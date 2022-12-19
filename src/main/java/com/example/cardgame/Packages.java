@@ -13,8 +13,8 @@ public class Packages {
 
         for(int i = 0; i < rounds; i++)
         {
-            playerOne[i] = myStack.getFromDeck; // gets the hand for player one
-            playerTwo[i] = myStack.getFromDeck; // gets the hand for player two
+        //    playerOne[i] = myStack.getFromDeck; // gets the hand for player one
+          //  playerTwo[i] = myStack.getFromDeck; // gets the hand for player two
 
         }
 

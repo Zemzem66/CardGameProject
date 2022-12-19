@@ -1,37 +1,61 @@
 package com.example.cardgame;
 
-public class SpellCard {
-    int water;
-    int fire;
-    int normal;
+public class SpellCard extends Card {
+    //effective (eg: water is effective against fire, so damage is doubled)
+    //– not effective (eg: fire is not effective against water, so damage is halved)
+    //– no effect (eg: normal monster vs normal spell, no change of damage,
+    // directwater -> fire
+    //• fire -> normal
+    //• normal -> water
 
-    public SpellCard(int water, int fire, int normal) {
-        this.water = water;
-        this.fire = fire;
-        this.normal = normal;
+
+    public Spells getSpellType() {
+        return spellType;
     }
 
-    public int getWater() {
-        return water;
+    public void setSpellType(Spells spellType) {
+        this.spellType = spellType;
     }
 
-    public void setWater(int water) {
-        this.water = water;
+    public int getDamage() {
+        return damage;
     }
 
-    public int getFire() {
-        return fire;
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
-    public void setFire(int fire) {
-        this.fire = fire;
+    @Override
+    public String name() {
+        return null;
     }
 
-    public int getNormal() {
-        return normal;
+    @Override
+    public int damage() {
+        return 0;
     }
 
-    public void setNormal(int normal) {
-        this.normal = normal;
+    @Override
+    public String elementType() {
+        return null;
     }
+
+    Spells spellType;
+
+    public ElementType getElementType() {
+        return elementType;
+    }
+
+    public void setElementType(ElementType elementType) {
+        this.elementType = elementType;
+    }
+
+    public SpellCard(ElementType elementType, Spells spellType, int damage) {
+        super(elementType,damage, CardType.SpellCard);
+        this.spellType = spellType;
+    }
+
+
+
+
 }
