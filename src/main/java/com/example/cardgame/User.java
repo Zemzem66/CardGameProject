@@ -1,12 +1,35 @@
 package com.example.cardgame;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class User {
+    //ROUNDS MAX 100
+    int userId;
+
+    public int getUserId() {
+        return userId;
+    }
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
     boolean battle = false;
-    List<String> stack = new ArrayList<String>(); // stack muss erstellt werden
-    List<String> deck = new ArrayList<String>(); // deck muss erstellt werden
+    List<Card> stack = new ArrayList<>(); // stack muss, class erstellt werden
+    List<Card> deck = new ArrayList<>(); // deck muss, class erstellt werden
+    private static List<Card> cards = new ArrayList<>();
+
+    //Shuffler von Cards
+    //public User() {}
+    public void shuffle()
+    {
+        Collections.shuffle(this.cards); // mischt meine karten
+    }
+
+
+
     String username; // Benutzername
 
     //Request an den Server.Server
@@ -20,7 +43,7 @@ public class User {
     }
 
     public String getUsername() {
-        return username;
+        return username+"\r";
     }
 
     public void setUsername(String username) {
@@ -43,6 +66,11 @@ public class User {
         this.coins = coins;
     }
 
+    public void printUserName()
+    {
+        System.out.println(getUsername());
+
+    }
     int coins;
 /*
     boolean battle()
@@ -69,7 +97,11 @@ public class User {
     int compareStats();
 */
    // Packages cardPackages = new Packages();
-
+public static void main(String[] args) {
+    //Testing cards
+   // cards = (List<Card>) new MonsterCard(1,2,ElementType.randomElement(),MonsterName.Ork);
+   /// Card card = new Card(ElementType.randomElement(), 1,CardType.;
+}
 
 
 
