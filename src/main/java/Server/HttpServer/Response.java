@@ -7,12 +7,15 @@ public class Response {
     private String contentType;
     private String content;
 
-    public Response (HttpStatus httpStatus, ContentType contentType, String content)
+    private String title;
+
+    public Response (HttpStatus httpStatus, ContentType contentType, String content, String title)
     {
         this.statusCode = httpStatus.statusCode;
         this.statusMessage = httpStatus.statusMessage;
         this.contentType = contentType.type;
         this.content = content;
+        this.title = title;
     }
 
     public String get() {
@@ -21,7 +24,7 @@ public class Response {
                 "Content-Length: " + (this.content != null ? this.content.length() : 0) + "\r\n" +
                 "Connection: close\r\n" +
                 "\r\n" +
-                this.content;
+                this.content + "Title: " + this.title;
 
     }
 }

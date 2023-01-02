@@ -5,74 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="First push">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/BattleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/CheckTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/FireEvleTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/GoblinTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/KrakenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/MonsterCardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/OrkTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/PackagesTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/SpellCardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/UserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Test/com/example/cardgame/WizzardTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/CardDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/CardDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/Dao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/Entity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/InjectionProtection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/MonsterDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/MonsterDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Endpoint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ContentType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HttpStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Method.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ProcessRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RESTAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/SlowProcess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/RequestBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/CardType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/ElementType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterName.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Spells.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/main/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/Server/Parse/HttpParserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ControllMapper/ControllMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandleRequestService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ParseUserCreate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Parser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Route.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/config/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/config/ConfigurationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/createUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/user/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/Parse/HttpParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/http.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/RequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/SocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SocketServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/SocketServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Check.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/FireEvle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/FireEvle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Goblin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Kraken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Kraken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Ork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Ork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Packages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Packages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/SpellCard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Stack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Wizzard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Wizzard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/CardDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/CardDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/Dao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/MonsterDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/MonsterDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HttpStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HttpStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,10 +41,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Class" />
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -106,11 +64,10 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/FH/WSS22-23/Software/CardGame",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/http-server",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -133,10 +90,11 @@
       <recent name="com.example.cardgame" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Server.Parse" />
       <recent name="com.example.cardgame" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DriverMangerConnection">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="DriverMangerConnection" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.Connection.DriverMangerConnection" />
       <module name="CardGame" />
@@ -150,12 +108,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.cardgame.HelloApplication" />
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.Server" />
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.cardgame.*" />
+          <option name="PATTERN" value="Server.HttpServer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -176,15 +134,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.main" />
+    <configuration name="HttpParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.*" />
+          <option name="PATTERN" value="Server.Parse.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Server.Parse" />
+      <option name="MAIN_CLASS_NAME" value="Server.Parse.HttpParserTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.HttpParserTest" />
         <item itemvalue="Application.DriverMangerConnection" />
         <item itemvalue="Docker.Dockerfile" />
         <item itemvalue="Application.User" />
-        <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.main" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +186,8 @@
       <workItem from="1666895339972" duration="15403000" />
       <workItem from="1667125916650" duration="46671000" />
       <workItem from="1670093672494" duration="908000" />
-      <workItem from="1670354289127" duration="33896000" />
+      <workItem from="1670354289127" duration="34416000" />
+      <workItem from="1671735524478" duration="36503000" />
     </task>
     <task id="LOCAL-00001" summary="First push">
       <created>1665921694476</created>
@@ -235,7 +196,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665921694476</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="First push">
+      <created>1671467234102</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671467234102</updated>
+    </task>
+    <task id="LOCAL-00003" summary="First push">
+      <created>1671467313681</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671467313681</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,12 +222,13 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="SHOW_ROOT_NAMES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="HEAD" />
                       </list>
                     </value>
                   </entry>

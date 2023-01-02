@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-public class MonsterDaoImpl implements MonsterDao{
+public class MonsterDaoImpl implements Dao{
     @Override
     public void connection() {
         try {
@@ -15,13 +15,30 @@ public class MonsterDaoImpl implements MonsterDao{
             MonsterDaoImpl data = new MonsterDaoImpl();
             statement.setInt(1, 1);
             statement.setString(2,data.elementType());
-            statement.setString(3, data.monsterType());
+        //    statement.setString(3, data.monsterType());
             statement.execute();
         } catch (SQLException ex)
         {
             ex.printStackTrace();
         }
     }
+
+    @Override
+    public void update() {
+
+    }
+
+    @Override
+    public void delete() {
+
+    }
+
+    @Override
+    public Connection add() {
+
+        return null;
+    }
+
     public String elementType() {
         int random = 0;
         if(random % 2 == 0)
@@ -39,7 +56,7 @@ public class MonsterDaoImpl implements MonsterDao{
             return "Fire";
         }
     }
-
+/*
     @Override
     public String monsterType() {
         int random = 0;
@@ -58,4 +75,6 @@ public class MonsterDaoImpl implements MonsterDao{
             return "Ork";
         }
     }
+
+ */
 }

@@ -3,6 +3,9 @@ module com.example.cardgame {
     requires javafx.fxml;
     requires java.sql;
     requires java.persistence;
+    requires com.fasterxml.jackson.core;
+    requires com.fasterxml.jackson.annotation;
+    requires com.fasterxml.jackson.databind;
 
 
     opens com.example.cardgame to javafx.fxml;

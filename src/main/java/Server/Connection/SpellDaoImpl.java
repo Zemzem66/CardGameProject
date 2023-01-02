@@ -1,7 +1,5 @@
 package Server.Connection;
 
-import com.example.cardgame.User;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -38,8 +36,9 @@ public class SpellDaoImpl implements Dao{
     }
 
     @Override
-    public void add() {
+    public Connection add() {
 
+        return null;
     }
 /*
     @Override

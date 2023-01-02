@@ -33,8 +33,9 @@ public class StackDaoImpl implements Dao {
     }
 
     @Override
-    public void add() {
+    public Connection add() {
 
+        return null;
     }
 
    /* @Override

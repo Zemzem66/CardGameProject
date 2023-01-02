@@ -12,6 +12,8 @@ public class RequestBuilder {
         if (firstline != null) {
             String[] splitFirstline = firstline.split(" ");
 
+            System.out.println(splitFirstline);
+            //Printouts
             request.setMethod(getMethod(splitFirstline[0]));
             setPathname(request, splitFirstline[1]);
 
@@ -20,14 +22,21 @@ public class RequestBuilder {
                 String[] headerRow = line.split(":", 2);
                 request.addHeader(headerRow[0], headerRow[1].trim());
                 line = bufferedReader.readLine();
+                System.out.println(line);
+                System.out.println(headerRow);
             }
 
             if (request.getContentLength() > 0 ) {
                 char[] charBuffer = new char[request.getContentLength()];
                 bufferedReader.read(charBuffer, 0, request.getContentLength());
                 request.setBody(new String(charBuffer));
+                System.out.println(charBuffer);
             }
         }
+
+        //Printouts
+        System.out.println("empty strings ");
+
         return request;
     }
 
@@ -43,6 +52,7 @@ public class RequestBuilder {
             String[] pathParts = path.split("\\?");
             request.setPathname(pathParts[0]);
             request.setParams(pathParts[1]);
+            System.out.println(pathParts);
         }
         else {
             request.setPathname(path);
