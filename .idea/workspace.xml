@@ -4,44 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="Understand to parse the Curl">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Echo/EchoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Handle/Dao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Http/HttpStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/HandleRequestService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/Header.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/Request.java" afterDir="false" />
+    <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="CURL READINGS">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/LoginInUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/CardDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/CardDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/CardDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/CardDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/Dao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/Dao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/MonsterDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/MonsterDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/InjectionProtection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/MonsterDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDao.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ContentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Http/ContentType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ControllMapper/ControllMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ControllMapper/ControllMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Handle/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Handle/UserHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandleRequestService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HttpStatus.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Method.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Http/Method.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ParseUserCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ParseUserCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Parser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RESTAPI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Request.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ParseUserCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ParseUserCreate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/createUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/createUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Parse/HttpParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Parse/HttpParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/RequestBuilder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Server.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SocketHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/SocketServer.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,12 +96,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.Main" />
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.UtilsServer.Server" />
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Server.HttpServer.*" />
+          <option name="PATTERN" value="Server.HttpServer.UtilsServer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,12 +109,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.UtilsServer.Server" />
+    <configuration name="Server.HttpServer.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.Main" />
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Server.HttpServer.UtilsServer.*" />
+          <option name="PATTERN" value="Server.HttpServer.HandlingCurlsRequest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -170,7 +148,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Server.HttpServer.Main" />
         <item itemvalue="JUnit.HttpParserTest" />
         <item itemvalue="Application.DriverMangerConnection" />
         <item itemvalue="Docker.Dockerfile" />
@@ -200,7 +178,7 @@
       <workItem from="1671735524478" duration="48608000" />
       <workItem from="1672694534717" duration="3712000" />
       <workItem from="1672748484714" duration="4065000" />
-      <workItem from="1672753996246" duration="13676000" />
+      <workItem from="1672753996246" duration="26649000" />
     </task>
     <task id="LOCAL-00001" summary="First push">
       <created>1665921694476</created>
@@ -237,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672696611150</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="CURL READINGS">
+      <created>1672830879625</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672830879626</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,7 +256,8 @@
     <MESSAGE value="First push" />
     <MESSAGE value="Curl, testing and more" />
     <MESSAGE value="Understand to parse the Curl" />
-    <option name="LAST_COMMIT_MESSAGE" value="Understand to parse the Curl" />
+    <MESSAGE value="CURL READINGS" />
+    <option name="LAST_COMMIT_MESSAGE" value="CURL READINGS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

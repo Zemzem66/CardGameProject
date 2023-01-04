@@ -1,4 +1,5 @@
-package Server.HttpServer;
+package Server.HttpServer.HandlingCurlsRequest;
+import Server.Connection.DriverMangerConnection;
 import Server.Connection.UserDaoImpl;
 import Server.HttpServer.UtilsServer.Request;
 
@@ -24,18 +25,13 @@ public class ParseUserCreate {
 
         String userBody = request.getBody();
         String[] valuePair = userBody.split(",");
-
-
         //String[] valuePair =  split(userBody,","); // userbody.split(",);
         System.out.println(valuePair);
-
         for(int i = 0 ; i < valuePair.length; i++)
         {
             System.out.println("TEST---");
             StringItemStorage  = valuePair[i];
-
             String[] SplitViaDoublePoint =  StringItemStorage.split(":");
-
                  cutFirst = SplitViaDoublePoint[0].trim();
 
                  cutSecond = SplitViaDoublePoint[1].trim();
@@ -59,22 +55,18 @@ public class ParseUserCreate {
                      System.out.println(password);
                  }
             //}
-
            // [] = StringItemStorage.split(":");
            // cutFirst = SplitViaDoublePoint
-
         }
-
        // String []
-
-
-
+        DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
         //Server connection and add
-        String conn = createUserDatabase.add(username,password);
+        Connection conn = driverMangerConnection.Connection();
+        String testCon =driverMangerConnection.add(conn,username,password);
      //   Connection conn = userDb.add(username,password);
         //_userContent = String.valueOf(conn);
         System.out.println("TEST---");
-        return conn;
+        return testCon;
     }
 
     //public String LoginUser()

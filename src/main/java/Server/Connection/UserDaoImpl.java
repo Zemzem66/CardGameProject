@@ -25,7 +25,7 @@ public class UserDaoImpl implements Dao{
 
 
     @Override
-    public String update(String Username, String password ) {
+    public String update(String Username, String password) {
         try {
             //Login
             Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CardGame","postgres","");
@@ -83,6 +83,6 @@ public class UserDaoImpl implements Dao{
         {
             ex.printStackTrace();
         }
-        return "";
+        return "ars";
     }
 }

@@ -1,13 +1,13 @@
 package Server.HttpServer.RequestUtils;
 
 import Server.Connection.UserDaoImpl;
+import Server.HttpServer.HandlingCurlsRequest.LoginInUser;
 import Server.HttpServer.Http.ContentType;
 import Server.HttpServer.Http.HttpStatus;
 import Server.HttpServer.Http.Method;
-import Server.HttpServer.ParseUserCreate;
+import Server.HttpServer.HandlingCurlsRequest.ParseUserCreate;
 import Server.HttpServer.UtilsServer.Request;
 import Server.HttpServer.UtilsServer.Response;
-import Server.HttpServer.createUser;
 
 import java.io.*;
 import java.net.Socket;
@@ -66,7 +66,7 @@ public class RequestHandler implements  Runnable{
         {
             input = /*"CreatedUser--------";///CreateUserTwo(request);/*/String.valueOf(new ParseUserCreate().CreateUser(request)); // muss implementiert werden
         } else if (path.equals("/sessions") && method == Method.POST) {
-            input = "User Sessions-----";//String.valueOf(new LoginUser(request));
+            input = String.valueOf(new LoginInUser().UserLogIn(request));//"User Sessions-----";//String.valueOf(new LoginUser(request));
         } else if (path.equals("/packages") && method == Method.POST) {
             input ="Package created-----"; //String.valueOf(new createPackage(request));
         } else if (path.equals("/transactions/packages") && method == Method.POST) {
