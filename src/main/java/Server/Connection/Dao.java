@@ -1,10 +1,11 @@
 package Server.Connection;
 
-import java.sql.Connection;
-
 public interface Dao {
     void connection();
-    void update();
+
+    String update(String Username, String password);
+
     void delete();
-    Connection add();
+   // Connection add();
+    String add(String Username, String password);
 }

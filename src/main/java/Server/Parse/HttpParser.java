@@ -1,7 +1,7 @@
 package Server.Parse;
 
 
-import Server.HttpServer.RequestBuilder;
+import Server.HttpServer.RequestUtils.RequestBuilder;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

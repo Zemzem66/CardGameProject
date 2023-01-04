@@ -23,9 +23,11 @@ public class DeckDaoImpl implements Dao{
         }
     }
 
-    @Override
-    public void update() {
 
+
+    @Override
+    public String update(String Username, String password) {
+        return null;
     }
 
     @Override
@@ -34,7 +36,7 @@ public class DeckDaoImpl implements Dao{
     }
 
     @Override
-    public Connection add() {
+    public String add(String Username, String password) {
 
         return null;
     }

@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class MonsterDaoImpl implements Dao{
+
     @Override
     public void connection() {
         try {
@@ -24,9 +25,11 @@ public class MonsterDaoImpl implements Dao{
     }
 
     @Override
-    public void update() {
-
+    public String update(String Username, String password) {
+        return null;
     }
+
+
 
     @Override
     public void delete() {
@@ -34,10 +37,10 @@ public class MonsterDaoImpl implements Dao{
     }
 
     @Override
-    public Connection add() {
-
+    public String add(String Username, String password) {
         return null;
     }
+
 
     public String elementType() {
         int random = 0;

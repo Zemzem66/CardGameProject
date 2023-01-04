@@ -23,9 +23,10 @@ public class StackDaoImpl implements Dao {
     }
 
     @Override
-    public void update() {
-
+    public String update(String Username, String password) {
+        return null;
     }
+
 
     @Override
     public void delete() {
@@ -33,7 +34,7 @@ public class StackDaoImpl implements Dao {
     }
 
     @Override
-    public Connection add() {
+    public String add(String Username, String password) {
 
         return null;
     }

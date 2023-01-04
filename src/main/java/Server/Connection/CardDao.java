@@ -1,9 +1,11 @@
 package Server.Connection;
 
+import java.sql.Connection;
+
 public interface CardDao {
     void connection();
     String getType();
-    void update();
+    String update();
     void delete();
-    void add();
+    Connection add(String Username, String password);
 }

@@ -1,8 +1,10 @@
 package Server.HttpServer.RequestUtils;
 
+import Server.Connection.UserDaoImpl;
 import Server.HttpServer.Http.ContentType;
 import Server.HttpServer.Http.HttpStatus;
 import Server.HttpServer.Http.Method;
+import Server.HttpServer.ParseUserCreate;
 import Server.HttpServer.UtilsServer.Request;
 import Server.HttpServer.UtilsServer.Response;
 import Server.HttpServer.createUser;
@@ -10,20 +12,13 @@ import Server.HttpServer.createUser;
 import java.io.*;
 import java.net.Socket;
 
+import static com.sun.javafx.util.Utils.split;
+
 public class RequestHandler implements  Runnable{
 
     private Socket clientConnection;
-     private Route router;
-     private  PrintWriter printWriter;
-     private  BufferedReader bufferedReader;
-
-
-    //public Router router;
-    public RequestHandler(Socket clientConnection, Route router) throws IOException {
+    public RequestHandler(Socket clientConnection) {
         this.clientConnection = clientConnection;
-        this.bufferedReader = new BufferedReader(new InputStreamReader(this.clientConnection.getInputStream())); //
-        this.printWriter = new PrintWriter(this.clientConnection.getOutputStream(), true);//
-        this.router = router;//
     }
 
     @Override
@@ -31,26 +26,18 @@ public class RequestHandler implements  Runnable{
         BufferedReader bufferedReader = null;
         PrintWriter printWriter = null;
         try {
-            //Read the request stream from the browser // we take or get it also from our socket/client connection
             InputStream inputStream = clientConnection.getInputStream();
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             bufferedReader = new BufferedReader(inputStreamReader);
             OutputStream outputStream = clientConnection.getOutputStream();
             printWriter = new PrintWriter(outputStream);
-            String htmlTitle = "<html><head><title>CardGame/Mustafa Sahin</title></head><body><h1>Test Test</h1></body></html>";
-
-
-
-            int _test;
-            while((_test= inputStream.read()) >=0)
-            {
-                System.out.println((char) _test);
-            }
-            //String testResponse= ""
 
             Request request = new RequestBuilder().buildRequest(bufferedReader);
-            printWriter.write(new Response(HttpStatus.OK, ContentType.PLAIN_TEXT, "Verbindungs Test:Echo-").get());
-            //printWriter.write(new Response(HttpStatus.OK, ContentType.JSON, "Hello wolrd !!!  " + request.getBody()).get());
+            //TestRequest(request);
+            printWriter.write(
+
+                    new Response(HttpStatus.OK, ContentType.PLAIN_TEXT, "Echo-" + TestRequest(request)).get());
+                   // TestRequest(request);
         } catch (IOException exception)
         {
             exception.printStackTrace();
@@ -75,25 +62,25 @@ public class RequestHandler implements  Runnable{
         String input = request.getBody();
         Method method = request.getMethod();
         String path = request.getPathname();
-        if(path.equals("/user")  && method == Method.POST)
+        if(path.equals("/users")  && method == Method.POST)
         {
-            input = String.valueOf(new createUser()); // muss implementiert werden
+            input = /*"CreatedUser--------";///CreateUserTwo(request);/*/String.valueOf(new ParseUserCreate().CreateUser(request)); // muss implementiert werden
         } else if (path.equals("/sessions") && method == Method.POST) {
-            input = String.valueOf(new LoginUser(request));
+            input = "User Sessions-----";//String.valueOf(new LoginUser(request));
         } else if (path.equals("/packages") && method == Method.POST) {
-            input = String.valueOf(new createPackage(request));
+            input ="Package created-----"; //String.valueOf(new createPackage(request));
         } else if (path.equals("/transactions/packages") && method == Method.POST) {
-            input = String.valueOf(new handlePackage(request));
+            input = "Transaction and packages-----";//String.valueOf(new handlePackage(request));
         }else if (path.equals("/cards") && method == Method.GET)
         {
-            input = String.valueOf(new getCard(request));
+            input = "Getting cards back";//String.valueOf(new getCard(request));
         } else if (path.equals("/deck") && method == Method.GET) {
-            input = String.valueOf(new getDeck(request));
+            input = "Getting Deck";// String.valueOf(new getDeck(request));
         }else if (path.equals("/deck") && method == Method.POST)
         {
-            input = String.valueOf(new addDeck(request));
+            input = "Post decks";//String.valueOf(new addDeck(request));
         } else if (path.equals("/users/") && method == Method.PUT) {
-            input = String.valueOf(new userUpdate(request));
+            input = "Puting users";// String.valueOf(new userUpdate(request));
         } else if (path.equals("/stats") && method == Method.GET) {
             input = "get stats";
         } else if (path.equals("/battles") && method == Method.POST) {
@@ -109,4 +96,106 @@ public class RequestHandler implements  Runnable{
         }
         return input;
     }
+
+
+
+    public String CreateUserTwo(Request request) // to get the request
+    {
+        UserDaoImpl userDb= new UserDaoImpl();
+         String username = null;
+         String password = null;
+        String StringItemStorage;
+         String SplitViaDoublePoint[] = new String[0];
+        UserDaoImpl createUserDatabase = new UserDaoImpl();
+         String cutFirst;
+         String cutSecond;
+        System.out.println("TEST---");
+
+        String userBody = request.getBody();
+        String[] valuePair =  split(userBody,","); // userbody.split(",);
+        System.out.println(userBody);
+        for(int i = 0 ; i < valuePair.length; i++)
+        {        System.out.println("TEST---");
+
+            StringItemStorage  = valuePair[i];  // itertae through the array and store it every time in key Value
+            for (String s : SplitViaDoublePoint) {
+                cutFirst = SplitViaDoublePoint[0].trim();
+                cutSecond = SplitViaDoublePoint[1].trim();
+                if(cutFirst.charAt(0) == '{')
+                {
+                    cutFirst = cutFirst.substring(1);
+                }
+                if(cutSecond.endsWith("}"))
+                {
+                    cutSecond = cutSecond.substring(0,cutSecond.length()-1);
+                }
+                cutSecond = cutSecond.substring(1, cutSecond.length()-1);
+
+                if(cutFirst.equals("\"Username\""))
+                {
+                    username = cutSecond;
+                    System.out.println(username);
+                } else if (cutFirst.equals("\"Password\"")) {
+                    password = cutSecond;
+                    System.out.println(password);
+                }
+            }
+
+            // [] = StringItemStorage.split(":");
+            // cutFirst = SplitViaDoublePoint
+
+        }
+
+        // String []
+
+
+
+        //Server connection and add
+        String conn = createUserDatabase.add(username,password);
+        //   Connection conn = userDb.add(username,password);
+        //_userContent = String.valueOf(conn);
+        System.out.println("TEST---");
+        return conn;
+    }
+
 }
+    /*
+    public String TestRequest(Request request)
+    {
+        String input = request.getBody();
+        Method method = request.getMethod();
+        String path = request.getPathname();
+        if(path.equals("/user")  && method == Method.POST)
+        {
+            input = String.valueOf(new createUser()); // muss implementiert werden
+        } else if (path.equals("/sessions") && method == Method.POST) {
+            input = "User Created";//String.valueOf(new LoginUser(request));
+        } else if (path.equals("/packages") && method == Method.POST) {
+            input ="Package created"; //String.valueOf(new createPackage(request));
+        } else if (path.equals("/transactions/packages") && method == Method.POST) {
+            input = "Transaction and packages";//String.valueOf(new handlePackage(request));
+        }else if (path.equals("/cards") && method == Method.GET)
+        {
+            input = "Getting cards back";//String.valueOf(new getCard(request));
+        } else if (path.equals("/deck") && method == Method.GET) {
+            input = "Getting Deck";// String.valueOf(new getDeck(request));
+        }else if (path.equals("/deck") && method == Method.POST)
+        {
+            input = "Post decks";//String.valueOf(new addDeck(request));
+        } else if (path.equals("/users/") && method == Method.PUT) {
+            input = "Puting users";// String.valueOf(new userUpdate(request));
+        } else if (path.equals("/stats") && method == Method.GET) {
+            input = "get stats";
+        } else if (path.equals("/battles") && method == Method.POST) {
+            input = "post battles";
+        } else if (path.equals("/score") && method == Method.GET) {
+            input = "get score";
+        } else if (path.equals("/tradings") && method == Method.GET) {
+            input = "get trading";
+        } else if (path.equals("/tradings") && method == Method.POST) {
+            input = "create tradings";
+        } else if (path.equals("/tradings/") && method == Method.DELETE) {
+            input = " delete tradings";
+        }
+        return input;
+    }*/

@@ -1,4 +1,4 @@
-package Server.HttpServer;
+package Server.HttpServer.Http;
 
 public enum ContentType {
     PLAIN_TEXT("text/plain"),

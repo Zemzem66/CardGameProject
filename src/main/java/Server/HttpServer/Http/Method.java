@@ -1,4 +1,4 @@
-package Server.HttpServer;
+package Server.HttpServer.Http;
 
 public enum Method {
     GET,

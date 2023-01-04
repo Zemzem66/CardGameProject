@@ -23,6 +23,7 @@ public class CardDaoImpl implements Dao{
             ex.printStackTrace();
         }
     }
+
     /*
     @Override
     public String getType() {
@@ -40,7 +41,7 @@ public class CardDaoImpl implements Dao{
     }*/
 
     @Override
-    public void update() {
+    public String update(String username, String password) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CardGame","postgres","");
             PreparedStatement statement = connection.prepareStatement(" update card (card_id,type) VALUES (?,?); ");
@@ -53,6 +54,7 @@ public class CardDaoImpl implements Dao{
         {
             ex.printStackTrace();
         }
+        return "hello";
     }
 
     @Override
@@ -71,8 +73,10 @@ public class CardDaoImpl implements Dao{
         }
     }
 
+
+
     @Override
-    public Connection add() {
+    public String add(String Username, String password) {
         try {
             Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CardGame","postgres","");
             PreparedStatement statement = connection.prepareStatement("INSERT INTO card (card_id,type) VALUES (?,?); ");
