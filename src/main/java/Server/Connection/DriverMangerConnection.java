@@ -71,20 +71,16 @@ public class DriverMangerConnection {
     public String LogIn(Connection connection,String username, String password)
     {
         try{
-            //  Scanner rs = new Scanner(System.in);
-            //  rs = request.executeQuery(query);
-//)          ResultSet rs;
             ResultSet rs;
-            PreparedStatement statement = connection.prepareStatement("select * from accounts where password = ? AND username = ?");
+            PreparedStatement statement = connection.prepareStatement("select username, password from accounts where username = ? AND password = ?");
             //    statement.setInt(1, 1);
             statement.setString(1,username);
             statement.setString(2, password);
-            statement.execute();
+            //statement.execute();
             System.out.println(username + "-----" + password  + "-----");
 
-
             rs = statement.executeQuery();
-            if (!rs.next())
+            if (rs.next())
             {
                 System.out.println("USER LOGGED IN ");
                 return "User " + username + " was logged in!----";

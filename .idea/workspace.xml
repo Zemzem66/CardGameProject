@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="CURL READINGS">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/LoginInUser.java" afterDir="false" />
+    <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="CURL 1 and two 2 is working">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DeckDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/Entity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/InjectionProtection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/MonsterDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/SpellDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/StackDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/ParseUserCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ParseUserCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,25 +35,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/http-server&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Users/Lenovo/Desktop/http-server",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "database.query.execution"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Server" />
@@ -178,7 +165,7 @@
       <workItem from="1671735524478" duration="48608000" />
       <workItem from="1672694534717" duration="3712000" />
       <workItem from="1672748484714" duration="4065000" />
-      <workItem from="1672753996246" duration="26649000" />
+      <workItem from="1672753996246" duration="30484000" />
     </task>
     <task id="LOCAL-00001" summary="First push">
       <created>1665921694476</created>
@@ -222,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672830879626</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="CURL 1 and two 2 is working">
+      <created>1672865619762</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1672865619762</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +251,8 @@
     <MESSAGE value="Curl, testing and more" />
     <MESSAGE value="Understand to parse the Curl" />
     <MESSAGE value="CURL READINGS" />
-    <option name="LAST_COMMIT_MESSAGE" value="CURL READINGS" />
+    <MESSAGE value="CURL 1 and two 2 is working" />
+    <option name="LAST_COMMIT_MESSAGE" value="CURL 1 and two 2 is working" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
