@@ -1,6 +1,7 @@
 package Server.HttpServer.RequestUtils;
 
 import Server.Connection.UserDaoImpl;
+import Server.HttpServer.HandlingCurlsRequest.CreatePackages;
 import Server.HttpServer.HandlingCurlsRequest.LoginInUser;
 import Server.HttpServer.Http.ContentType;
 import Server.HttpServer.Http.HttpStatus;
@@ -68,7 +69,7 @@ public class RequestHandler implements  Runnable{
         } else if (path.equals("/sessions") && method == Method.POST) {
             input = String.valueOf(new LoginInUser().UserLogIn(request));//"User Sessions-----";//String.valueOf(new LoginUser(request));
         } else if (path.equals("/packages") && method == Method.POST) {
-            input ="Package created-----"; //String.valueOf(new createPackage(request));
+            input =String.valueOf(new CreatePackages().CreatePackage(request)) ; //"Package created-----"; //String.valueOf(new createPackage(request));
         } else if (path.equals("/transactions/packages") && method == Method.POST) {
             input = "Transaction and packages-----";//String.valueOf(new handlePackage(request));
         }else if (path.equals("/cards") && method == Method.GET)

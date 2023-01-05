@@ -46,11 +46,9 @@ public class DriverMangerConnection {
     
      public String add(Connection connection,String username, String password){
        try{
-         //  Scanner rs = new Scanner(System.in);
-         //  rs = request.executeQuery(query);
-//)
+
            PreparedStatement statement = connection.prepareStatement("INSERT INTO accounts (username, password) VALUES (?,?); ");
-       //    statement.setInt(1, 1);
+
            statement.setString(1,username);
            statement.setString(2, password);
            statement.execute();
@@ -94,5 +92,25 @@ public class DriverMangerConnection {
             exception.printStackTrace();
         }
         return "WARUM!";
+    }
+
+    public String createPackage(Connection connection , String packedid, String monstername, String damage)
+    {
+        try{
+
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO packages (packedid, monstername,damage) VALUES (?,?,?); ");
+
+            statement.setString(1,packedid);
+            statement.setString(2, monstername);
+            statement.setString(3,damage);
+            statement.execute();
+            System.out.println("Package"  + packedid + " ----- " + monstername  + "-----" + damage);
+
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  packedid+" WITH " + monstername + "and" +damage+" was created!";
+
     }
 }
