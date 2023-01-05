@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="362.0" y="170.0">com.example.cardgame.Ork</node>
+    <node x="94.0" y="-14.5">com.example.cardgame.Goblin</node>
+    <node x="100.0" y="55.5">com.example.cardgame.Card</node>
+    <node x="-67.0" y="118.5">com.example.cardgame.SpellCard</node>
+    <node x="93.5" y="251.5">com.example.cardgame.Kraken</node>
+    <node x="73.5" y="118.5">com.example.cardgame.MonsterCard</node>
+    <node x="233.5" y="170.0">com.example.cardgame.Wizzard</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.example.cardgame.Goblin" target="com.example.cardgame.MonsterCard" relationship="GENERALIZATION">
+      <point x="46.0" y="0.0" />
+      <point x="203.5" y="0.0" />
+      <point x="63.5" y="-14.5" />
+    </edge>
+    <edge source="com.example.cardgame.Kraken" target="com.example.cardgame.MonsterCard" relationship="GENERALIZATION">
+      <point x="-15.0" y="-14.5" />
+      <point x="-15.0" y="14.5" />
+    </edge>
+    <edge source="com.example.cardgame.MonsterCard" target="com.example.cardgame.Card" relationship="GENERALIZATION">
+      <point x="0.0" y="-14.5" />
+      <point x="0.0" y="14.5" />
+    </edge>
+    <edge source="com.example.cardgame.SpellCard" target="com.example.cardgame.Card" relationship="GENERALIZATION">
+      <point x="-0.0" y="-14.5" />
+      <point x="-12.0" y="70.0" />
+      <point x="-40.0" y="-0.0" />
+    </edge>
+    <edge source="com.example.cardgame.Wizzard" target="com.example.cardgame.MonsterCard" relationship="GENERALIZATION">
+      <point x="-0.0" y="-14.5" />
+      <point x="284.0" y="133.0" />
+      <point x="66.5" y="-0.0" />
+    </edge>
+    <edge source="com.example.cardgame.Ork" target="com.example.cardgame.MonsterCard" relationship="GENERALIZATION">
+      <point x="-0.0" y="14.5" />
+      <point x="399.0" y="216.5" />
+      <point x="140.0" y="216.5" />
+      <point x="-0.0" y="14.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Compact" zoom="1.0" showDependencies="false" x="402.5" y="94.5" />
+  <SelectedNodes>
+    <node>com.example.cardgame.Goblin</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
