@@ -1,4 +1,5 @@
 package Server.Connection;
+import com.example.cardgame.Card;
 import com.example.cardgame.User;
 
 import java.sql.*;
@@ -10,7 +11,7 @@ public class DriverMangerConnection {
     {
 
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CardGame","postgres","");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres","postgres","");
             System.out.println("The connection is succesfull");
         /*    PreparedStatement statement = connection.prepareStatement("INSERT INTO account (id,username, password) VALUES (?,?,?); ");
 /
@@ -94,23 +95,41 @@ public class DriverMangerConnection {
         return "WARUM!";
     }
 
-    public String createPackage(Connection connection , String packedid, String monstername, String damage)
+    public String createPackage(Connection connection , String packedid)
     {
         try{
 
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO packages (packedid, monstername,damage) VALUES (?,?,?); ");
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO packages (cardID) VALUES (?); ");
 
             statement.setString(1,packedid);
-            statement.setString(2, monstername);
-            statement.setString(3,damage);
             statement.execute();
-            System.out.println("Package"  + packedid + " ----- " + monstername  + "-----" + damage);
+            System.out.println("PackageID"  + packedid + " ----- " + "-----" );
 
         }catch (SQLException exception)
         {
             exception.printStackTrace();
         }
-        return  packedid+" WITH " + monstername + "and" +damage+" was created!";
+        return  packedid+" WITH PACKED was created!";
 
+    }
+
+    public String createCard(Connection connection,String cardId,double damage, String ctype, String etype, String name)
+    {
+        try{
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO cards (cardId,damage, ctype,etype,name) VALUES (?,?,?,?,?); ");
+            statement.setString(1,cardId);
+            statement.setDouble(2,damage);
+            statement.setString(3,ctype);
+            statement.setString(4,etype);
+            statement.setString(5,name);
+
+            statement.execute();
+            System.out.println("Package"  + damage + " ----- " + ctype  + "-----" + damage+ "------"+ name);
+
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  damage+" WITH " + name + "and" +damage+" was created "+ ctype +"-------" + etype;
     }
 }

@@ -33,6 +33,10 @@ public class Request {
         return this.urlContent;
     }
 
+    public Map<String, String> getHeaderMap() {
+        return headerMap;
+    }
+
     public void setUrlContent(String urlContent) {
         this.urlContent = urlContent;
         Boolean hasParams = urlContent.indexOf("?") != -1;

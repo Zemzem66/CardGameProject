@@ -11,11 +11,16 @@ public abstract class Card {
     public int damage;
     CardType cardType;
 
+
     //---------------------------Random
     //CARDS
     private Random mRandom;
     private ArrayList<Card> mCards;
     private ArrayList<Card> mPulledCards;
+
+    public Card(String elementType, double damage, String cardType) {
+
+    }
 
     public ElementType getElementType() {
         return elementType;
@@ -49,10 +54,11 @@ public abstract class Card {
 
     public abstract String name();
 
-    public abstract int damage();
+    public abstract double damage();
 
     public abstract String elementType();
 
+    public abstract String cardType();
     void createStack()
     {
 

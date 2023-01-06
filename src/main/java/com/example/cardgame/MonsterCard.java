@@ -57,13 +57,18 @@ public class MonsterCard extends Card /*implements Playable */{
     }
 
     @Override
-    public int damage() {
+    public double damage() {
         return 0;
     }
 
 
     @Override
     public String elementType() {
+        return null;
+    }
+
+    @Override
+    public String cardType() {
         return null;
     }
 

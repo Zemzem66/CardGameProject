@@ -4,8 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="Create Package is working">
+    <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="DATABASE IS CORRECT">
+      <change afterPath="$PROJECT_DIR$/../Project-Card" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c31483c6-2c8d-42e3-8338-7693a12b0745.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c31483c6-2c8d-42e3-8338-7693a12b0745.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c31483c6-2c8d-42e3-8338-7693a12b0745/storage_v2/_src_/database/CardGame.QpdWAw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c31483c6-2c8d-42e3-8338-7693a12b0745/storage_v2/_src_/database/CardGame.QpdWAw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/CreatePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/CreatePackages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/Request.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/FireEvle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/FireEvle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/SpellCard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,25 +45,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/http-server",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "database.query.execution"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/http-server&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Server" />
@@ -164,7 +175,10 @@
       <workItem from="1671735524478" duration="48608000" />
       <workItem from="1672694534717" duration="3712000" />
       <workItem from="1672748484714" duration="4065000" />
-      <workItem from="1672753996246" duration="45620000" />
+      <workItem from="1672753996246" duration="50410000" />
+      <workItem from="1673005022266" duration="5693000" />
+      <workItem from="1673011214850" duration="2006000" />
+      <workItem from="1673026528862" duration="5833000" />
     </task>
     <task id="LOCAL-00001" summary="First push">
       <created>1665921694476</created>
@@ -229,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672936241924</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="DATABASE IS CORRECT">
+      <created>1672957092319</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1672957092319</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -267,7 +288,8 @@
     <MESSAGE value="CURL 1 and two 2 is working" />
     <MESSAGE value="Create Users, Login Users is working withou problems" />
     <MESSAGE value="Create Package is working" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Package is working" />
+    <MESSAGE value="DATABASE IS CORRECT" />
+    <option name="LAST_COMMIT_MESSAGE" value="DATABASE IS CORRECT" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

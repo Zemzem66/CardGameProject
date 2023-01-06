@@ -40,7 +40,7 @@ public class FireEvle extends MonsterCard {
     }
 
     @Override
-    public int damage() {
+    public double damage() {
         return 0;
     }
 
