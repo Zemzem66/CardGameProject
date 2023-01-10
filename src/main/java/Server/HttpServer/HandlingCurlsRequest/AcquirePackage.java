@@ -36,22 +36,25 @@ public class AcquirePackage {
             // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
             driverMangerConnection.AcquirePackageK(conn);
+            return "kienboc";
             //System.out.println("ITS KIENBOC ");
         }else if (Name.equals("altenhof"))
         {
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
-            driverMangerConnection.AcquirePackageA(conn);
+            String User = "altenhof";
+            driverMangerConnection.AcquirePackageA(conn, User);
             //System.out.println("ITS altenhof ");
+            return "altenhof";
         }
 
         else{
-            System.out.println("NO USER SELECTED");
+            return" no user selected"   ;
         }
         //String userBody = request.getBody();
         //String[] valuePair = userBody.split(",");
 
 
-        return "Irgendwas";
+      //  return "Irgendwas";
     }
 }

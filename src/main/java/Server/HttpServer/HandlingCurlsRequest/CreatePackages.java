@@ -11,6 +11,7 @@ import java.sql.SQLOutput;
 
 public class CreatePackages {
     String sId;
+    int myID;
     String damageDouble;
     String name;
     String cardType;
@@ -68,16 +69,13 @@ public class CreatePackages {
                 String element_name = s.substring(s.indexOf("\"Name\":\"") + 8, s.indexOf("\","));
                 if ((element_name.length() > 5) && (element_name.substring(0, 5).equals("Water"))) {
                     elementType = "Water";
-                    System.out.println("GEHT REIN 1 ");
                     if (element_name.substring(5).equals("Spell")) {
                         cardType = "Spell";
                         name = "Spell";
-                        System.out.println("GEHT REIN 2 ");
 
                     } else {
                         cardType = "Monster";
                         name = element_name.substring(5);
-                        System.out.println("GEHT REIN 3 ");
 
                     }
                 } else if (element_name.length() > 4 && (element_name.substring(0, 4).equals("Fire"))) {
@@ -85,12 +83,10 @@ public class CreatePackages {
                     if (element_name.substring(4).equals("Spell")) {
                         cardType = "Spell";
                         name = "Spell";
-                        System.out.println("GEHT REIN 4 ");
 
                     } else {
                         cardType = "Monster";
                         name = element_name.substring(4);
-                        System.out.println("GEHT REIN 5 ");
 
                     }
                 } else {
@@ -101,8 +97,6 @@ public class CreatePackages {
                     } else {
                         cardType = "Monster";
                         name = element_name;
-                        System.out.println("GEHT REIN 6 ");
-
                     }
                 }
 
@@ -110,12 +104,11 @@ public class CreatePackages {
                 String damageString = s.substring(s.indexOf("\"Damage\": ") + 10, s.indexOf("}"));
                 damage = Double.parseDouble(damageString);
 
-                System.out.println("Whats inside the idStorage" + idStorage);
                 /// Get the id from Package
 
 
                // RequestHandler idHandler = null;
-                Input= driverMangerConnection.createCard(conn,sId,damage,cardType,elementType,name,owner);
+                Input= driverMangerConnection.createCard(conn,sId,damage,cardType,elementType,name,owner,myID);
 
             }
 

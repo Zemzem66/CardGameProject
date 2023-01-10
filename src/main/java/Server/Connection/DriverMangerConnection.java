@@ -1,4 +1,5 @@
 package Server.Connection;
+import Server.HttpServer.HandlingCurlsRequest.AcquirePackage;
 import com.example.cardgame.Card;
 import com.example.cardgame.User;
 
@@ -6,7 +7,6 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class DriverMangerConnection {
-    int newId ;
     static Connection connection;
     public static Connection Connection /*connection*/()
     {
@@ -106,7 +106,6 @@ public class DriverMangerConnection {
          //   statement.setString(2,ad);
             statement.execute();
             System.out.println("PackageID"  + packedid + "-----" );
-
         }catch (SQLException exception)
         {
             exception.printStackTrace();
@@ -115,32 +114,48 @@ public class DriverMangerConnection {
 
     }
 
-    public String createCard(Connection connection,String cardId,double damage, String ctype, String etype, String name, String owner)
-    {
+    public int getNewId() {
+        return newId;
+    }
 
+    public void setNewId(int newId) {
+        this.newId = newId;
+    }
+
+    int newId;
+    public String createCard(Connection connection,String cardId,double damage, String ctype, String etype, String name, String owner, int myId)
+    {
         try{
+            /*
             ResultSet rs;
             Statement stmt;
             stmt =connection.createStatement();
-            rs = stmt.executeQuery("SELECT id, cardId from packages;");
+            rs = stmt.executeQuery("SELECT packagesid from packages;");
+           // newId++;
             while (rs.next()) {
-                newId = rs.getInt(1);
-                String cardTestId = rs.getString(2);
-                System.out.println("TESSSST CARRRD "+ cardTestId);
-                System.out.println("Package Number : "+ newId);
+               setNewId(rs.getInt("packagesid"));
             }
-            PreparedStatement statement = connection.prepareStatement("INSERT INTO cards (cardId,damage, ctype,etype,monsterSpellName,owner,id) VALUES (?,?,?,?,?,?,?); ");
-            statement.setString(1,cardId);
-            statement.setDouble(2,damage);
-            statement.setString(3,ctype);
-            statement.setString(4,etype);
-            statement.setString(5,name);
-            statement.setString(6,owner);
-            statement.setInt(7,newId);
+                System.out.println("Package Number : " + newId);
+             */
+            PreparedStatement takeIP = connection.prepareStatement("SELECT id from packages;");
+            ResultSet resultSet = takeIP.executeQuery();
+            while(resultSet.next()) {
+                setNewId(resultSet.getInt(1));
+            }
+            takeIP = connection.prepareStatement("INSERT INTO cards (cardId,damage, ctype,etype,monsterSpellName,owner,id) VALUES (?,?,?,?,?,?,?); ");
+            takeIP.setString(1, cardId);
+            takeIP.setDouble(2, damage);
+            takeIP.setString(3, ctype);
+            takeIP.setString(4, etype);
+            takeIP.setString(5, name);
+            takeIP.setString(6, owner);
+            takeIP.setInt(7, getNewId()+1);
+            takeIP.execute();
 
-            statement.execute();
-            System.out.println("Package"  + damage + " ----- " + ctype  + "-----" + damage+ "------"+ name+ "owner of the cards: " +owner + "THE ID of the card is " +newId);
+            System.out.println("Package"  + damage + " ----- " + ctype  + "-----" + damage+ "------"+ name+ "owner of the cards: " +owner + "THE ID of the card is " );
 
+            takeIP.close();
+            resultSet.close();
         }catch (SQLException exception)
         {
             exception.printStackTrace();
@@ -167,6 +182,9 @@ public class DriverMangerConnection {
 
     public String AcquirePackageK(Connection connection)
     {
+        //AcquirePackage acquirePackage = new AcquirePackage();
+       // System.out.println("THE NAME IS !!!!!!!!!   "+acquirePackage.getName());
+
         int token = 0;
         try{
             ResultSet rs;
@@ -204,6 +222,7 @@ public class DriverMangerConnection {
                     System.out.println("NO MONEY!");
                     return "NO MONEY!";
                 }
+
                 else{
                     ResultSet rsMinimum;
                     int miniumID;
@@ -215,19 +234,11 @@ public class DriverMangerConnection {
 
                         PreparedStatement statementUpdate = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
                         String user = "kienboec";
-                        statementUpdate.setString(1, user);
-                        statementUpdate.setInt(2, miniumID);
-                        System.out.println("OWNER TESSSSST: " + miniumID);
-                        statementUpdate.executeUpdate();
+                        name(connection, miniumID, statementUpdate, user);
 
-                        PreparedStatement deleteId = connection.prepareStatement("DELETE FROM packages WHERE id = ?;");
-                        deleteId.setInt(1,miniumID);
-                        deleteId.execute();
                     }
-
-
+               //     return "Kienboc GOT  PACKGED " + miniumID ;
                 }
-
            // }
             rs.close();
             stmt.close();
@@ -237,11 +248,75 @@ public class DriverMangerConnection {
         {
             exception.printStackTrace();
         }
-        return  token+" : return value of token ";
+        return  " KIENBOC ";
 
     }
-    public String AcquirePackageA(Connection connection)
+    public String AcquirePackageA(Connection connection, String User)
     {
+        int token = 0;
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT token from accounts where username = 'altenhof'");
+            while (rs.next()) {
+                token = rs.getInt(1);
+                System.out.println(token + "THIS IS MY TOKEN its kienboc");
+                //rs = stmt.executeQuery("UPDATE accounts set token = ? where username = 'kienboec'");
+
+                PreparedStatement statement = connection.prepareStatement("UPDATE accounts set token = ? where username = 'altenhof'");
+                token -= 5; // kein minus
+                statement.setInt(1,token);
+                statement.executeUpdate();
+                System.out.println("This is the round to set the token down: " + token);
+
+                //GET THE PACAKGE ID From PACKAGE
+
+
+
+/////               TODO:
+                    /*
+                    //To update the table for inserting the player
+                    PreparedStatement statementUpdate = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
+                    String user = "kienboec";
+                    statementUpdate.setString(1, user);
+                    statementUpdate.setInt(2,newId);
+                    System.out.println("OWNER TESSSSST: " + newId);
+                    statementUpdate.executeUpdate();
+                     */
+            }
+            if(token < 0 )
+            {
+                System.out.println("NO MONEY!");
+                return "NO MONEY!";
+            }
+           // else if()
+            else{
+                ResultSet rsMinimum;
+                int miniumID;
+                Statement stmtMinimum;
+                stmtMinimum =connection.createStatement();
+                rsMinimum = stmtMinimum.executeQuery("SELECT MIN(id) from packages");
+                while(rsMinimum.next()) {
+                    miniumID = rsMinimum.getInt(1);
+
+                    PreparedStatement statementUpdate = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
+                    String user = "altenhof";
+                    name(connection, miniumID, statementUpdate, user);
+                }
+            }
+            // }
+            rs.close();
+            stmt.close();
+           // return "altenhof";
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  " ALTENHOG ";
+
+
+/*
         int token = 0;
         try{
             ResultSet rs;
@@ -268,7 +343,7 @@ public class DriverMangerConnection {
 
                  */
 
-
+/*
 
                 System.out.println("This is the round to set the token down: " + token);
             }
@@ -288,7 +363,19 @@ public class DriverMangerConnection {
             exception.printStackTrace();
         }
         return  token+" : return value of token ";
+ */
 
+    }
+
+    private void name(Connection connection, int miniumID, PreparedStatement statementUpdate, String user) throws SQLException {
+        statementUpdate.setString(1, user);
+        statementUpdate.setInt(2, miniumID);
+        System.out.println("OWNER TESSSSST: " + miniumID);
+        statementUpdate.executeUpdate();
+
+        PreparedStatement deleteId = connection.prepareStatement("DELETE FROM packages WHERE id = ?;");
+        deleteId.setInt(1,miniumID);
+        deleteId.execute();
     }
 
 }
