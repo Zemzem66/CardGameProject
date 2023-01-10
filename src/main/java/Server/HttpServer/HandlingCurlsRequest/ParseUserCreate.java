@@ -13,6 +13,7 @@ public class ParseUserCreate {
     UserDaoImpl userDb= new UserDaoImpl();
     public String username;
     public String password;
+    int token= 20;
     public String StringItemStorage;
     public String SplitViaDoublePoint[];
     UserDaoImpl createUserDatabase = new UserDaoImpl();
@@ -62,7 +63,7 @@ public class ParseUserCreate {
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
         //Server connection and add
         Connection conn = driverMangerConnection.Connection();
-        String testCon =driverMangerConnection.add(conn,username,password);
+        String testCon =driverMangerConnection.add(conn,username,password, token);
      //   Connection conn = userDb.add(username,password);
         //_userContent = String.valueOf(conn);
         System.out.println("TEST---");

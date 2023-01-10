@@ -1,6 +1,7 @@
 package Server.HttpServer.HandlingCurlsRequest;
 
 import Server.Connection.DriverMangerConnection;
+import Server.HttpServer.RequestUtils.RequestHandler;
 import Server.HttpServer.UtilsServer.Request;
 import com.example.cardgame.Card;
 
@@ -14,6 +15,15 @@ public class CreatePackages {
     String name;
     String cardType;
     String elementType;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id += id;
+    }
+
     String idStorage;
     String MonsterName;
     String MonsterNameSt;
@@ -27,9 +37,12 @@ public class CreatePackages {
     String StoreValue[];
 
     String[] split;
+    String owner;
+    int id =1;
 
     String SplitBody[];
     public String CreatePackage(Request request) {
+
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
         Connection conn = driverMangerConnection.Connection();
         String authorization = request.getHeaderMap().get("Authorization");
@@ -40,12 +53,14 @@ public class CreatePackages {
         String Name = StoreValue[0];
 
 
-        if (Name.equals("admin")) {
+       // if (Name.equals("admin")) {
 
             RequestBody = request.getBody();
             split = RequestBody.split("\\{");
             double damage;
             for (int i = 0; i < 5; i++) {
+
+                //id++;
                 String s = split[i + 1];
                 sId = s.substring(s.indexOf("\"Id\":\"") + 6, s.indexOf("\","));
                 s = s.substring(s.indexOf("\",") + 1);
@@ -90,16 +105,24 @@ public class CreatePackages {
 
                     }
                 }
+
                 s = s.substring(s.indexOf("\",") + 1);
                 String damageString = s.substring(s.indexOf("\"Damage\": ") + 10, s.indexOf("}"));
                 damage = Double.parseDouble(damageString);
 
                 System.out.println("Whats inside the idStorage" + idStorage);
-                Input= driverMangerConnection.createCard(conn,sId,damage,cardType,elementType,name);
+                /// Get the id from Package
+
+
+               // RequestHandler idHandler = null;
+                Input= driverMangerConnection.createCard(conn,sId,damage,cardType,elementType,name,owner);
+
             }
+
             driverMangerConnection.createPackage(conn,sId);
+            driverMangerConnection.createAdmin(conn,Name);
             return Input;
-        }
+        //}
 ////////////////////////////////////////////M
 /*
         System.out.println("Test Create Package");
@@ -166,14 +189,15 @@ public class CreatePackages {
 
  */
 
-        else{
-            System.out.println("Package cannot be created ");
-            return "Pack can not be created";
-        }
+       // else{
+          //  System.out.println("Package cannot be created ");
+          //  return "Pack can not be created";
+       // }
         //return Input;
        // return "test";
 
     }
       //  return "Hello";
+
 }
 
