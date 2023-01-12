@@ -64,12 +64,11 @@ public class ParseUserCreate {
         //Server connection and add
         Connection conn = driverMangerConnection.Connection();
         String testCon =driverMangerConnection.add(conn,username,password, token);
-     //   Connection conn = userDb.add(username,password);
-        //_userContent = String.valueOf(conn);
+
         System.out.println("TEST---");
         return testCon;
     }
 
-    //public String LoginUser()
+
 
 }

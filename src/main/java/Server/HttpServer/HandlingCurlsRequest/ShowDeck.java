@@ -5,7 +5,8 @@ import Server.HttpServer.UtilsServer.Request;
 
 import java.sql.Connection;
 
-public class AcquirePackage {
+public class ShowDeck {
+
     String Name;
 
     public String getName() {
@@ -16,10 +17,9 @@ public class AcquirePackage {
         Name = name;
     }
 
-    String requestBody;
     String[] requestStorage;
     String[] cStorage;
-    public String createAcquire(Request request)
+    public String showDeck(Request request)
     {
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
         System.out.println("ACQUIRE PACKAGES--------------------------- ");
@@ -35,26 +35,18 @@ public class AcquirePackage {
             setName("kienboec");
             // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
-            driverMangerConnection.AcquirePackageK(conn);
-            return "kienboc";
-            //System.out.println("ITS KIENBOC ");
+            String show =driverMangerConnection.showDecksK(conn);
+
+            return show;
         }else if (Name.equals("altenhof"))
         {
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
-           // String User = "altenhof";
-            driverMangerConnection.AcquirePackageA(conn);
-            //System.out.println("ITS altenhof ");
-            return "altenhof";
+            String show = driverMangerConnection.showDecksA(conn);
+            return show;
         }
-
         else{
-            return" no user selected"   ;
+            return" CANT SHOW DECK";
         }
-        //String userBody = request.getBody();
-        //String[] valuePair = userBody.split(",");
-
-
-      //  return "Irgendwas";
     }
 }

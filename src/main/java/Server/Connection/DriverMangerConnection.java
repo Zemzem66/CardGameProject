@@ -111,7 +111,6 @@ public class DriverMangerConnection {
             exception.printStackTrace();
         }
         return  packedid+" WITH PACKED was created!";
-
     }
 
     public int getNewId() {
@@ -125,6 +124,7 @@ public class DriverMangerConnection {
     int newId;
     public String createCard(Connection connection,String cardId,double damage, String ctype, String etype, String name, String owner, int myId)
     {
+        //TODO BEIM UEBERGEBEN IST IMMER AM ANFANG 0  muss gefixt werden.
         try{
             /*
             ResultSet rs;
@@ -251,8 +251,9 @@ public class DriverMangerConnection {
         return  " KIENBOC ";
 
     }
-    public String AcquirePackageA(Connection connection, String User)
+    public String AcquirePackageA(Connection connection)
     {
+        // TODO: 11.01.2023 ALTENHOF MUSS NOCH RICHTIG GESTELLT WERDEN
         int token = 0;
         try{
             ResultSet rs;
@@ -376,6 +377,193 @@ public class DriverMangerConnection {
         PreparedStatement deleteId = connection.prepareStatement("DELETE FROM packages WHERE id = ?;");
         deleteId.setInt(1,miniumID);
         deleteId.execute();
+    }
+    String element;
+    String card;
+    String MonsterSpell;
+    public String ShowK(Connection connection)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT ctype, etype,monsterspellname from cards where owner = 'kienboec'; ");
+            while(rs.next()) {
+                while(rs.next()) {
+                    element = rs.getString(1);
+                    card = rs.getString(2);
+                    MonsterSpell = rs.getString(3);
+                }
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "Kienboec :The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
+    }
+    public String ShowA(Connection connection)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT ctype, etype,monsterspellname from cards where owner = 'altenhof'; ");
+
+            while(rs.next()) {
+                element = rs.getString(1);
+                card = rs.getString(2);
+                MonsterSpell = rs.getString(3);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
+    }
+
+
+    //Show unconfirgemdDeck
+    String UsernameR;
+    public String createDeck(Connection connection, String testIdFirst, String testIdSecond, String testIdThree, String testIdFour, String Username)
+    {
+        try{
+/*
+            ResultSet rs;
+            Statement stmt;
+            //PreparedStatement statement;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT cardId from cards where owner = 'kienboec'; ");
+            while(rs.next()) {
+                UsernameR = rs.getString(1);
+                ///card = rs.getString(2);
+                //MonsterSpell = rs.getString(3);
+
+ */
+                // if(UsernameR == "kienboec") {
+               PreparedStatement statement = connection.prepareStatement("INSERT INTO deck (cardIdFirst,cardIdSecond,cardIdThree,cardIdFour,username) VALUES (?,?,?,?,?); ");
+                statement.setString(1, testIdFirst);
+                statement.setString(2, testIdSecond);
+                statement.setString(3, testIdThree);
+                statement.setString(4, testIdFour);
+                statement.setString(5, Username);
+                statement.execute();
+            //}
+            /*
+            rs = stmt.executeQuery("SELECT cardId from cards where owner = 'altenhof'; ");
+            while(rs.next()) {
+                UsernameR = rs.getString(1);
+                ///card = rs.getString(2);
+                //MonsterSpell = rs.getString(3);
+
+
+                // if(UsernameR == "kienboec") {
+                statement = connection.prepareStatement("INSERT INTO deck (cardIdFirst,cardIdSecond,cardIdThree,cardIdFour,cardFive,username) VALUES (?,?,?,?,?,?); ");
+                statement.setString(1, UsernameR);
+                statement.setString(2, UsernameR);
+                statement.setString(3, UsernameR);
+                statement.setString(4, UsernameR);
+                statement.setString(5, UsernameR);
+                statement.setString(6, "altenhof");
+                statement.execute();
+            }
+
+             */
+
+                //   statement.setString(2,ad);
+
+           // }
+        //    System.out.println(testIdFirst +" + ad + " );
+
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  " WITH PACKED was created!";
+    }
+    /*
+    public String ShowUDeck(Connection connection)
+    {
+
+    }
+     */
+    String showCardId;
+    public String showDecksK(Connection connection)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT cardIdFirst from deck where username = 'kienboec'; ");
+
+            while(rs.next()) {
+                showCardId = rs.getString(1);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "KIENBOEC CardID is: " + showCardId;
+    }
+
+    public String showDecksA(Connection connection)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT cardIdFirst from deck where username = 'altenhof'; ");
+
+            while(rs.next()) {
+                showCardId = rs.getString(1);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "ALTENHOF CardID is: " + showCardId;
+    }
+
+    String sname;
+    String bio;
+    String image;
+    public String showEditsK(Connection connection)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT uname,bio,image from data where username = 'kienboec'; ");
+
+            while(rs.next()) {
+                sname = rs.getString(1);
+                bio = rs.getString(2);
+                image = rs.getString(3);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "Kienboec Name is: " + sname + " Bio: " +bio + " Image: " +image;
+    }
+
+    public String showEditsA(Connection connection)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT uname,bio,image from data where username = 'altenhof'; ");
+
+            while(rs.next()) {
+                sname = rs.getString(1);
+                bio = rs.getString(2);
+                image = rs.getString(3);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "Altenhof Name is: " + sname + " Bio: " +bio + " Image: " +image;
     }
 
 }

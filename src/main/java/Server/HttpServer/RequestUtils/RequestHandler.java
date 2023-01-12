@@ -1,13 +1,10 @@
 package Server.HttpServer.RequestUtils;
 
 import Server.Connection.UserDaoImpl;
-import Server.HttpServer.HandlingCurlsRequest.AcquirePackage;
-import Server.HttpServer.HandlingCurlsRequest.CreatePackages;
-import Server.HttpServer.HandlingCurlsRequest.LoginInUser;
+import Server.HttpServer.HandlingCurlsRequest.*;
 import Server.HttpServer.Http.ContentType;
 import Server.HttpServer.Http.HttpStatus;
 import Server.HttpServer.Http.Method;
-import Server.HttpServer.HandlingCurlsRequest.ParseUserCreate;
 import Server.HttpServer.UtilsServer.Request;
 import Server.HttpServer.UtilsServer.Response;
 
@@ -76,15 +73,26 @@ public class RequestHandler implements  Runnable{
             input = String.valueOf(new AcquirePackage().createAcquire(request));//"Transaction and packages-----";//String.valueOf(new handlePackage(request));
         }else if (path.equals("/cards") && method == Method.GET)
         {
-            input = "Getting cards back";//String.valueOf(new getCard(request));
+            input = String.valueOf(new ShowCards().ShowAcquiredCards(request));//"Getting cards back";//String.valueOf(new getCard(request));
         } else if (path.equals("/deck") && method == Method.GET) {
-            input = "Getting Deck";// String.valueOf(new getDeck(request));
-        }else if (path.equals("/deck") && method == Method.POST)
+            input = String.valueOf(new ShowDeck().showDeck(request));// String.valueOf(new getDeck(request));
+        }else if (path.equals("/deck") && method == Method.PUT)
         {
-            input = "Post decks";//String.valueOf(new addDeck(request));
-        } else if (path.equals("/users/") && method == Method.PUT) {
+            input = String.valueOf(new ConfiguredDeck().confDeck(request)); //"Post decks";//String.valueOf(new addDeck(request));
+        }
+        else if (path.equals("/users/kienboec") && method == Method.GET) {
+            input ="Hello";// String.valueOf(new ConfiguredDeck().confDeck(request));//"Puting users";// String.valueOf(new userUpdate(request));
+        } else if (path.equals("/users/altenhof") && method == Method.GET) {
+            input = "Hello";//String.valueOf(new ConfiguredDeck().confDeck(request));//
+                }
+        else if (path.equals("/users/kienboec") && method == Method.PUT) {
             input = "Puting users";// String.valueOf(new userUpdate(request));
-        } else if (path.equals("/stats") && method == Method.GET) {
+        } else if (path.equals("/users/altenhof") && method == Method.PUT) {
+            input = "Puting users";// String.valueOf(new userUpdate(request));
+        }
+
+
+        else if (path.equals("/stats") && method == Method.GET) {
             input = "get stats";
         } else if (path.equals("/battles") && method == Method.POST) {
             input = "post battles";

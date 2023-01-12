@@ -8,9 +8,16 @@ import com.example.cardgame.Card;
 import javax.xml.namespace.QName;
 import java.sql.Connection;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 
 public class CreatePackages {
+    ArrayList<String> cardIDs= new ArrayList<String>();
     String sId;
+    String sIdFirst;
+    String sIdSecond;
+    String sIdThree;
+    String sIdFour;
+    String sIdFive;
     int myID;
     String damageDouble;
     String name;
@@ -40,7 +47,7 @@ public class CreatePackages {
     String[] split;
     String owner;
     int id =1;
-
+int counter;
     String SplitBody[];
     public String CreatePackage(Request request) {
 
@@ -65,7 +72,7 @@ public class CreatePackages {
                 String s = split[i + 1];
                 sId = s.substring(s.indexOf("\"Id\":\"") + 6, s.indexOf("\","));
                 s = s.substring(s.indexOf("\",") + 1);
-                System.out.println(s+"TEST THE NEW id");
+                System.out.println(s + "TEST THE NEW id");
                 String element_name = s.substring(s.indexOf("\"Name\":\"") + 8, s.indexOf("\","));
                 if ((element_name.length() > 5) && (element_name.substring(0, 5).equals("Water"))) {
                     elementType = "Water";
@@ -106,14 +113,34 @@ public class CreatePackages {
 
                 /// Get the id from Package
 
+                cardIDs.add(sId);
+                // RequestHandler idHandler = null;
+                Input = driverMangerConnection.createCard(conn, sId, damage, cardType, elementType, name, owner, myID);
+                //String[] idCollection = sId.;
+                counter++;
+                //
+      //          cardIDs.add(sId);
 
-               // RequestHandler idHandler = null;
-                Input= driverMangerConnection.createCard(conn,sId,damage,cardType,elementType,name,owner,myID);
+    //            cardIDs.add(sId);
+
+  //              cardIDs.add(sId);
+
+//                cardIDs.add(sId);
+
+                //  driverMangerConnection.createDeck(conn,cardIDs.get(0),cardIDs.get(1),cardIDs.get(2),cardIDs.get(3),cardIDs.get(4));
+
+                //  driverMangerConnection.createDeck(conn,sIdFirst,sIdSecond,sIdThree,sIdFour,sIdFive);
+               // driverMangerConnection.createDeck(conn, cardIDs.get(i), cardIDs.get(i), cardIDs.get(i), cardIDs.get(i), cardIDs.get(i));
 
             }
 
-            driverMangerConnection.createPackage(conn,sId);
-            driverMangerConnection.createAdmin(conn,Name);
+        driverMangerConnection.createPackage(conn,sId);
+        driverMangerConnection.createAdmin(conn,Name);
+      //  for(int i = 0; i < counter; i++) {
+          //  driverMangerConnection.createDeck(conn, cardIDs.get(i), cardIDs.get(1+i), cardIDs.get(2+i), cardIDs.get(3+i), cardIDs.get(4+i));
+     //}
+       // driverMangerConnection.createDeck(conn);
+                // driverMangerConnection.createDeck(conn);
             return Input;
         //}
 ////////////////////////////////////////////M
