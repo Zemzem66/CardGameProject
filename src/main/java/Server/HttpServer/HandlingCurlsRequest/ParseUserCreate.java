@@ -14,6 +14,9 @@ public class ParseUserCreate {
     public String username;
     public String password;
     int token= 20;
+    int elo = 100;
+    int wins = 0;
+    int games = 0;
     public String StringItemStorage;
     public String SplitViaDoublePoint[];
     UserDaoImpl createUserDatabase = new UserDaoImpl();
@@ -63,7 +66,7 @@ public class ParseUserCreate {
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
         //Server connection and add
         Connection conn = driverMangerConnection.Connection();
-        String testCon =driverMangerConnection.add(conn,username,password, token);
+        String testCon =driverMangerConnection.add(conn,username,password, token,elo, wins, games);
 
         System.out.println("TEST---");
         return testCon;

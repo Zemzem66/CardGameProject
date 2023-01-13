@@ -35,17 +35,17 @@ public class AcquirePackage {
             setName("kienboec");
             // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
-            driverMangerConnection.AcquirePackageK(conn);
-            return "kienboc";
+            String storage = driverMangerConnection.AcquirePackageK(conn);
+            return storage;
             //System.out.println("ITS KIENBOC ");
         }else if (Name.equals("altenhof"))
         {
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
            // String User = "altenhof";
-            driverMangerConnection.AcquirePackageA(conn);
+            String storage = driverMangerConnection.AcquirePackageA(conn);
             //System.out.println("ITS altenhof ");
-            return "altenhof";
+            return storage;
         }
 
         else{

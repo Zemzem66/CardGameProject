@@ -26,7 +26,7 @@ public class Server {
 
     public void start() throws IOException {
         Request request = null;
-        ExecutorService executorService = Executors.newFixedThreadPool(20);
+        ExecutorService executorService = Executors.newFixedThreadPool(100);
 
         try (ServerSocket serverSocket = new ServerSocket(this.port)) {
             System.out.println("Server started ...");

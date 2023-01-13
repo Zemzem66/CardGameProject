@@ -4,6 +4,8 @@ import com.example.cardgame.Card;
 import com.example.cardgame.User;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class DriverMangerConnection {
@@ -46,14 +48,17 @@ public class DriverMangerConnection {
         return connection;
     }
     
-     public String add(Connection connection,String username, String password, int token){
+     public String add(Connection connection,String username, String password, int token, int elo , int wins , int games ){
        try{
 
-           PreparedStatement statement = connection.prepareStatement("INSERT INTO accounts (username, password,token) VALUES (?,?,?); ");
+           PreparedStatement statement = connection.prepareStatement("INSERT INTO accounts (username, password,token,elo,win , games) VALUES (?,?,?,?,?,?); ");
 
            statement.setString(1,username);
            statement.setString(2, password);
            statement.setInt(3,token);
+           statement.setInt(4,elo);
+           statement.setInt(5, wins);
+           statement.setInt(6,games);
            statement.execute();
            System.out.println(username + "-----" + password  + "-----");
 
@@ -225,7 +230,7 @@ public class DriverMangerConnection {
 
                 else{
                     ResultSet rsMinimum;
-                    int miniumID;
+                    int miniumID = 0;
                     Statement stmtMinimum;
                     stmtMinimum =connection.createStatement();
                     rsMinimum = stmtMinimum.executeQuery("SELECT MIN(id) from packages");
@@ -237,11 +242,11 @@ public class DriverMangerConnection {
                         name(connection, miniumID, statementUpdate, user);
 
                     }
-               //     return "Kienboc GOT  PACKGED " + miniumID ;
+                   return "kienboec got PackageId:" + miniumID ;
                 }
            // }
-            rs.close();
-            stmt.close();
+           // rs.close();
+           // stmt.close();
 
 
         }catch (SQLException exception)
@@ -300,6 +305,11 @@ public class DriverMangerConnection {
                 rsMinimum = stmtMinimum.executeQuery("SELECT MIN(id) from packages");
                 while(rsMinimum.next()) {
                     miniumID = rsMinimum.getInt(1);
+                    if(miniumID == 0)
+                    {
+                      //  token += 5;
+                        return "NO SUCH LEFT!!!";
+                    }
 
                     PreparedStatement statementUpdate = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
                     String user = "altenhof";
@@ -486,41 +496,54 @@ public class DriverMangerConnection {
 
     }
      */
-    String showCardId;
-    public String showDecksK(Connection connection)
-    {
-        try{
+    String showCardIdOne;
+    String showCardIdTwo;
+    String showCardIdThree;
+    String showCardIdFour;
+    public String showDecksK(Connection connection) {
+        try {
             ResultSet rs;
             Statement stmt;
-            stmt =connection.createStatement();
-            rs = stmt.executeQuery("SELECT cardIdFirst from deck where username = 'kienboec'; ");
+            stmt = connection.createStatement();
+            rs = stmt.executeQuery("SELECT cardIdFirst, cardIdSecond,cardIdThree,cardIdFour from deck where username = 'kienboec'; ");
 
-            while(rs.next()) {
-                showCardId = rs.getString(1);
+            while (rs.next()) {
+                showCardIdOne = rs.getString(1);
+                showCardIdTwo = rs.getString(2);
+                showCardIdThree = rs.getString(3);
+                showCardIdFour = rs.getString(4);
             }
-        }catch (SQLException exception)
-        {
+        } catch (SQLException exception) {
             exception.printStackTrace();
         }
-        return  "KIENBOEC CardID is: " + showCardId;
+        if (showCardIdOne == null) {
+            return "Unconfigured Deck!!!";
+        } else {
+            return "KIENBOEC Decks are: Card 1: " + showCardIdOne + " Card 2:" + showCardIdTwo + " Card 3:" + showCardIdThree + " Card 4:" + showCardIdFour;
+        }
     }
-
     public String showDecksA(Connection connection)
     {
-        try{
+        try {
             ResultSet rs;
             Statement stmt;
-            stmt =connection.createStatement();
-            rs = stmt.executeQuery("SELECT cardIdFirst from deck where username = 'altenhof'; ");
+            stmt = connection.createStatement();
+            rs = stmt.executeQuery("SELECT cardIdFirst, cardIdSecond,cardIdThree,cardIdFour from deck where username = 'altenhof'; ");
 
-            while(rs.next()) {
-                showCardId = rs.getString(1);
+            while (rs.next()) {
+                showCardIdOne = rs.getString(1);
+                showCardIdTwo = rs.getString(2);
+                showCardIdThree = rs.getString(3);
+                showCardIdFour = rs.getString(4);
             }
-        }catch (SQLException exception)
-        {
+        } catch (SQLException exception) {
             exception.printStackTrace();
         }
-        return  "ALTENHOF CardID is: " + showCardId;
+        if (showCardIdOne == null) {
+            return "Unconfigured Deck!!!";
+        } else {
+            return "Altenhof Decks are: Card 1:" + showCardIdOne + " 2:" + showCardIdTwo + " 3:" + showCardIdThree + " 4:" + showCardIdFour;
+        }
     }
 
     String sname;
@@ -532,7 +555,7 @@ public class DriverMangerConnection {
             ResultSet rs;
             Statement stmt;
             stmt =connection.createStatement();
-            rs = stmt.executeQuery("SELECT uname,bio,image from data where username = 'kienboec'; ");
+            rs = stmt.executeQuery("SELECT uname,bio,image from data where uname = 'Kienboeck'; ");
 
             while(rs.next()) {
                 sname = rs.getString(1);
@@ -552,7 +575,7 @@ public class DriverMangerConnection {
             ResultSet rs;
             Statement stmt;
             stmt =connection.createStatement();
-            rs = stmt.executeQuery("SELECT uname,bio,image from data where username = 'altenhof'; ");
+            rs = stmt.executeQuery("SELECT uname,bio,image from data where uname = 'Altenhofer'; ");
 
             while(rs.next()) {
                 sname = rs.getString(1);
@@ -564,6 +587,221 @@ public class DriverMangerConnection {
             exception.printStackTrace();
         }
         return  "Altenhof Name is: " + sname + " Bio: " +bio + " Image: " +image;
+    }
+
+    //DONE
+    public String getStatK(Connection conn)
+    {
+        String username = null;
+
+        int elo = 0;
+        int wins = 0;
+        int games = 0;
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT username, games, win,elo from accounts where username = 'kienboec'; ");
+
+            while(rs.next()) {
+                username = rs.getString(1);
+                games = rs.getInt(2);
+                wins = rs.getInt(3);
+                elo = rs.getInt(4);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "Stats of " + username + " is WINS: " +wins + " and Elo is : " +elo + " played games:"+ games ;
+    }
+    //Done
+    public String getStatA(Connection conn)
+    {
+        String username = null;
+        int elo = 0;
+        int wins = 0;
+        int games = 0;
+
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT username, games, win,elo from accounts where username = 'altenhof'; ");
+
+            while(rs.next()) {
+                username = rs.getString(1);
+                games = rs.getInt(2);
+                wins = rs.getInt(3);
+                elo = rs.getInt(4);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "Stats of " + username + " is WINS: " +wins + " and Elo is : " +elo + " played games: "+ games ;
+
+    }
+
+
+
+    public String addToBattle(Connection connection, String opponent)
+    {
+        try{
+
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO addbattle (name) VALUES (?); ");
+
+            statement.setString(1,opponent);
+            statement.execute();
+            System.out.println("TO BATTLE READY IS:" + opponent);
+
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return opponent;
+    }
+
+
+    public String getBattle(Connection connection, String opponent)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT name from addBattle;");
+
+            while(rs.next()) {
+                opponent = rs.getString(1);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  opponent;
+    }
+    //TODO: BATTLE
+    public String battleStart(Connection connection,String userFrist ,String userSecond) {
+  /*
+    String ctype;
+    String etype;
+    String monsterspellname;
+        System.out.println("USER FIRST IS:" + userFrist +": Second User is: "+ userSecond);
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT cardIdFirst, cardIdSecond, cardIdSecond, cardIdThree,cardIdFour from deck where username = 'kienboec' ;");
+            while(rs.next()) {
+                cardIdFirst = rs.getString(1);
+                cardIdSecond = rs.getString(2);
+                cardIdThree = rs.getString(3);
+                cardIdFour = rs.getString(4);
+            }
+//TODO: DIE WERTE ID NEHMEN, DANN ANSCHLIESSEND, MIT DEN IDS DIE JEWEILIN WERTTE NEHMEN, diese in die Cards einspeichern
+          //TODO  Die ise dann anschliesnd in die decks speichern, worauf der User dann zugriff hat
+                rs = stmt.executeQuery("SELECT ctype,etype,damage from cards where cardId = cardIdFirst ;");
+                while (rs.next()) {
+                    ctype = rs.getString(1);
+                    etype = rs.getString(2);
+                    damage = rs.getString(3);
+                    Card cards1 = new Card(ct ,  , );
+                 //   List<Card> deck = new ArrayList<>();
+                    Deck deck = new Deck()
+                    User users = new User();
+                    deck.setCard1()
+                  //  users.setDeck(deck)
+                    //deck.add(cards);
+                    users.setDeck(deck);
+
+
+                    Deck decks = new Deck(cards);
+                }
+            }
+
+
+
+
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+
+
+
+        return  userFrist+userSecond;
+
+}
+
+   */
+        return "Hello";
+    }
+    public String showScoreboardK(Connection connection)
+    {
+        String username = null;
+
+        int elo = 0;
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT username,elo from accounts where username = 'kienboec'; ");
+
+            while(rs.next()) {
+                username = rs.getString(1);
+                elo = rs.getInt(2);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "Score of " + username + " is : " +elo;
+    }
+
+
+    public String showScoreboardA(Connection connection)
+    {
+        String username = null;
+
+        int elo = 0;
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT username,elo from accounts where username = 'altenhof'; ");
+
+            while(rs.next()) {
+                username = rs.getString(1);
+                elo = rs.getInt(2);
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "Score of " + username + " is : " +elo;
+    }
+
+    public String addEdit(Connection connection, String name, String bio, String Image)
+    {
+        if(name.equals("Hoax"))
+        {
+            return "Cannot Edit/Update User data------------------ ";
+        }
+        try{
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO data (uname,bio , image) VALUES (?,?,?); ");
+
+            statement.setString(1,name);
+            statement.setString(2,bio);
+            statement.setString(3,Image);
+
+            statement.execute();
+
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  " Name is: " + name + " Bio: " +bio + " Image: " +Image + " was added";
+
     }
 
 }

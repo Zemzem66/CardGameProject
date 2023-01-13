@@ -31,7 +31,8 @@ public enum MonsterName {
             return "Ork";
         }
     },
-
-
+    Dragon {
+        String DragonName(){ return "Dragon";}
+    }
 
 }

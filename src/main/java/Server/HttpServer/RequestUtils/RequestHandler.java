@@ -35,7 +35,7 @@ public class RequestHandler implements  Runnable{
             //TestRequest(request);
             printWriter.write(
 
-                    new Response(HttpStatus.OK, ContentType.PLAIN_TEXT, "Echo-" + TestRequest(request)).get());
+                    new Response(HttpStatus.OK, ContentType.PLAIN_TEXT, "" + TestRequest(request)).get());
                    // TestRequest(request);
         } catch (IOException exception)
         {
@@ -81,25 +81,28 @@ public class RequestHandler implements  Runnable{
             input = String.valueOf(new ConfiguredDeck().confDeck(request)); //"Post decks";//String.valueOf(new addDeck(request));
         }
         else if (path.equals("/users/kienboec") && method == Method.GET) {
-            input ="Hello";// String.valueOf(new ConfiguredDeck().confDeck(request));//"Puting users";// String.valueOf(new userUpdate(request));
+            input = String.valueOf(new ShowEditData().showEditData(request));//"Puting users";// String.valueOf(new userUpdate(request));
         } else if (path.equals("/users/altenhof") && method == Method.GET) {
-            input = "Hello";//String.valueOf(new ConfiguredDeck().confDeck(request));//
-                }
+            input = String.valueOf(new ShowEditData().showEditData(request));}
+
         else if (path.equals("/users/kienboec") && method == Method.PUT) {
-            input = "Puting users";// String.valueOf(new userUpdate(request));
+            input = String.valueOf(new editPutData().putData(request));//"Puting users";// String.valueOf(new userUpdate(request));
         } else if (path.equals("/users/altenhof") && method == Method.PUT) {
-            input = "Puting users";// String.valueOf(new userUpdate(request));
+            input = String.valueOf(new editPutData().putData(request));//"Puting users";// String.valueOf(new userUpdate(request));
+        }
+        else if (path.equals("/users/someGuy") && method == Method.GET) {
+            input = String.valueOf(new editPutData().ERROR());//"Puting users";// String.valueOf(new userUpdate(request));
         }
 
 
         else if (path.equals("/stats") && method == Method.GET) {
-            input = "get stats";
+            input = String.valueOf(new showStats().getStats(request));//"get stats";
         } else if (path.equals("/battles") && method == Method.POST) {
-            input = "post battles";
+            input = String.valueOf(new battles().uBattles(request));//"post battles";
         } else if (path.equals("/score") && method == Method.GET) {
-            input = "get score";
+            input = String.valueOf(new scoreboard().showScore(request));// "get score";
         } else if (path.equals("/tradings") && method == Method.GET) {
-            input = "get trading";
+            input = String.valueOf(new Trading().showTrading(request));//"get trading";
         } else if (path.equals("/tradings") && method == Method.POST) {
             input = "create tradings";
         } else if (path.equals("/tradings/") && method == Method.DELETE) {

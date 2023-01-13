@@ -2,11 +2,9 @@ package com.example.cardgame;
 
 public class FireEvle extends MonsterCard {
 
-
     public FireEvle(int damage,  int health,ElementType elementType,MonsterName monsterName) {
         super(damage, health,elementType,monsterName);
     }
-
     public int getFire() {
         return fire;
     }

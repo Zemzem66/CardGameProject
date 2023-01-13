@@ -26,6 +26,7 @@ public class ShowCards {
         System.out.println("ACQUIRE PACKAGES--------------------------- ");
         String authorization = request.getHeaderMap().get("Authorization");
         String Input = null;
+
         //requestStorage = authorization.split(" ");
 for(int i =0; i < 2; i++)
         {
@@ -40,8 +41,8 @@ for(int i =0; i < 2; i++)
             setName("kienboec");
             // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
-            driverMangerConnection.ShowK(conn);
-            return "Shows Kienboec";
+            String storage = driverMangerConnection.ShowK(conn);
+            return storage;
             //System.out.println("ITS KIENBOC ");
         //}
         }
@@ -51,9 +52,9 @@ for(int i =0; i < 2; i++)
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
             String User = "altenhof";
-            driverMangerConnection.ShowA(conn);
+            String storage = driverMangerConnection.ShowA(conn);
             //System.out.println("ITS altenhof ");
-            return "Shows altenhof";
+            return storage;
         }
 
         //else{

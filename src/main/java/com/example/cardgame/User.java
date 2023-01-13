@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class User {
+
     //ROUNDS MAX 100
     int userId;
 
@@ -18,6 +19,15 @@ public class User {
 
     boolean battle = false;
     List<Card> stack = new ArrayList<>(); // stack muss, class erstellt werden
+
+    public List<Card> getDeck() {
+        return deck;
+    }
+
+    public void setDeck(List<Card> deck) {
+        this.deck = deck;
+    }
+
     List<Card> deck = new ArrayList<>(); // deck muss, class erstellt werden
     private static List<Card> cards = new ArrayList<>();
 

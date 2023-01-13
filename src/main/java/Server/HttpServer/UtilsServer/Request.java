@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class Request {
     private Method method;
     private String urlContent;
+
     private String pathname;
     private List<String> pathParts;
     private String params;
