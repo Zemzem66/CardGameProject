@@ -1,26 +1,36 @@
 package com.example.cardgame;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 public abstract class Card {
 
     //Klasse, NOETIG ODER NICHT
-
+    MonsterName monsterName;
     ElementType elementType;
     public int damage;
     CardType cardType;
 
+    public Card(String monsterspellname, String etype, int damageValue, String ctype) {
+    }
 
-    //---------------------------Random
-    //CARDS
-    private Random mRandom;
-    private ArrayList<Card> mCards;
-    private ArrayList<Card> mPulledCards;
-
-    public Card(String elementType, double damage, String cardType) {
+    public Card() {
 
     }
+
+    public MonsterName getMonsterName() {
+        return monsterName;
+    }
+
+    public void setMonsterName(MonsterName monsterName) {
+        this.monsterName = monsterName;
+    }
+//---------------------------Random
+    //CARDS
+   // private Random mRandom;
+    //private ArrayList<Card> mCards;
+    //private ArrayList<Card> mPulledCards;
+
+    //public Card(String elementType, double damage, String cardType) {
+
+    //}
 
     public ElementType getElementType() {
         return elementType;

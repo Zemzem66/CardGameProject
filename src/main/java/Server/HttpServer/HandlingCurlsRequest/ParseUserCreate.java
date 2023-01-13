@@ -58,13 +58,9 @@ public class ParseUserCreate {
                      password = cutSecond;
                      System.out.println(password);
                  }
-            //}
-           // [] = StringItemStorage.split(":");
-           // cutFirst = SplitViaDoublePoint
+
         }
-       // String []
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
-        //Server connection and add
         Connection conn = driverMangerConnection.Connection();
         String testCon =driverMangerConnection.add(conn,username,password, token,elo, wins, games);
 

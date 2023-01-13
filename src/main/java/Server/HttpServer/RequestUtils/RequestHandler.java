@@ -10,6 +10,7 @@ import Server.HttpServer.UtilsServer.Response;
 
 import java.io.*;
 import java.net.Socket;
+import java.sql.SQLException;
 
 import static com.sun.javafx.util.Utils.split;
 
@@ -40,8 +41,9 @@ public class RequestHandler implements  Runnable{
         } catch (IOException exception)
         {
             exception.printStackTrace();
-        }
-        finally {
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } finally {
             try {
                 if (printWriter != null){
                     printWriter.close();
@@ -57,8 +59,7 @@ public class RequestHandler implements  Runnable{
         }
     }
 
-    public String TestRequest(Request request)
-    {
+    public String TestRequest(Request request) throws SQLException {
         String input = request.getBody();
         Method method = request.getMethod();
         String path = request.getPathname();
@@ -104,10 +105,13 @@ public class RequestHandler implements  Runnable{
         } else if (path.equals("/tradings") && method == Method.GET) {
             input = String.valueOf(new Trading().showTrading(request));//"get trading";
         } else if (path.equals("/tradings") && method == Method.POST) {
-            input = "create tradings";
-        } else if (path.equals("/tradings/") && method == Method.DELETE) {
-            input = " delete tradings";
+            input = String.valueOf(new Trading().createTrading(request));//"create tradings";
+        } else if (path.equals("/tradings/6cd85277-4590-49d4-b0cf-ba0a921faad0") && method == Method.DELETE) {
+            input =String.valueOf(new Trading().deleteTrading(request)) ;//" delete tradings";
+        } else if (path.equals("/tradings/6cd85277-4590-49d4-b0cf-ba0a921faad0") && method == Method.POST) {
+            input = String.valueOf(new Trading().tryToTrade(request)) ;//String.valueOf(new Trading().deleteTrading(request)) ;//" delete tradings";
         }
+
         return input;
     }
 

@@ -17,6 +17,10 @@ public class MonsterCard extends Card /*implements Playable */{
         this.monsterName = monsterName;
     }
 
+    public MonsterCard() {
+        super();
+    }
+
     public int getHealth() {
         return health;
     }

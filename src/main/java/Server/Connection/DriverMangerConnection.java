@@ -1,6 +1,7 @@
 package Server.Connection;
 import Server.HttpServer.HandlingCurlsRequest.AcquirePackage;
 import com.example.cardgame.Card;
+import com.example.cardgame.Deck;
 import com.example.cardgame.User;
 
 import java.sql.*;
@@ -111,6 +112,14 @@ public class DriverMangerConnection {
          //   statement.setString(2,ad);
             statement.execute();
             System.out.println("PackageID"  + packedid + "-----" );
+
+            PreparedStatement takeIP = connection.prepareStatement("SELECT id from packages;");
+            ResultSet resultSet = takeIP.executeQuery();
+            while(resultSet.next()) {
+                setNewId(resultSet.getInt(1));
+                System.out.println("THESE ARE THE ALL ID FROM PACKAGES --------------: " + getNewId());
+            }
+
         }catch (SQLException exception)
         {
             exception.printStackTrace();
@@ -146,6 +155,7 @@ public class DriverMangerConnection {
             ResultSet resultSet = takeIP.executeQuery();
             while(resultSet.next()) {
                 setNewId(resultSet.getInt(1));
+                System.out.println("THESE ARE THE ALL ID FROM PACKAGES: " + getNewId());
             }
             takeIP = connection.prepareStatement("INSERT INTO cards (cardId,damage, ctype,etype,monsterSpellName,owner,id) VALUES (?,?,?,?,?,?,?); ");
             takeIP.setString(1, cardId);
@@ -187,9 +197,6 @@ public class DriverMangerConnection {
 
     public String AcquirePackageK(Connection connection)
     {
-        //AcquirePackage acquirePackage = new AcquirePackage();
-       // System.out.println("THE NAME IS !!!!!!!!!   "+acquirePackage.getName());
-
         int token = 0;
         try{
             ResultSet rs;
@@ -199,32 +206,13 @@ public class DriverMangerConnection {
                 while (rs.next()) {
                     token = rs.getInt(1);
                     System.out.println(token + "THIS IS MY TOKEN its kienboc");
-                    //rs = stmt.executeQuery("UPDATE accounts set token = ? where username = 'kienboec'");
-
                     PreparedStatement statement = connection.prepareStatement("UPDATE accounts set token = ? where username = 'kienboec'");
                     token -= 5;
                     statement.setInt(1,token);
                     statement.executeUpdate();
-                    System.out.println("This is the round to set the token down: " + token);
-
-                    //GET THE PACAKGE ID From PACKAGE
-
-
-
-/////               TODO:
-                    /*
-                    //To update the table for inserting the player
-                    PreparedStatement statementUpdate = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
-                    String user = "kienboec";
-                    statementUpdate.setString(1, user);
-                    statementUpdate.setInt(2,newId);
-                    System.out.println("OWNER TESSSSST: " + newId);
-                    statementUpdate.executeUpdate();
-                     */
                 }
                 if(token < 0 )
                 {
-                    System.out.println("NO MONEY!");
                     return "NO MONEY!";
                 }
 
@@ -242,7 +230,7 @@ public class DriverMangerConnection {
                         name(connection, miniumID, statementUpdate, user);
 
                     }
-                   return "kienboec got PackageId:" + miniumID ;
+                   return "kienboec got Package:" + miniumID ;
                 }
            // }
            // rs.close();
@@ -264,67 +252,55 @@ public class DriverMangerConnection {
             ResultSet rs;
             Statement stmt;
             stmt =connection.createStatement();
+            ResultSet rsMinimum;
+            int miniumID = 0;
+            Statement stmtMinimum;
+            stmtMinimum =connection.createStatement();
+            rsMinimum = stmtMinimum.executeQuery("SELECT MIN(id) from packages");
+            while(rsMinimum.next()) {
+                miniumID = rsMinimum.getInt(1);
+                if(miniumID == 0)
+                {
+                    //  token += 5;
+                    return "NO MORE PACKAGE LEFT LEFT!!!";
+                }
             rs = stmt.executeQuery("SELECT token from accounts where username = 'altenhof'");
             while (rs.next()) {
                 token = rs.getInt(1);
-                System.out.println(token + "THIS IS MY TOKEN its kienboc");
-                //rs = stmt.executeQuery("UPDATE accounts set token = ? where username = 'kienboec'");
-
+                System.out.println(token + "THIS IS MY TOKEN its altenhof");
                 PreparedStatement statement = connection.prepareStatement("UPDATE accounts set token = ? where username = 'altenhof'");
                 token -= 5; // kein minus
                 statement.setInt(1,token);
                 statement.executeUpdate();
-                System.out.println("This is the round to set the token down: " + token);
-
-                //GET THE PACAKGE ID From PACKAGE
-
-
-
-/////               TODO:
-                    /*
-                    //To update the table for inserting the player
-                    PreparedStatement statementUpdate = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
-                    String user = "kienboec";
-                    statementUpdate.setString(1, user);
-                    statementUpdate.setInt(2,newId);
-                    System.out.println("OWNER TESSSSST: " + newId);
-                    statementUpdate.executeUpdate();
-                     */
             }
             if(token < 0 )
             {
                 System.out.println("NO MONEY!");
                 return "NO MONEY!";
             }
-           // else if()
-            else{
-                ResultSet rsMinimum;
-                int miniumID;
-                Statement stmtMinimum;
-                stmtMinimum =connection.createStatement();
-                rsMinimum = stmtMinimum.executeQuery("SELECT MIN(id) from packages");
-                while(rsMinimum.next()) {
-                    miniumID = rsMinimum.getInt(1);
-                    if(miniumID == 0)
-                    {
-                      //  token += 5;
-                        return "NO SUCH LEFT!!!";
-                    }
+
+                 PreparedStatement statementUpdateV = connection.prepareStatement("UPDATE cards set id = ? where owner = ''");
+                statementUpdateV.setInt(1, 7);
+               // statementUpdateV.setString(2,"");
+                //statementUpdate.setInt(2, miniumID);
+                //System.out.println("OWNER TESSSSST: " + miniumID);
+                statementUpdateV.executeUpdate();
 
                     PreparedStatement statementUpdate = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
                     String user = "altenhof";
                     name(connection, miniumID, statementUpdate, user);
-                }
+
+                return "altenhof got Package:" + miniumID ;
             }
             // }
-            rs.close();
-            stmt.close();
+        //    rs.close();
+          //  stmt.close();
            // return "altenhof";
         }catch (SQLException exception)
         {
             exception.printStackTrace();
         }
-        return  " ALTENHOG ";
+        return  "altenhof";
 
 
 /*
@@ -403,13 +379,14 @@ public class DriverMangerConnection {
                     element = rs.getString(1);
                     card = rs.getString(2);
                     MonsterSpell = rs.getString(3);
+                    //return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
                 }
             }
         }catch (SQLException exception)
         {
             exception.printStackTrace();
         }
-        return  "Kienboec :The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
+        return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
     }
     public String ShowA(Connection connection)
     {
@@ -423,6 +400,7 @@ public class DriverMangerConnection {
                 element = rs.getString(1);
                 card = rs.getString(2);
                 MonsterSpell = rs.getString(3);
+                return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
             }
         }catch (SQLException exception)
         {
@@ -680,24 +658,84 @@ public class DriverMangerConnection {
         }
         return  opponent;
     }
+
+
+    //public String getBattle
     //TODO: BATTLE
-    public String battleStart(Connection connection,String userFrist ,String userSecond) {
-  /*
-    String ctype;
-    String etype;
-    String monsterspellname;
-        System.out.println("USER FIRST IS:" + userFrist +": Second User is: "+ userSecond);
-        try{
+    public String battleStart(Connection connection,String userFrist ,String userSecond) throws SQLException {
+        String cardOne;
+        String cardTwo;
+        String cardThree;
+        String cardFour;
+
+        String ctype;
+        String etype;
+        String monsterspellname;
+        int damageValue;
+        System.out.println("USER FIRST IS:" + userFrist + ": Second User is: " + userSecond);
+        try {
             ResultSet rs;
             Statement stmt;
-            stmt =connection.createStatement();
+
+            stmt = connection.createStatement();
             rs = stmt.executeQuery("SELECT cardIdFirst, cardIdSecond, cardIdSecond, cardIdThree,cardIdFour from deck where username = 'kienboec' ;");
-            while(rs.next()) {
-                cardIdFirst = rs.getString(1);
-                cardIdSecond = rs.getString(2);
-                cardIdThree = rs.getString(3);
-                cardIdFour = rs.getString(4);
+            while (rs.next()) {
+                cardOne = rs.getString(1);
+                cardTwo = rs.getString(2);
+                cardThree = rs.getString(3);
+                cardFour = rs.getString(4);
+
             }
+            /*
+            rs = stmt.executeQuery("SELECT ctype,etype,damage,monsterspellname from cards where cardOne ;");
+            while (rs.next()) {
+                ctype = rs.getString(1);
+                etype = rs.getString(2);
+                damageValue = rs.getInt(3);
+                monsterspellname = rs.getString(4);
+                //onsterName monsterName, ElementType elementType, int damage, CardType cardType
+                Card cards1 = new Card(monsterspellname, etype, damageValue, ctype) {
+                    @Override
+                    public String name() {
+                        return null;
+                    }
+
+                    @Override
+                    public double damage() {
+                        return 0;
+                    }
+
+                    @Override
+                    public String elementType() {
+                        return null;
+                    }
+
+                    @Override
+                    public String cardType() {
+                        return null;
+                    }
+                };
+                //   List<Card> deck = new ArrayList<>();
+                Deck deck = new Deck();
+                deck.setCard1(cards1);
+                User users = new User();
+                users.setDeck((List<Card>) deck);
+                //
+                // deck.setCard1(deck);
+                //  users.setDeck(deck)
+                //deck.add(cards);
+                //users.setDeck((List<Card>) deck);
+
+
+                //Deck decks = new Deck(cards);
+            }
+*/
+        }catch (SQLException exception){
+        exception.printStackTrace();
+        }
+         //stmt;
+
+            /*
 //TODO: DIE WERTE ID NEHMEN, DANN ANSCHLIESSEND, MIT DEN IDS DIE JEWEILIN WERTTE NEHMEN, diese in die Cards einspeichern
           //TODO  Die ise dann anschliesnd in die decks speichern, worauf der User dann zugriff hat
                 rs = stmt.executeQuery("SELECT ctype,etype,damage from cards where cardId = cardIdFirst ;");
@@ -722,11 +760,6 @@ public class DriverMangerConnection {
 
 
 
-        }catch (SQLException exception)
-        {
-            exception.printStackTrace();
-        }
-
 
 
         return  userFrist+userSecond;
@@ -734,8 +767,10 @@ public class DriverMangerConnection {
 }
 
    */
-        return "Hello";
-    }
+            return "Hello";
+        }
+
+
     public String showScoreboardK(Connection connection)
     {
         String username = null;
@@ -804,4 +839,90 @@ public class DriverMangerConnection {
 
     }
 
+    String username;
+    String cardtrade;
+    String givecard;
+    String mindamage;
+    String type;
+    public String showTradingK(Connection connection)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT username, wantedcard,type,cardtotrade,mindamage from trade where username = 'kienboec'; ");
+            while(rs.next()) {
+                while(rs.next()) {
+                    username = rs.getString(1);
+                    cardtrade = rs.getString(2);
+                    type = rs.getString(3);
+                    givecard = rs.getString(4);
+
+                    mindamage = rs.getString(5);
+                    //return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
+                }
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "The User kienboec: " + " gives this card: "+ cardtrade+" in exchange to get this " + givecard + " type:" +type+ " with mindamage: " + mindamage;
+    }
+
+    public String showTradingA(Connection connection)
+    {
+        try{
+            ResultSet rs;
+            Statement stmt;
+            stmt =connection.createStatement();
+            rs = stmt.executeQuery("SELECT username, wantedcard,type,cardtotrade,mindamage from trade where username = 'altenhof'; ");
+            while(rs.next()) {
+                while(rs.next()) {
+                    username = rs.getString(1);
+                    cardtrade = rs.getString(2);
+                    type = rs.getString(3);
+                    givecard = rs.getString(4);
+
+                    mindamage = rs.getString(5);
+                    //return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
+                }
+            }
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "The User kienboec: " + " gives this card: "+ cardtrade+" in exchange to get this " + givecard + " type:" +type+ " with mindamage: " + mindamage;
+    }
+    public String addTrade(Connection connection,String giveCardID,String  CardToTrade, String Type, int minimumDamage, String addName)
+    {
+        try{
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO trade (username,wantedcard,type,cardtotrade, mindamage) VALUES (?,?,?,?,?); ");
+            statement.setString(1,addName);
+            statement.setString(2,giveCardID);
+            statement.setString(3,Type);
+            statement.setString(4,CardToTrade);
+            statement.setInt(5,minimumDamage);
+            statement.execute();
+
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "Username: "+ addName +" gives: " +giveCardID + " to exchange: " +  CardToTrade + " with Damage: "+ minimumDamage ;
+    }
+
+    public String deletePath(Connection connection, String finishedPath)
+    {
+        try{
+            PreparedStatement statement = connection.prepareStatement("DELETE FROM trade WHERE wantedcard = ?;");
+            statement.setString(1,finishedPath);
+            statement.execute();
+
+        }catch (SQLException exception)
+        {
+            exception.printStackTrace();
+        }
+        return  "The trade with the ID:" + finishedPath +" is deleted";
+
+    }
 }

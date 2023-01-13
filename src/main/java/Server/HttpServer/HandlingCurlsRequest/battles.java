@@ -4,6 +4,7 @@ import Server.Connection.DriverMangerConnection;
 import Server.HttpServer.UtilsServer.Request;
 
 import java.sql.Connection;
+import java.sql.SQLException;
 
 public class battles {
 
@@ -15,8 +16,7 @@ private String username;
     String userFirst;
     String userSecond;
 
-    public String uBattles(Request request)
-    {
+    public String uBattles(Request request) throws SQLException {
         String getHeader = request.getHeaderMap().get("Authorization");
         requestStorage = getHeader.split(" ");
         cStorage = requestStorage[1].split("-");

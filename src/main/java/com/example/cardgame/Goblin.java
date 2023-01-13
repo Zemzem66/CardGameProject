@@ -29,10 +29,11 @@ public class Goblin extends MonsterCard  {
         this.health = health;
     }
 
-    public void getMonsterName()
+    public MonsterName getMonsterName()
     {
         System.out.println("Goblin");
         // return "Goblin";
+        return null;
     }
 
     //MonsterCard myMonsterCard = new MonsterCard(damage, normal,normal, health);

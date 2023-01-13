@@ -9,7 +9,9 @@ public class Wizzard extends MonsterCard {
         super(damage, health,elementType,monsterName);
     }
 
-
+    public Wizzard() {
+        super();
+    }
 
     public void setDecreaseHealth(int damage)
     {
@@ -29,8 +31,5 @@ public class Wizzard extends MonsterCard {
     }
 
 
-    public static String getMonsterName()
-    {
-        return "Goblin";
-    }
+
 }
