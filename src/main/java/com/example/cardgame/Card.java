@@ -15,6 +15,8 @@ public abstract class Card {
 
     }
 
+
+
     public MonsterName getMonsterName() {
         return monsterName;
     }

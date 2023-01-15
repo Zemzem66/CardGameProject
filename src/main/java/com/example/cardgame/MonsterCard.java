@@ -11,9 +11,8 @@ public class MonsterCard extends Card /*implements Playable */{
     int normal;
 
     int health;
-    public MonsterCard(int damage,int health, ElementType elementType, MonsterName monsterName) {
+    public MonsterCard(int damage, ElementType elementType, MonsterName monsterName) {
         super(elementType, damage, CardType.SpellCard);
-        this.health = health;
         this.monsterName = monsterName;
     }
 

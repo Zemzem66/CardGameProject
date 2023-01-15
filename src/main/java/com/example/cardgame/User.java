@@ -9,6 +9,11 @@ public class User {
     //ROUNDS MAX 100
     int userId;
 
+    public void setDeck(Deck deck) {
+        this.deck = deck;
+    }
+
+    Deck deck;
     public User() {
 
     }
@@ -23,7 +28,7 @@ public class User {
 
     boolean battle = false;
     List<Card> stack = new ArrayList<>(); // stack muss, class erstellt werden
-
+/*
     public List<Card> getDeck() {
         return deck;
     }
@@ -32,7 +37,9 @@ public class User {
         this.deck = deck;
     }
 
-    List<Card> deck = new ArrayList<>(); // deck muss, class erstellt werden
+ */
+
+  //  List<Card> deck = new ArrayList<>(); // deck muss, class erstellt werden
     private static List<Card> cards = new ArrayList<>();
 
     //Shuffler von Cards

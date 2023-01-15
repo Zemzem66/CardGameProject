@@ -91,7 +91,6 @@ public class HelloApplication extends Application {
         //ElementType.FIRE
 
 
-
         User playerOne = new User("Mike", "1234567");
         User playerTwo = new User("Kayle", "1234567");
         //Wizard, damage, health, element -> fire, normal, water -> String
@@ -99,13 +98,13 @@ public class HelloApplication extends Application {
         MonsterName monsterName;
         ElementType elementType;
         //<!0--------------TODO ELEMENTE RICHT ZUORDNENE >> passed
-        MonsterCard myWizzard = new MonsterCard(11,1,ElementType.randomElement(),MonsterName.Wizard);
+        //  MonsterCard myWizzard = new MonsterCard(11,1,ElementType.randomElement(),MonsterName.Wizard);
 
 
-        MonsterCard kraken = new Kraken(15,1,ElementType.randomElement(),MonsterName.Kraken);
-        MonsterCard goblin = new MonsterCard(15,1, ElementType.randomElement(),MonsterName.Goblin);
-        MonsterCard ork = new MonsterCard(15,1,ElementType.randomElement(),MonsterName.Ork);
-        MonsterCard fireElves = new MonsterCard(15,1,ElementType.randomElement(),MonsterName.FireEvle);
+        //MonsterCard kraken = new Kraken(15,1,ElementType.randomElement(),MonsterName.Kraken);
+        //MonsterCard goblin = new MonsterCard(15,1, ElementType.randomElement(),MonsterName.Goblin);
+        // MonsterCard ork = new MonsterCard(15,1,ElementType.randomElement(),MonsterName.Ork);
+        //MonsterCard fireElves = new MonsterCard(15,1,ElementType.randomElement(),MonsterName.FireEvle);
 
         //<--TODO: MonsterCard goblin = new Goblin(15,1,ElementType.randomElement(),MonsterName.Golbin); das ist alte Version
 
@@ -114,13 +113,13 @@ public class HelloApplication extends Application {
         //  myWizzard.getMonsterName(); !!!!!! Fragen !!!!!
         MonsterName wizardName = MonsterName.Wizard;
         System.out.println(wizardName);
-       // myWizzard.print();
+        // myWizzard.print();
 
 
         MonsterName goblinName = MonsterName.Goblin;
         System.out.println(goblinName);
         //goblin.print();
-
+/*
         while(myWizzard.getHealth() != 0 || goblin.getHealth() !=0) {
             fight(goblin, myWizzard);
             //spater bitte testen ob die fight functin ,funktioniert.
@@ -163,6 +162,6 @@ public class HelloApplication extends Application {
 
         launch();
     }
-
-
+*/
+    }
 }

@@ -160,9 +160,21 @@ public class Trading {
         if(Name.equals("kienboec"))
         {
             return "YOU CANNOT TRADE WITH YOUR SELF!";
-        }else
+        }else if(Name.equals("altenhof"))
         {
-            return "TRADE WAS SUCCESFULLY!";
+            String rquestBody = request.getBody();
+            String atBeginCut = requestBody.substring(1);
+            String finalCut = atBeginCut.substring(0,atBeginCut.length()-1);
+            DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
+            Connection conn = driverMangerConnection.Connection();
+            String completedTrade = driverMangerConnection.completeTrade(conn, finalCut, Name);
+       //     completeTrade
+
+
+            return completedTrade;
+        }
+        else {
+            return "HELO !";
         }
 
     }

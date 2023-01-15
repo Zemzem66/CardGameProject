@@ -8,15 +8,10 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/c31483c6-2c8d-42e3-8338-7693a12b0745.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c31483c6-2c8d-42e3-8338-7693a12b0745.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ParseUserCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ParseUserCreate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/Trading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/Trading.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/battles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/battles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Goblin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterCard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Wizzard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Wizzard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project-Card" beforeDir="false" afterPath="$PROJECT_DIR$/../Project-Card" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -184,6 +179,7 @@
       <workItem from="1673026528862" duration="30354000" />
       <workItem from="1673250343118" duration="26976000" />
       <workItem from="1673398811593" duration="75842000" />
+      <workItem from="1673690536797" duration="13032000" />
     </task>
     <task id="LOCAL-00001" summary="First push">
       <created>1665921694476</created>
