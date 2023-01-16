@@ -5,8 +5,8 @@ public class Ork extends MonsterCard {
     //MonsterCard myMonsterCard = new MonsterCard(damage, normal);
 
 
-    public Ork(int damage,int health,ElementType elementType,MonsterName monsterName) {
-        super(damage,health,elementType, monsterName);
+    public Ork(int damage,String elementType,String monsterName, String username) {
+        super(damage,elementType, monsterName,username);
     }
 
     public int getDamage() {

@@ -2,9 +2,12 @@ package Server.HttpServer.HandlingCurlsRequest;
 
 import Server.Connection.DriverMangerConnection;
 import Server.HttpServer.UtilsServer.Request;
+import com.example.cardgame.Deck;
+import main.main;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Collections;
 
 public class battles {
 
@@ -28,9 +31,12 @@ private String username;
 
         battleSecond = driverMangerConnection.getBattle(conn,userSecond);
         System.out.println("What is BATTLE SECOND ?" + battleSecond);
+
         driverMangerConnection.deleteDeck(conn);
-        String testTestOne = driverMangerConnection.getdeck(conn,battleFirst);
-        String testTestSecond = driverMangerConnection.getdeck(conn,battleSecond);
+        String testTestOne = driverMangerConnection.getdeckK(conn,"kienboec");
+        String testTestSecond = driverMangerConnection.getdeckA(conn,"altenhof");
+       // return
+        driverMangerConnection.fight();
         if(battleSecond != null)
         {
             String startBattle = driverMangerConnection.battleStart(conn,battleFirst,battleSecond);
@@ -51,7 +57,5 @@ private String username;
         //else{
         //}
        // return "THIS IS THE USER WHO WANTS TO BATTLE : " + opponent;
-
-
     }
 }

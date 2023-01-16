@@ -1,6 +1,23 @@
 package com.example.cardgame;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Deck {
+
+
+
+
+    List<Card> myCards = new ArrayList<Card>();
+
+    public List<Card> getMyCards() {
+        return myCards;
+    }
+
+    public void setMyCards(Card myCardsT) {
+        myCards.add(myCardsT);
+    }
+
     Card card1;
     Card card2;
     Card card3;

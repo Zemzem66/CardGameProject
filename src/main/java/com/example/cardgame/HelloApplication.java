@@ -102,7 +102,7 @@ public class HelloApplication extends Application {
 
 
         //MonsterCard kraken = new Kraken(15,1,ElementType.randomElement(),MonsterName.Kraken);
-        //MonsterCard goblin = new MonsterCard(15,1, ElementType.randomElement(),MonsterName.Goblin);
+       // MonsterCard goblin = new MonsterCard(15,1, ElementType.randomElement(),MonsterName.Goblin);
         // MonsterCard ork = new MonsterCard(15,1,ElementType.randomElement(),MonsterName.Ork);
         //MonsterCard fireElves = new MonsterCard(15,1,ElementType.randomElement(),MonsterName.FireEvle);
 

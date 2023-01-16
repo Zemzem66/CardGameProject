@@ -3,16 +3,28 @@ package com.example.cardgame;
 import java.util.Random;
 
 public enum ElementType {
-    FIRE(10),
-    WATER(20),
-    NORMAL(12);
-
+    FIRE { String Fire(){
+                return "Fire";
+            }},
+  //  FIRE(10),
+    WATER{ String Water(){
+      return "Water";
+  }},
+    NORMAL{ String Normal(){
+        return "Regular";
+    }};
+/*
     private int numVal;
 
     ElementType(int numVal)
     {
         this.numVal = numVal;
     }
+
+    ElementType() {
+
+    }
+
     public int getNumVal()
     {
         return numVal;
@@ -24,4 +36,6 @@ public enum ElementType {
         ElementType[] elements = values();
         return elements[PRNG.nextInt(elements.length)];
     }
+
+ */
 }

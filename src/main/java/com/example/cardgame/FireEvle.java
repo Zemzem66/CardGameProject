@@ -2,8 +2,8 @@ package com.example.cardgame;
 
 public class FireEvle extends MonsterCard {
 
-    public FireEvle(int damage,  int health,ElementType elementType,MonsterName monsterName) {
-        super(damage, health,elementType,monsterName);
+    public FireEvle(int damage,String elementType,String monsterName, String username) {
+        super(damage,elementType,monsterName, username);
     }
     public int getFire() {
         return fire;

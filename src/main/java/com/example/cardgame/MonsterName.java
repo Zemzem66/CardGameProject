@@ -2,27 +2,27 @@ package com.example.cardgame;
 
 public enum MonsterName {
     Wizard {
-        String WizardName()
+        String Wizzard()
         {
             return "Wizard";
         }
     },
     Goblin {
-        String GoblinName()
+        String Goblin()
         {
             return "Goblin";
         }
     },
     Kraken {
-        String KrakenName()
+        String Kraken()
         {
             return "Kraken";
         }
     },
-    FireEvle {
-        String FireEvle()
+    FireElve {
+        String Elf()
         {
-            return "FireEvle";
+            return "Elf";
         }
     },
     Ork {
@@ -33,6 +33,18 @@ public enum MonsterName {
     },
     Dragon {
         String DragonName(){ return "Dragon";}
+    },
+    Knight {
+        String Knight() {return "Knight";}
+    },
+    Spell{
+        String Spell() {return "Spell";}
+    },
+    Regular{
+        String RegularSpell() {
+            return "RegularSpell";
+        }
     }
+
 
 }

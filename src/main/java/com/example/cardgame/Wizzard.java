@@ -5,8 +5,8 @@ public class Wizzard extends MonsterCard {
     //MonsterCard myMonsterCard = new MonsterCard(water, normal, normal, health);
     //int health = 100;
 
-    public Wizzard(int damage,int health, ElementType elementType, MonsterName monsterName) {
-        super(damage, health,elementType,monsterName);
+    public Wizzard(int damage, String elementType, String monsterName, String username) {
+        super(damage,elementType,monsterName,username);
     }
 
     public Wizzard() {

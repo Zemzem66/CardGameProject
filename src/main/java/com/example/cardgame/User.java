@@ -13,6 +13,10 @@ public class User {
         this.deck = deck;
     }
 
+    public Deck getDeck() {
+        return deck;
+    }
+
     Deck deck;
     public User() {
 
@@ -39,7 +43,15 @@ public class User {
 
  */
 
-  //  List<Card> deck = new ArrayList<>(); // deck muss, class erstellt werden
+    public List<Card> getDeckArray() {
+        return deckArray;
+    }
+
+    public void setDeckArray(List<Card> deckArray) {
+        this.deckArray = deckArray;
+    }
+
+    List<Card> deckArray = new ArrayList<>(); // deck muss, class erstellt werden
     private static List<Card> cards = new ArrayList<>();
 
     //Shuffler von Cards

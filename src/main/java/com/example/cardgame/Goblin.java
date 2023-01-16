@@ -3,8 +3,8 @@ package com.example.cardgame;
 public class Goblin extends MonsterCard  {
    // int damage;
  //int health = 100;
-    public Goblin(int damage,int health, ElementType elementType, MonsterName monsterName) {
-        super(damage, health, elementType,monsterName);
+    public Goblin(int damage, String elementType, String monsterName, String username) {
+        super(damage, elementType,monsterName,username);
     }
 
     //public int getNormal() {return normal;}
@@ -29,7 +29,7 @@ public class Goblin extends MonsterCard  {
         this.health = health;
     }
 
-    public MonsterName getMonsterName()
+    public String getMonsterName()
     {
         System.out.println("Goblin");
         // return "Goblin";

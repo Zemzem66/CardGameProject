@@ -8,9 +8,19 @@ public class SpellCard extends Card {
     //• fire -> normal
     //• normal -> water
 
-
+String username;
     public Spells getSpellType() {
         return spellType;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setSpellType(Spells spellType) {
@@ -47,20 +57,27 @@ public class SpellCard extends Card {
 
     Spells spellType;
 
-    public ElementType getElementType() {
+    public String getElementType() {
         return elementType;
     }
 
-    public void setElementType(ElementType elementType) {
+    public void setElementType(String elementType) {
         this.elementType = elementType;
     }
-
+/*
     public SpellCard(ElementType elementType, Spells spellType, int damage) {
         super(elementType,damage, CardType.SpellCard);
         this.spellType = spellType;
     }
 
 
+ */
+
+    public SpellCard(int damage, String elementType, String monsterName, String username) {
+        super(elementType, damage, CardType.SpellCard);
+        this.monsterName = monsterName;
+        this.username = username;
+    }
 
 
 }

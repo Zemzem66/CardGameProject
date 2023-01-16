@@ -4,8 +4,8 @@ public class Kraken extends MonsterCard {
 
     int normal;
 
-    public Kraken(int damage, int health,ElementType elementType,MonsterName monsterName) {
-        super(damage, health,elementType,monsterName);
+    public Kraken(int damage,String elementType,String monsterName, String username) {
+        super(damage,elementType,monsterName, username);
     }
 
     public int getDamage() {

@@ -6,19 +6,33 @@ public class MonsterCard extends Card /*implements Playable */{
 
     MonsterType monsterType;
 
-    MonsterName monsterName;
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    @Override
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    String monsterName;
     int fire;
     int normal;
 
+    String username;
     int health;
-    public MonsterCard(int damage, ElementType elementType, MonsterName monsterName) {
-        super(elementType, damage, CardType.SpellCard);
+    public MonsterCard(int damage, String elementType, String monsterName, String username) {
+        super(elementType, damage, CardType.MonsterCard);
         this.monsterName = monsterName;
+        this.username = username;
     }
 
     public MonsterCard() {
         super();
     }
+
+
 
     public int getHealth() {
         return health;

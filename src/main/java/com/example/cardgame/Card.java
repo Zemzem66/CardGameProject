@@ -2,14 +2,17 @@ package com.example.cardgame;
 
 public abstract class Card {
 
+
+
+    String username;
     //Klasse, NOETIG ODER NICHT
-    MonsterName monsterName;
-    ElementType elementType;
+    String monsterName;
+    String elementType;
     public int damage;
     CardType cardType;
 
-    public Card(String monsterspellname, String etype, int damageValue, String ctype) {
-    }
+  //  public Card(String monsterspellname, String etype, int damageValue, String ctype) {
+    //}
 
     public Card() {
 
@@ -17,11 +20,11 @@ public abstract class Card {
 
 
 
-    public MonsterName getMonsterName() {
+    public String getMonsterName() {
         return monsterName;
     }
 
-    public void setMonsterName(MonsterName monsterName) {
+    public void setMonsterName(String monsterName) {
         this.monsterName = monsterName;
     }
 //---------------------------Random
@@ -34,11 +37,18 @@ public abstract class Card {
 
     //}
 
-    public ElementType getElementType() {
+    public String getElementType() {
         return elementType;
     }
+    public String getUsername() {
+        return username;
+    }
 
-    public void setElementType(ElementType elementType) {
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setElementType(String elementType) {
         this.elementType = elementType;
     }
 
@@ -58,7 +68,7 @@ public abstract class Card {
         this.cardType = cardType;
     }
 
-    public Card(ElementType elementType, int damage, CardType cardType) {
+    public Card(String elementType, int damage, CardType cardType) {
         this.elementType = elementType;
         this.damage = damage;
         this.cardType = cardType;

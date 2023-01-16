@@ -1,13 +1,14 @@
-package com.example.cardgame;public enum CardType {
+package com.example.cardgame;
+public enum CardType {
     SpellCard {
         String SpellCard()
         {
-            return "SpellCard";
+            return "Spell";
         }
     },
     MonsterCard {
         String MonsterCard() {
-            return "MonsterCard";
+            return "Monster";
         }
     }
 }

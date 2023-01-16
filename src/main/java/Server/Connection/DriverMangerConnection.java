@@ -1,19 +1,16 @@
 package Server.Connection;
-import Server.HttpServer.HandlingCurlsRequest.AcquirePackage;
-import com.example.cardgame.Card;
-import com.example.cardgame.Deck;
-import com.example.cardgame.MonsterCard;
-import com.example.cardgame.User;
+import com.example.cardgame.*;
+import main.main;
 
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.Collections;
 
 public class DriverMangerConnection {
     static Connection connection;
-
+    Deck deckFirst = new Deck();
+    Deck deckSecond = new Deck();
     public static Connection Connection /*connection*/() {
+
 
         try {
             connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "");
@@ -913,12 +910,149 @@ public class DriverMangerConnection {
             return "User " + username + " was created!";
     }
 
-    public String getdeck(Connection connection, String usernameK )
+    public String getdeckK(Connection connection, String usernameK )
     {
         String cardone = null;
         String cardtwo = null;
         String cardthree = null;
         String cardFour = null;
+
+//CARDONE
+        try {
+                PreparedStatement statone = connection.prepareStatement("SELECT cardIdFirst, cardIdSecond, cardIdThree, cardIdThree,cardIdFour from deck where username = ?;");
+                statone.setString(1,usernameK);
+                ResultSet resultSet = statone.executeQuery();
+                while (resultSet.next()) {
+                    cardone = resultSet.getString(1);
+                    cardtwo = resultSet.getString(2);
+                    cardthree = resultSet.getString(3);
+                    cardFour = resultSet.getString(4);
+                    System.out.println(cardone + " cardonone");
+                }
+                    String ctype;
+                    String etype;
+                    int damage;
+                    String monsterspell;
+
+                    PreparedStatement statementCardOne = connection.prepareStatement("SELECT ctype,etype,damage,monsterspellname from cards where cardid = (?);");
+                    statementCardOne.setString(1, cardone);
+                    ResultSet rs = statementCardOne.executeQuery();
+                    while (rs.next()) {
+                        System.out.println(cardone);
+                        ctype = rs.getString(1);
+                        etype = rs.getString(2);
+                        damage = rs.getInt(3);
+                        monsterspell = rs.getString(4);
+                        if(ctype.equals("Monster"))
+                        {
+
+                          Card cardOne = new MonsterCard(damage, etype,monsterspell,usernameK);
+                          User users = new User();
+                          deckFirst.setMyCards(cardOne);
+                          users.setDeck(deckFirst);
+                            System.out.println("What inse my array " + users.getDeck());
+                        }else if(ctype.equals("Spell"))
+                        {
+                            Card cardOne = new SpellCard(damage, etype,monsterspell,usernameK);
+                            User users = new User();
+                            deckFirst.setMyCards(cardOne);
+                            users.setDeck(deckFirst);
+                            System.out.println("What inse my array " + users.getDeck());
+                        }
+                        System.out.println("User:"+usernameK+" For + CARD ONE :"+ cardone +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
+                    }
+                PreparedStatement statementCardTwo = connection.prepareStatement("SELECT ctype,etype,damage,monsterspellname from cards where cardid = (?);");
+                statementCardTwo.setString(1, cardtwo);
+                ResultSet rsTwo = statementCardTwo.executeQuery();
+                while (rsTwo.next()) {
+                    System.out.println(cardone);
+                    ctype = rsTwo.getString(1);
+                    etype = rsTwo.getString(2);
+                    damage = rsTwo.getInt(3);
+                    monsterspell = rsTwo.getString(4);
+                    if(ctype.equals("Monster"))
+                    {
+                        Card cardTwo = new MonsterCard(damage, etype,monsterspell,usernameK);
+                        User users = new User();
+                        deckFirst.setMyCards(cardTwo);
+                        users.setDeck(deckFirst);
+                    }else if(ctype.equals("Spell"))
+                    {
+                        Card cardTwo = new SpellCard(damage, etype,monsterspell,usernameK);
+                        User users = new User();
+                        deckFirst.setMyCards(cardTwo);
+                        users.setDeck(deckFirst);
+                    }
+                    System.out.println("User:"+usernameK+"For + CARD Two :"+ cardtwo +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
+                }
+                PreparedStatement statementCardThree = connection.prepareStatement("SELECT ctype,etype,damage,monsterspellname from cards where cardid = (?);");
+                statementCardThree.setString(1, cardthree);
+                ResultSet rsThree = statementCardThree.executeQuery();
+                while (rsThree.next()) {
+                    System.out.println(cardthree);
+                    ctype = rsThree.getString(1);
+                    etype = rsThree.getString(2);
+                    damage = rsThree.getInt(3);
+                    monsterspell = rsThree.getString(4);
+                    if(ctype.equals("Monster"))
+                    {
+                        Card cardThree = new MonsterCard(damage, etype,monsterspell,usernameK);
+                        User users = new User();
+                        deckFirst.setMyCards(cardThree);
+                        users.setDeck(deckFirst);
+                    }else if(ctype.equals("Spell"))
+                    {
+                        Card cardThree = new SpellCard(damage, etype,monsterspell,usernameK);
+                        User users = new User();
+                        deckFirst.setMyCards(cardThree);
+                        users.setDeck(deckFirst);
+                    }
+
+                    System.out.println("User:"+usernameK+"For + CARD Three :"+ cardthree +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
+                }
+
+                PreparedStatement statementCardFour = connection.prepareStatement("SELECT ctype,etype,damage,monsterspellname from cards where cardid = (?);");
+                statementCardFour.setString(1, cardFour);
+                ResultSet rsFour = statementCardFour.executeQuery();
+                while (rsFour.next()) {
+                    System.out.println(cardFour);
+                    ctype = rsFour.getString(1);
+                    etype = rsFour.getString(2);
+                    damage = rsFour.getInt(3);
+                    monsterspell = rsFour.getString(4);
+                    if(ctype.equals("Monster"))
+                    {
+                        Card cardFourth = new MonsterCard(damage, etype,monsterspell,usernameK);
+                        User users = new User();
+                        deckFirst.setMyCards(cardFourth);
+                        users.setDeck(deckFirst);
+                    }else if(ctype.equals("Spell"))
+                    {
+                        Card cardFourth = new SpellCard(damage, etype,monsterspell,usernameK);
+
+                        User users = new User();
+                        deckFirst.setMyCards(cardFourth);
+                        users.setDeck(deckFirst);
+                    }
+                    System.out.println("User:"+usernameK+"For + CARD Four :"+ cardFour +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
+                }
+
+
+
+                //   return "Ctype is bpla bal " + ctype+ etype + damage+ monsterspell;
+        } catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return "User " + username + " was created!";
+
+    }
+    public String getdeckA(Connection connection, String usernameK )
+    {
+        String cardone = null;
+        String cardtwo = null;
+        String cardthree = null;
+        String cardFour = null;
+
 //CARDONE
         try {
             PreparedStatement statone = connection.prepareStatement("SELECT cardIdFirst, cardIdSecond, cardIdThree, cardIdThree,cardIdFour from deck where username = ?;");
@@ -931,30 +1065,38 @@ public class DriverMangerConnection {
                 cardFour = resultSet.getString(4);
                 System.out.println(cardone + " cardonone");
             }
-                String ctype;
-                String etype;
-                int damage;
-                String monsterspell;
+            String ctype;
+            String etype;
+            int damage;
+            String monsterspell;
 
-                PreparedStatement statementCardOne = connection.prepareStatement("SELECT ctype,etype,damage,monsterspellname from cards where cardid = (?);");
-                statementCardOne.setString(1, cardone);
-                ResultSet rs = statementCardOne.executeQuery();
-                while (rs.next()) {
-                    System.out.println(cardone);
-                    ctype = rs.getString(1);
-                    etype = rs.getString(2);
-                    damage = rs.getInt(3);
-                    monsterspell = rs.getString(4);
-                   // String monsterspellname, String etype, int damageValue, String ctype
-                 //   Card cardOne  = new Card(monsterspell, etype, damage, ctype);
-                  //  Deck deck = new Deck();
-                   // User users = new User();
-                    //deck.setCard1(cardOne);
-                    //users.setDeck(deck);
+            PreparedStatement statementCardOne = connection.prepareStatement("SELECT ctype,etype,damage,monsterspellname from cards where cardid = (?);");
+            statementCardOne.setString(1, cardone);
+            ResultSet rs = statementCardOne.executeQuery();
+            while (rs.next()) {
+                System.out.println(cardone);
+                ctype = rs.getString(1);
+                etype = rs.getString(2);
+                damage = rs.getInt(3);
+                monsterspell = rs.getString(4);
+                if(ctype.equals("Monster"))
+                {
 
-                    System.out.println("User:"+usernameK+" For + CARD ONE :"+ cardone +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
+                    Card cardOne = new MonsterCard(damage, etype,monsterspell,usernameK);
+                    User users = new User();
+                    deckSecond.setMyCards(cardOne);
+                    users.setDeck(deckSecond);
+                    System.out.println("What inse my array " + users.getDeck());
+                }else if(ctype.equals("Spell"))
+                {
+                    Card cardOne = new SpellCard(damage, etype,monsterspell,usernameK);
+                    User users = new User();
+                    deckSecond.setMyCards(cardOne);
+                    users.setDeck(deckSecond);
+                    System.out.println("What inse my array " + users.getDeck());
                 }
-
+                System.out.println("User:"+usernameK+" For + CARD ONE :"+ cardone +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
+            }
             PreparedStatement statementCardTwo = connection.prepareStatement("SELECT ctype,etype,damage,monsterspellname from cards where cardid = (?);");
             statementCardTwo.setString(1, cardtwo);
             ResultSet rsTwo = statementCardTwo.executeQuery();
@@ -964,16 +1106,21 @@ public class DriverMangerConnection {
                 etype = rsTwo.getString(2);
                 damage = rsTwo.getInt(3);
                 monsterspell = rsTwo.getString(4);
-                // String monsterspellname, String etype, int damageValue, String ctype
-             //   Card cardTwo  = new Card(monsterspell, etype, damage, ctype);
-              //  Deck deck = new Deck();
-               // User users = new User();
-                //deck.setCard1(cardTwo);
-                //users.setDeck(deck);
-
+                if(ctype.equals("Monster"))
+                {
+                    Card cardTwo = new MonsterCard(damage, etype,monsterspell,usernameK);
+                    User users = new User();
+                    deckSecond.setMyCards(cardTwo);
+                    users.setDeck(deckSecond);
+                }else if(ctype.equals("Spell"))
+                {
+                    Card cardTwo = new SpellCard(damage, etype,monsterspell,usernameK);
+                    User users = new User();
+                    deckSecond.setMyCards(cardTwo);
+                    users.setDeck(deckSecond);
+                }
                 System.out.println("User:"+usernameK+"For + CARD Two :"+ cardtwo +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
             }
-
             PreparedStatement statementCardThree = connection.prepareStatement("SELECT ctype,etype,damage,monsterspellname from cards where cardid = (?);");
             statementCardThree.setString(1, cardthree);
             ResultSet rsThree = statementCardThree.executeQuery();
@@ -983,12 +1130,19 @@ public class DriverMangerConnection {
                 etype = rsThree.getString(2);
                 damage = rsThree.getInt(3);
                 monsterspell = rsThree.getString(4);
-                // String monsterspellname, String etype, int damageValue, String ctype
-                //   Card cardTwo  = new Card(monsterspell, etype, damage, ctype);
-                //  Deck deck = new Deck();
-                // User users = new User();
-                //deck.setCard1(cardTwo);
-                //users.setDeck(deck);
+                if(ctype.equals("Monster"))
+                {
+                    Card cardThree = new MonsterCard(damage, etype,monsterspell,usernameK);
+                    User users = new User();
+                    deckSecond.setMyCards(cardThree);
+                    users.setDeck(deckSecond);
+                }else if(ctype.equals("Spell"))
+                {
+                    Card cardThree = new SpellCard(damage, etype,monsterspell,usernameK);
+                    User users = new User();
+                    deckSecond.setMyCards(cardThree);
+                    users.setDeck(deckSecond);
+                }
 
                 System.out.println("User:"+usernameK+"For + CARD Three :"+ cardthree +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
             }
@@ -1008,9 +1162,26 @@ public class DriverMangerConnection {
                 // User users = new User();
                 //deck.setCard1(cardTwo);
                 //users.setDeck(deck);
-               // MonsterCard
+                // MonsterCard
+
+                if(ctype.equals("Monster"))
+                {
+                    Card cardFourth = new MonsterCard(damage, etype,monsterspell,usernameK);
+                    User users = new User();
+                    deckSecond.setMyCards(cardFourth);
+                    users.setDeck(deckSecond);
+                }else if(ctype.equals("Spell"))
+                {
+                    Card cardFourth = new SpellCard(damage, etype,monsterspell,usernameK);
+
+                    User users = new User();
+                    deckSecond.setMyCards(cardFourth);
+                    users.setDeck(deckSecond);
+                }
+
                 System.out.println("User:"+usernameK+"For + CARD Four :"+ cardFour +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
             }
+
 
 
             //   return "Ctype is bpla bal " + ctype+ etype + damage+ monsterspell;
@@ -1020,7 +1191,27 @@ public class DriverMangerConnection {
         return "User " + username + " was created!";
 
     }
-
+    public void fight()
+    {
+        main myMain = new main();
+       // for(int i = 0; i < 100; i++){
+        Collections.shuffle(deckFirst.getMyCards());
+        Collections.shuffle(deckSecond.getMyCards());
+        myMain.fight(deckFirst.getMyCards().get(0), deckSecond.getMyCards().get(0));
+        if(deckFirst.getMyCards().get(0).getDamage() > deckSecond.getMyCards().get(0).getDamage())
+        {
+            deckSecond.getMyCards().remove(0);
+            System.out.println(deckFirst.getMyCards().get(0)+ "REMOVING THE SECOND DECK");
+        }else if(deckSecond.getMyCards().get(0).getDamage() > deckFirst.getMyCards().get(0).getDamage())
+        {
+            deckFirst.getMyCards().remove(0);
+            System.out.println(deckFirst.getMyCards().get(0)+ "REMOVING THE FIRST DECK");
+        } else {
+            System.out.println("DRAAAW");
+        }
+        //}
+        myMain.battleLog();
+    }
     public String deleteDeck(Connection connection)
     {
         try {
