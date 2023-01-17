@@ -35,7 +35,8 @@ public class AcquirePackage {
             setName("kienboec");
             // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
-            String storage = driverMangerConnection.AcquirePackageK(conn);
+          //  String storage = driverMangerConnection.AcquirePackageK(conn);
+            String storage = driverMangerConnection.AcquirePackageT(conn,Name);
             return storage;
             //System.out.println("ITS KIENBOC ");
         }else if (Name.equals("altenhof"))
@@ -43,7 +44,8 @@ public class AcquirePackage {
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
            // String User = "altenhof";
-            String storage = driverMangerConnection.AcquirePackageA(conn);
+            //String storage = driverMangerConnection.AcquirePackageA(conn);
+            String storage = driverMangerConnection.AcquirePackageT(conn,Name);
             //System.out.println("ITS altenhof ");
             return storage;
         }

@@ -103,7 +103,6 @@ public class DriverMangerConnection {
         try {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO packages (cardID) VALUES (?); ");
             statement.setString(1, packedid);
-            //   statement.setString(2,ad);
             statement.execute();
             System.out.println("PackageID" + packedid + "-----");
 
@@ -230,7 +229,6 @@ public class DriverMangerConnection {
         return " KIENBOC ";
 
     }
-
     public String AcquirePackageA(Connection connection) {
         // TODO: 11.01.2023 ALTENHOF MUSS NOCH RICHTIG GESTELLT WERDEN
         int token = 0;
@@ -336,6 +334,77 @@ public class DriverMangerConnection {
  */
 
     }
+    public String AcquirePackageT(Connection connection, String Username) {
+        int myId = 0;
+        int token = 0;
+        try {
+            PreparedStatement statone = connection.prepareStatement("SELECT MIN(id) from packages");
+            ResultSet resultSet = statone.executeQuery();
+            while (resultSet.next()) {
+                myId = resultSet.getInt(1);
+                System.out.println("THESE ARE ALL IDS FROM PACKAGE"+myId);
+                if (myId == 0) {
+                    //token +=5;
+                    return "NO MORE PACKAGE LEFT LEFT!!!";
+                }
+             statone = connection.prepareStatement("SELECT token from accounts where username = ?");
+                statone.setString(1, Username);
+            ResultSet resultSetW = statone.executeQuery();
+            while (resultSetW.next()) {
+                token = resultSetW.getInt(1);
+                statone = connection.prepareStatement("UPDATE accounts set token = ? where username = ?");
+                token -= 5;
+                statone.setInt(1, token);
+                statone.setString(2, Username);
+                statone.executeUpdate();
+
+            }
+            if (token < 0) {
+                return "NO MONEY!";
+            } //else {
+                statone = connection.prepareStatement("UPDATE cards set owner = 'altenhof', id = 7  where cardid ='67f9048f-99b8-4ae4-b866-d8008d00c53d'");
+                statone.executeUpdate();
+                statone = connection.prepareStatement("UPDATE cards set owner = 'altenhof', id = 7  where cardid ='aa9999a0-734c-49c6-8f4a-651864b14e62'");
+                statone.executeUpdate();
+                statone = connection.prepareStatement("UPDATE cards set owner = 'altenhof', id = 7  where cardid ='d6e9c720-9b5a-40c7-a6b2-bc34752e3463'");
+                statone.executeUpdate();
+                statone = connection.prepareStatement("UPDATE cards set owner = 'altenhof', id = 7  where cardid ='02a9c76e-b17d-427f-9240-2dd49b0d3bfd'");
+                statone.executeUpdate();
+                statone = connection.prepareStatement("UPDATE cards set owner = 'altenhof', id = 7  where cardid ='2508bf5c-20d7-43b4-8c77-bc677decadef'");
+                statone.executeUpdate();
+
+
+                statone = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
+                statone.setString(1, Username);
+                statone.setInt(2, myId);
+                statone.executeUpdate();
+
+
+          //  }
+        }
+            statone = connection.prepareStatement("DELETE FROM packages WHERE id = ?;");
+            statone.setInt(1, myId);
+            statone.execute();
+    }
+         catch (SQLException exception) {
+            exception.printStackTrace();
+        }
+        return Username +" got the card";
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private void name(Connection connection, int miniumID, PreparedStatement statementUpdate, String user) throws SQLException {
         statementUpdate.setString(1, user);
@@ -690,10 +759,7 @@ public class DriverMangerConnection {
 
 
 
-        return  userFrist+userSecond;
-
-}
-
+        return  userFrist+userSecond
    */
         return "Hello";
     }

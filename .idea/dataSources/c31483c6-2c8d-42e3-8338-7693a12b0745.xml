@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.40">
     <root id="1">
       <DateStyle>mdy</DateStyle>
-      <IntrospectionStateNumber>48739</IntrospectionStateNumber>
+      <IntrospectionStateNumber>55366</IntrospectionStateNumber>
       <ServerVersion>15.0</ServerVersion>
       <StartupTime>1673690978</StartupTime>
       <TimeZones>true ACDT
@@ -1408,16 +1408,16 @@ false posixrules
 13186||10|C|G
 13186||-9223372036854775808|U|G
 13186||10|U|G</Grants>
-      <IntrospectionStateNumber>48739</IntrospectionStateNumber>
+      <IntrospectionStateNumber>55366</IntrospectionStateNumber>
       <ObjectId>5</ObjectId>
-      <Relations>sequence|table|70491|70492|1
-sequence|table|70368|70369|1
-sequence|table|70384|70385|1
-sequence|table|70398|70399|1
-sequence|table|70405|70406|1
-sequence|table|70439|70440|1
-sequence|table|70448|70449|1
-sequence|table|70462|70463|1
+      <Relations>sequence|table|73428|73429|1
+sequence|table|73444|73445|1
+sequence|table|73458|73459|1
+sequence|table|73465|73466|1
+sequence|table|73499|73500|1
+sequence|table|73508|73509|1
+sequence|table|73522|73523|1
+sequence|table|73551|73552|1
 </Relations>
       <OwnerName>postgres</OwnerName>
     </database>
@@ -8177,7 +8177,7 @@ sequence|table|70462|70463|1
     <schema id="506" parent="3" name="public">
       <Comment>standard public schema</Comment>
       <Current>1</Current>
-      <IntrospectionStateNumber>48739</IntrospectionStateNumber>
+      <IntrospectionStateNumber>55366</IntrospectionStateNumber>
       <ObjectId>2200</ObjectId>
       <StateNumber>518</StateNumber>
       <OwnerName>pg_database_owner</OwnerName>
@@ -8190,109 +8190,109 @@ sequence|table|70462|70463|1
     </table>
     <sequence id="508" parent="506" name="accounts_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>70368</ObjectId>
-      <StateNumber>48729</StateNumber>
+      <ObjectId>73428</ObjectId>
+      <StateNumber>55356</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="509" parent="506" name="addtrade_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>70491</ObjectId>
-      <StateNumber>48738</StateNumber>
+      <ObjectId>73551</ObjectId>
+      <StateNumber>55365</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="510" parent="506" name="admin_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>70398</ObjectId>
-      <StateNumber>48732</StateNumber>
+      <ObjectId>73458</ObjectId>
+      <StateNumber>55359</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="511" parent="506" name="battle_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>70462</ObjectId>
-      <StateNumber>48736</StateNumber>
+      <ObjectId>73522</ObjectId>
+      <StateNumber>55363</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="512" parent="506" name="data_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>70439</ObjectId>
-      <StateNumber>48734</StateNumber>
+      <ObjectId>73499</ObjectId>
+      <StateNumber>55361</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="513" parent="506" name="deck_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>70405</ObjectId>
-      <StateNumber>48733</StateNumber>
+      <ObjectId>73465</ObjectId>
+      <StateNumber>55360</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="514" parent="506" name="packages_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>70384</ObjectId>
-      <StateNumber>48731</StateNumber>
+      <ObjectId>73444</ObjectId>
+      <StateNumber>55358</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <sequence id="515" parent="506" name="trade_id_seq">
       <DataType>integer|0s</DataType>
-      <ObjectId>70448</ObjectId>
-      <StateNumber>48735</StateNumber>
+      <ObjectId>73508</ObjectId>
+      <StateNumber>55362</StateNumber>
       <OwnerName>postgres</OwnerName>
     </sequence>
     <table id="516" parent="506" name="accounts">
-      <ObjectId>70369</ObjectId>
-      <StateNumber>48733</StateNumber>
+      <ObjectId>73429</ObjectId>
+      <StateNumber>55360</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="517" parent="506" name="addbattle">
-      <ObjectId>70486</ObjectId>
-      <StateNumber>48737</StateNumber>
+      <ObjectId>73546</ObjectId>
+      <StateNumber>55364</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="518" parent="506" name="addtrade">
-      <ObjectId>70492</ObjectId>
-      <StateNumber>48738</StateNumber>
+      <ObjectId>73552</ObjectId>
+      <StateNumber>55365</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="519" parent="506" name="admin">
-      <ObjectId>70399</ObjectId>
-      <StateNumber>48732</StateNumber>
+      <ObjectId>73459</ObjectId>
+      <StateNumber>55359</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="520" parent="506" name="battle">
-      <ObjectId>70463</ObjectId>
-      <StateNumber>48736</StateNumber>
+      <ObjectId>73523</ObjectId>
+      <StateNumber>55363</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="521" parent="506" name="cards">
-      <ObjectId>70377</ObjectId>
-      <StateNumber>48731</StateNumber>
+      <ObjectId>73437</ObjectId>
+      <StateNumber>55358</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="522" parent="506" name="data">
-      <ObjectId>70440</ObjectId>
-      <StateNumber>48734</StateNumber>
+      <ObjectId>73500</ObjectId>
+      <StateNumber>55361</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="523" parent="506" name="deck">
-      <ObjectId>70406</ObjectId>
-      <StateNumber>48733</StateNumber>
+      <ObjectId>73466</ObjectId>
+      <StateNumber>55360</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="524" parent="506" name="packages">
-      <ObjectId>70385</ObjectId>
-      <StateNumber>48731</StateNumber>
+      <ObjectId>73445</ObjectId>
+      <StateNumber>55358</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
     <table id="525" parent="506" name="trade">
-      <ObjectId>70449</ObjectId>
-      <StateNumber>48735</StateNumber>
+      <ObjectId>73509</ObjectId>
+      <StateNumber>55362</StateNumber>
       <AccessMethodId>2</AccessMethodId>
       <OwnerName>postgres</OwnerName>
     </table>
@@ -8301,65 +8301,65 @@ sequence|table|70462|70463|1
       <DefaultExpression>nextval(&apos;accounts_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48729</StateNumber>
+      <StateNumber>55356</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="527" parent="516" name="username">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>48729</StateNumber>
+      <StateNumber>55356</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="528" parent="516" name="password">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>48729</StateNumber>
+      <StateNumber>55356</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="529" parent="516" name="token">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>48729</StateNumber>
+      <StateNumber>55356</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="530" parent="516" name="elo">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>48729</StateNumber>
+      <StateNumber>55356</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="531" parent="516" name="win">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>48729</StateNumber>
+      <StateNumber>55356</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="532" parent="516" name="games">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>7</Position>
-      <StateNumber>48729</StateNumber>
+      <StateNumber>55356</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="533" parent="516" name="accounts_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70373</ObjectId>
+      <ObjectId>73433</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48729</StateNumber>
+      <StateNumber>55356</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <index id="534" parent="516" name="accounts_username_key">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70375</ObjectId>
-      <StateNumber>48729</StateNumber>
+      <ObjectId>73435</ObjectId>
+      <StateNumber>55356</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -8368,30 +8368,30 @@ sequence|table|70462|70463|1
     </index>
     <key id="535" parent="516" name="accounts_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70374</ObjectId>
+      <ObjectId>73434</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48729</StateNumber>
-      <UnderlyingIndexId>70373</UnderlyingIndexId>
+      <StateNumber>55356</StateNumber>
+      <UnderlyingIndexId>73433</UnderlyingIndexId>
     </key>
     <key id="536" parent="516" name="accounts_username_key">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70376</ObjectId>
-      <StateNumber>48729</StateNumber>
-      <UnderlyingIndexId>70375</UnderlyingIndexId>
+      <ObjectId>73436</ObjectId>
+      <StateNumber>55356</StateNumber>
+      <UnderlyingIndexId>73435</UnderlyingIndexId>
     </key>
     <column id="537" parent="517" name="name">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48737</StateNumber>
+      <StateNumber>55364</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="538" parent="517" name="addbattle_pkey">
       <ColNames>name</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70489</ObjectId>
+      <ObjectId>73549</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48737</StateNumber>
+      <StateNumber>55364</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -8400,275 +8400,275 @@ sequence|table|70462|70463|1
     </index>
     <key id="539" parent="517" name="addbattle_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70490</ObjectId>
+      <ObjectId>73550</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48737</StateNumber>
-      <UnderlyingIndexId>70489</UnderlyingIndexId>
+      <StateNumber>55364</StateNumber>
+      <UnderlyingIndexId>73549</UnderlyingIndexId>
     </key>
     <column id="540" parent="518" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;addtrade_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48738</StateNumber>
+      <StateNumber>55365</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="541" parent="518" name="cardtotrade">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>48738</StateNumber>
+      <StateNumber>55365</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="542" parent="518" name="givingcard">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>48738</StateNumber>
+      <StateNumber>55365</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="543" parent="518" name="userrequest">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>48738</StateNumber>
+      <StateNumber>55365</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="544" parent="518" name="userresponse">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>48738</StateNumber>
+      <StateNumber>55365</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <foreign-key id="545" parent="518" name="addtrade_cardtotrade_fkey">
       <ColNames>cardtotrade</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70500</ObjectId>
+      <ObjectId>73560</ObjectId>
       <RefColNames>cardid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>48738</StateNumber>
-      <RefTableId>70377</RefTableId>
+      <StateNumber>55365</StateNumber>
+      <RefTableId>73437</RefTableId>
       <RefTableName>cards</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="546" parent="518" name="addtrade_givingcard_fkey">
       <ColNames>givingcard</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70505</ObjectId>
+      <ObjectId>73565</ObjectId>
       <RefColNames>cardid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>48738</StateNumber>
-      <RefTableId>70377</RefTableId>
+      <StateNumber>55365</StateNumber>
+      <RefTableId>73437</RefTableId>
       <RefTableName>cards</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="547" parent="518" name="addtrade_userrequest_fkey">
       <ColNames>userrequest</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70510</ObjectId>
+      <ObjectId>73570</ObjectId>
       <RefColNames>username</RefColNames>
       <RefColPositions>2</RefColPositions>
-      <StateNumber>48738</StateNumber>
-      <RefTableId>70369</RefTableId>
+      <StateNumber>55365</StateNumber>
+      <RefTableId>73429</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="548" parent="518" name="addtrade_userresponse_fkey">
       <ColNames>userresponse</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70515</ObjectId>
+      <ObjectId>73575</ObjectId>
       <RefColNames>username</RefColNames>
       <RefColPositions>2</RefColPositions>
-      <StateNumber>48738</StateNumber>
-      <RefTableId>70369</RefTableId>
+      <StateNumber>55365</StateNumber>
+      <RefTableId>73429</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <index id="549" parent="518" name="addtrade_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70498</ObjectId>
+      <ObjectId>73558</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48738</StateNumber>
+      <StateNumber>55365</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="550" parent="518" name="addtrade_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70499</ObjectId>
+      <ObjectId>73559</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48738</StateNumber>
-      <UnderlyingIndexId>70498</UnderlyingIndexId>
+      <StateNumber>55365</StateNumber>
+      <UnderlyingIndexId>73558</UnderlyingIndexId>
     </key>
     <column id="551" parent="519" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;admin_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48732</StateNumber>
+      <StateNumber>55359</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="552" parent="519" name="ad">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>48732</StateNumber>
+      <StateNumber>55359</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="553" parent="519" name="admin_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70403</ObjectId>
+      <ObjectId>73463</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48732</StateNumber>
+      <StateNumber>55359</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="554" parent="519" name="admin_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70404</ObjectId>
+      <ObjectId>73464</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48732</StateNumber>
-      <UnderlyingIndexId>70403</UnderlyingIndexId>
+      <StateNumber>55359</StateNumber>
+      <UnderlyingIndexId>73463</UnderlyingIndexId>
     </key>
     <column id="555" parent="520" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;battle_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48736</StateNumber>
+      <StateNumber>55363</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="556" parent="520" name="firstuser">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>48736</StateNumber>
+      <StateNumber>55363</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="557" parent="520" name="seconduser">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>48736</StateNumber>
+      <StateNumber>55363</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="558" parent="520" name="wins">
       <DataType>varchar|0s</DataType>
       <Position>4</Position>
-      <StateNumber>48736</StateNumber>
+      <StateNumber>55363</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="559" parent="520" name="ready">
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>48736</StateNumber>
+      <StateNumber>55363</StateNumber>
       <TypeId>16</TypeId>
     </column>
     <foreign-key id="560" parent="520" name="battle_firstuser_fkey">
       <ColNames>firstuser</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70471</ObjectId>
+      <ObjectId>73531</ObjectId>
       <RefColNames>username</RefColNames>
       <RefColPositions>2</RefColPositions>
-      <StateNumber>48736</StateNumber>
-      <RefTableId>70369</RefTableId>
+      <StateNumber>55363</StateNumber>
+      <RefTableId>73429</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="561" parent="520" name="battle_seconduser_fkey">
       <ColNames>seconduser</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70476</ObjectId>
+      <ObjectId>73536</ObjectId>
       <RefColNames>username</RefColNames>
       <RefColPositions>2</RefColPositions>
-      <StateNumber>48736</StateNumber>
-      <RefTableId>70369</RefTableId>
+      <StateNumber>55363</StateNumber>
+      <RefTableId>73429</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="562" parent="520" name="battle_wins_fkey">
       <ColNames>wins</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70481</ObjectId>
+      <ObjectId>73541</ObjectId>
       <RefColNames>username</RefColNames>
       <RefColPositions>2</RefColPositions>
-      <StateNumber>48736</StateNumber>
-      <RefTableId>70369</RefTableId>
+      <StateNumber>55363</StateNumber>
+      <RefTableId>73429</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <index id="563" parent="520" name="battle_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70469</ObjectId>
+      <ObjectId>73529</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48736</StateNumber>
+      <StateNumber>55363</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="564" parent="520" name="battle_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70470</ObjectId>
+      <ObjectId>73530</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48736</StateNumber>
-      <UnderlyingIndexId>70469</UnderlyingIndexId>
+      <StateNumber>55363</StateNumber>
+      <UnderlyingIndexId>73529</UnderlyingIndexId>
     </key>
     <column id="565" parent="521" name="cardid">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48730</StateNumber>
+      <StateNumber>55357</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="566" parent="521" name="damage">
       <DataType>double precision|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>48730</StateNumber>
+      <StateNumber>55357</StateNumber>
       <TypeId>701</TypeId>
     </column>
     <column id="567" parent="521" name="ctype">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>48730</StateNumber>
+      <StateNumber>55357</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="568" parent="521" name="etype">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>48730</StateNumber>
+      <StateNumber>55357</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="569" parent="521" name="monsterspellname">
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>48730</StateNumber>
+      <StateNumber>55357</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="570" parent="521" name="owner">
       <DataType>varchar(50)|0s</DataType>
       <Position>6</Position>
-      <StateNumber>48730</StateNumber>
+      <StateNumber>55357</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="571" parent="521" name="id">
       <DataType>integer|0s</DataType>
       <Position>7</Position>
-      <StateNumber>48730</StateNumber>
+      <StateNumber>55357</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <index id="572" parent="521" name="cards_pkey">
       <ColNames>cardid</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70382</ObjectId>
+      <ObjectId>73442</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48730</StateNumber>
+      <StateNumber>55357</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
       <CollationNames>default</CollationNames>
@@ -8677,272 +8677,272 @@ sequence|table|70462|70463|1
     </index>
     <key id="573" parent="521" name="cards_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70383</ObjectId>
+      <ObjectId>73443</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48730</StateNumber>
-      <UnderlyingIndexId>70382</UnderlyingIndexId>
+      <StateNumber>55357</StateNumber>
+      <UnderlyingIndexId>73442</UnderlyingIndexId>
     </key>
     <column id="574" parent="522" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;data_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48734</StateNumber>
+      <StateNumber>55361</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="575" parent="522" name="uname">
       <DataType>varchar(255)|0s</DataType>
       <Position>2</Position>
-      <StateNumber>48734</StateNumber>
+      <StateNumber>55361</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="576" parent="522" name="bio">
       <DataType>varchar(255)|0s</DataType>
       <Position>3</Position>
-      <StateNumber>48734</StateNumber>
+      <StateNumber>55361</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="577" parent="522" name="image">
       <DataType>varchar(255)|0s</DataType>
       <Position>4</Position>
-      <StateNumber>48734</StateNumber>
+      <StateNumber>55361</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <index id="578" parent="522" name="data_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70446</ObjectId>
+      <ObjectId>73506</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48734</StateNumber>
+      <StateNumber>55361</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="579" parent="522" name="data_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70447</ObjectId>
+      <ObjectId>73507</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48734</StateNumber>
-      <UnderlyingIndexId>70446</UnderlyingIndexId>
+      <StateNumber>55361</StateNumber>
+      <UnderlyingIndexId>73506</UnderlyingIndexId>
     </key>
     <column id="580" parent="523" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;deck_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48733</StateNumber>
+      <StateNumber>55360</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="581" parent="523" name="cardidfirst">
       <DataType>varchar|0s</DataType>
       <Position>2</Position>
-      <StateNumber>48733</StateNumber>
+      <StateNumber>55360</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="582" parent="523" name="cardidsecond">
       <DataType>varchar|0s</DataType>
       <Position>3</Position>
-      <StateNumber>48733</StateNumber>
+      <StateNumber>55360</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="583" parent="523" name="cardidthree">
       <DataType>varchar|0s</DataType>
       <Position>4</Position>
-      <StateNumber>48733</StateNumber>
+      <StateNumber>55360</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="584" parent="523" name="cardidfour">
       <DataType>varchar|0s</DataType>
       <Position>5</Position>
-      <StateNumber>48733</StateNumber>
+      <StateNumber>55360</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="585" parent="523" name="username">
       <DataType>varchar|0s</DataType>
       <Position>6</Position>
-      <StateNumber>48733</StateNumber>
+      <StateNumber>55360</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <foreign-key id="586" parent="523" name="deck_cardidfirst_fkey">
       <ColNames>cardidfirst</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70414</ObjectId>
+      <ObjectId>73474</ObjectId>
       <RefColNames>cardid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>48733</StateNumber>
-      <RefTableId>70377</RefTableId>
+      <StateNumber>55360</StateNumber>
+      <RefTableId>73437</RefTableId>
       <RefTableName>cards</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="587" parent="523" name="deck_cardidsecond_fkey">
       <ColNames>cardidsecond</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70419</ObjectId>
+      <ObjectId>73479</ObjectId>
       <RefColNames>cardid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>48733</StateNumber>
-      <RefTableId>70377</RefTableId>
+      <StateNumber>55360</StateNumber>
+      <RefTableId>73437</RefTableId>
       <RefTableName>cards</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="588" parent="523" name="deck_cardidthree_fkey">
       <ColNames>cardidthree</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70424</ObjectId>
+      <ObjectId>73484</ObjectId>
       <RefColNames>cardid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>48733</StateNumber>
-      <RefTableId>70377</RefTableId>
+      <StateNumber>55360</StateNumber>
+      <RefTableId>73437</RefTableId>
       <RefTableName>cards</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="589" parent="523" name="deck_cardidfour_fkey">
       <ColNames>cardidfour</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70429</ObjectId>
+      <ObjectId>73489</ObjectId>
       <RefColNames>cardid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>48733</StateNumber>
-      <RefTableId>70377</RefTableId>
+      <StateNumber>55360</StateNumber>
+      <RefTableId>73437</RefTableId>
       <RefTableName>cards</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <foreign-key id="590" parent="523" name="deck_username_fkey">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70434</ObjectId>
+      <ObjectId>73494</ObjectId>
       <RefColNames>username</RefColNames>
       <RefColPositions>2</RefColPositions>
-      <StateNumber>48733</StateNumber>
-      <RefTableId>70369</RefTableId>
+      <StateNumber>55360</StateNumber>
+      <RefTableId>73429</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <index id="591" parent="523" name="deck_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70412</ObjectId>
+      <ObjectId>73472</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48733</StateNumber>
+      <StateNumber>55360</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="592" parent="523" name="deck_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70413</ObjectId>
+      <ObjectId>73473</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48733</StateNumber>
-      <UnderlyingIndexId>70412</UnderlyingIndexId>
+      <StateNumber>55360</StateNumber>
+      <UnderlyingIndexId>73472</UnderlyingIndexId>
     </key>
     <column id="593" parent="524" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;packages_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48731</StateNumber>
+      <StateNumber>55358</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="594" parent="524" name="cardid">
       <DataType>varchar|0s</DataType>
       <Position>2</Position>
-      <StateNumber>48731</StateNumber>
+      <StateNumber>55358</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <foreign-key id="595" parent="524" name="packages_cardid_fkey">
       <ColNames>cardid</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70393</ObjectId>
+      <ObjectId>73453</ObjectId>
       <RefColNames>cardid</RefColNames>
       <RefColPositions>1</RefColPositions>
-      <StateNumber>48731</StateNumber>
-      <RefTableId>70377</RefTableId>
+      <StateNumber>55358</StateNumber>
+      <RefTableId>73437</RefTableId>
       <RefTableName>cards</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <index id="596" parent="524" name="packages_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70391</ObjectId>
+      <ObjectId>73451</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48731</StateNumber>
+      <StateNumber>55358</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="597" parent="524" name="packages_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70392</ObjectId>
+      <ObjectId>73452</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48731</StateNumber>
-      <UnderlyingIndexId>70391</UnderlyingIndexId>
+      <StateNumber>55358</StateNumber>
+      <UnderlyingIndexId>73451</UnderlyingIndexId>
     </key>
     <column id="598" parent="525" name="id">
       <DataType>integer|0s</DataType>
       <DefaultExpression>nextval(&apos;trade_id_seq&apos;::regclass)</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>1</Position>
-      <StateNumber>48735</StateNumber>
+      <StateNumber>55362</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <column id="599" parent="525" name="username">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StateNumber>48735</StateNumber>
+      <StateNumber>55362</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="600" parent="525" name="wantedcard">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>3</Position>
-      <StateNumber>48735</StateNumber>
+      <StateNumber>55362</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="601" parent="525" name="type">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>4</Position>
-      <StateNumber>48735</StateNumber>
+      <StateNumber>55362</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="602" parent="525" name="cardtotrade">
       <DataType>varchar|0s</DataType>
       <NotNull>1</NotNull>
       <Position>5</Position>
-      <StateNumber>48735</StateNumber>
+      <StateNumber>55362</StateNumber>
       <TypeId>1043</TypeId>
     </column>
     <column id="603" parent="525" name="mindamage">
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
       <Position>6</Position>
-      <StateNumber>48735</StateNumber>
+      <StateNumber>55362</StateNumber>
       <TypeId>23</TypeId>
     </column>
     <foreign-key id="604" parent="525" name="trade_username_fkey">
       <ColNames>username</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70457</ObjectId>
+      <ObjectId>73517</ObjectId>
       <RefColNames>username</RefColNames>
       <RefColPositions>2</RefColPositions>
-      <StateNumber>48735</StateNumber>
-      <RefTableId>70369</RefTableId>
+      <StateNumber>55362</StateNumber>
+      <RefTableId>73429</RefTableId>
       <RefTableName>accounts</RefTableName>
       <RefTableKind>table</RefTableKind>
     </foreign-key>
     <index id="605" parent="525" name="trade_pkey">
       <ColNames>id</ColNames>
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70455</ObjectId>
+      <ObjectId>73515</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48735</StateNumber>
+      <StateNumber>55362</StateNumber>
       <Unique>1</Unique>
       <AccessMethodId>403</AccessMethodId>
     </index>
     <key id="606" parent="525" name="trade_pkey">
       <NameSurrogate>1</NameSurrogate>
-      <ObjectId>70456</ObjectId>
+      <ObjectId>73516</ObjectId>
       <Primary>1</Primary>
-      <StateNumber>48735</StateNumber>
-      <UnderlyingIndexId>70455</UnderlyingIndexId>
+      <StateNumber>55362</StateNumber>
+      <UnderlyingIndexId>73515</UnderlyingIndexId>
     </key>
   </database-model>
 </dataSource>
