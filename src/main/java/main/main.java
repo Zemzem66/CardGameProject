@@ -2,7 +2,6 @@ package main;
 import com.example.cardgame.*;
 import com.example.cardgame.MonsterCard;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.util.ArrayList;
@@ -15,12 +14,13 @@ public class main {
     static PrintStream ps = new PrintStream(baos);
     static PrintStream old = System.out;
 
-    public void battleLog()
+    public String battleLog()
     {
         System.out.println("Here"+baos.toString());
         //return null;
+        return baos.toString();
     }
-    public static void fight(Card cardfirst, Card cardsecond) {
+    public static Card fight(Card cardfirst, Card cardsecond) {
         System.setOut(ps);
             //EFFECTIVNES 1:
             // Water > fire
@@ -32,19 +32,23 @@ public class main {
                 {
                     System.out.println(cardfirst.getUsername() + ": " + cardfirst.getElementType() + "("+cardfirst.getDamage() +") wins: " +" vs "+
                            cardsecond.getUsername()+" "+ cardsecond.getElementType() + "("+cardsecond.getDamage() +")" );
+
                     System.out.flush();
                     System.setOut(old);
+                    return cardfirst;
                 }else if(cardfirst.getDamage() < cardsecond.getDamage())
                 {
                     System.out.println(cardsecond.getUsername() + ": " + cardsecond.getElementType() + "("+cardsecond.getDamage() +") wins: " +" vs "+
                             cardfirst.getUsername()+" "+ cardfirst.getElementType() + "("+cardfirst.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardsecond;
                 }
                 else{
                     System.out.println("-----------------Draw---------------");
                     System.out.flush();
                     System.setOut(old);
+                    return null;
                 }
              //   fire > normal
             }else if(cardfirst.getElementType().equals("Fire") && cardsecond.getElementType().equals("Normal"))
@@ -56,15 +60,18 @@ public class main {
                             cardsecond.getUsername()+" "+ cardsecond.getElementType() + "("+cardsecond.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardfirst;
                 } else if (cardfirst.getDamage() < cardsecond.getDamage()) {
                     System.out.println(cardsecond.getUsername() + ": " + cardsecond.getElementType() + "("+cardsecond.getDamage() +") wins: " +" vs "+
                             cardfirst.getUsername()+" "+ cardfirst.getElementType() + "("+cardfirst.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardsecond;
                 } else {
                     System.out.println("-------------DRAW---------------");
                     System.out.flush();
                     System.setOut(old);
+                    return null;
                 }
             }
             //   normal > water
@@ -76,6 +83,7 @@ public class main {
                             cardsecond.getUsername()+" "+ cardsecond.getElementType() + "("+cardsecond.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardfirst;
                 }
 
                 else if(cardfirst.getDamage() < cardsecond.getDamage()) {
@@ -83,11 +91,13 @@ public class main {
                             cardfirst.getUsername()+" "+ cardfirst.getElementType() + "("+cardfirst.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardsecond;
                 }
                 else{
-                    System.out.println("-------DRAW-----");
+                    System.out.println("-------------DRAW------------");
                     System.out.flush();
                     System.setOut(old);
+                    return null;
                 }
             } else if (cardfirst.getElementType().equals("Water") && cardsecond.getElementType().equals("Fire")) {
                 cardfirst.setDamage(cardfirst.getDamage()*2);
@@ -97,6 +107,7 @@ public class main {
                             cardsecond.getUsername()+ " "+ cardsecond.getElementType() + "("+cardsecond.getDamage() +")" );                } else if (cardfirst.getDamage() < cardsecond.getDamage()) {
                     System.out.flush();
                     System.setOut(old);
+                    return cardfirst;
                 }
                 else if (cardsecond.getDamage() > cardfirst.getDamage())
                 {
@@ -104,11 +115,13 @@ public class main {
                             cardfirst.getUsername()+" "+ cardfirst.getElementType() + "("+cardfirst.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardsecond;
                 }
                 else {
                     System.out.println("-------------DRAW------------");
                     System.out.flush();
                     System.setOut(old);
+                    return null;
                 }
             }
             else if(cardfirst.getElementType().equals("Normal") && cardsecond.getElementType().equals("Fire"))
@@ -120,16 +133,19 @@ public class main {
                             cardsecond.getUsername()+" "+ cardsecond.getElementType() + "("+cardsecond.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardfirst;
                 } else if ((cardfirst.getDamage() < cardsecond.getDamage())) {
                     System.out.println(cardsecond.getUsername() + ": " + cardsecond.getElementType() + "("+cardsecond.getDamage() +") wins: " +" vs "+
                             cardfirst.getUsername()+" "+ cardfirst.getElementType() + "("+cardfirst.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardsecond;
 
                 } else {
-                    System.out.println("DRAW");
+                    System.out.println("------------DRAW-------------");
                     System.out.flush();
                     System.setOut(old);
+                    return null;
                 }
             }else if (cardfirst.getElementType().equals("Water")&& cardsecond.getElementType().equals("Normal")) {
                 cardsecond.setDamage(cardfirst.getDamage()*2);
@@ -139,16 +155,19 @@ public class main {
                             cardsecond.getUsername()+" "+ cardsecond.getElementType() + "("+cardsecond.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardfirst;
                 }
                 else if(cardfirst.getDamage() < cardsecond.getDamage()) {
                     System.out.println(cardsecond.getUsername() + ": " + cardsecond.getElementType() + "("+cardsecond.getDamage() +") wins: " +" vs "+
                             cardfirst.getUsername()+" "+ cardfirst.getElementType() + "("+cardfirst.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardsecond;
                 }else {
                     System.out.println("------------DRAW-------------");
                     System.out.flush();
                     System.setOut(old);
+                    return null;
                 }
             }
             else{
@@ -158,17 +177,21 @@ public class main {
                             cardsecond.getUsername()+" "+ cardsecond.getElementType() + "("+cardsecond.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardfirst;
                 } else if (cardfirst.getDamage() < cardsecond.getDamage()) {
                     System.out.println(cardsecond.getUsername() + ": " + cardsecond.getElementType() + "("+cardsecond.getDamage() +") wins: " +" vs "+
                             cardfirst.getUsername()+" "+ cardfirst.getElementType() + "("+cardfirst.getDamage() +")" );
                     System.out.flush();
                     System.setOut(old);
+                    return cardsecond;
                 } else {
                     System.out.println("-------------draw-----------");
                     System.out.flush();
                     System.setOut(old);
+                    return cardfirst;
                 }
             }
+            return null;
            // return "Test!!!!!!!!!!!!!!!!!!!!!!!!!!!!!";
         }
 
@@ -205,8 +228,8 @@ public class main {
       //  }
 
 
-        User usereins = new User("Ray", "Password");
-        User userzwei = new User("Drake", "PasswordZwei");
+        //User usereins = new User("Ray", "Password");
+        //User userzwei = new User("Drake", "PasswordZwei");
 
     }
 

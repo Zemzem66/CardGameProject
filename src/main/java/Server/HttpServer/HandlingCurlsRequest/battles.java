@@ -36,7 +36,8 @@ private String username;
         String testTestOne = driverMangerConnection.getdeckK(conn,"kienboec");
         String testTestSecond = driverMangerConnection.getdeckA(conn,"altenhof");
        // return
-        driverMangerConnection.fight();
+        String battle = driverMangerConnection.fight();
+        /*
         if(battleSecond != null)
         {
             String startBattle = driverMangerConnection.battleStart(conn,battleFirst,battleSecond);
@@ -57,5 +58,8 @@ private String username;
         //else{
         //}
        // return "THIS IS THE USER WHO WANTS TO BATTLE : " + opponent;
+
+         */
+        return battle;
     }
 }

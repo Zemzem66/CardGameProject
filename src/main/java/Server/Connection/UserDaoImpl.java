@@ -31,7 +31,7 @@ public class UserDaoImpl implements Dao{
             Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CardGame","postgres","");
             PreparedStatement statement = connection.prepareStatement(" SELECT * FROM user where username = ? AND password = ?; ");
 
-            User data = new User("admin","admin");
+        //    User data = new User("admin","admin");
             statement.setString(1, Username);
             statement.setString(2,password);
            // statement.setString(3, password);
@@ -51,10 +51,10 @@ public class UserDaoImpl implements Dao{
             Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CardGame","postgres","");
             PreparedStatement statement = connection.prepareStatement("DROP user (userId,username, password) VALUES (?,?,?); ");
 
-            User data = new User("admin","admin");
+            //User data = new User("admin","admin");
             statement.setInt(1, 1);
-            statement.setString(2,data.getUsername());
-            statement.setString(3, data.getPassword());
+           // statement.setString(2,data.getUsername());
+            //statement.setString(3, data.getPassword());
             statement.execute();
         } catch (SQLException ex)
         {
@@ -72,7 +72,7 @@ public class UserDaoImpl implements Dao{
             Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CardGame","postgres","");
             PreparedStatement statement = connection.prepareStatement("INSERT INTO user(username, password) VALUES (?,?); ");
 
-            User data = new User("admin","admin");
+            //User data = new User("admin","admin");
 
            // statement.setInt(1, 1);
             statement.setString(1,Username);

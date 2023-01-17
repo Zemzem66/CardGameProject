@@ -4,6 +4,8 @@ public abstract class Card {
 
 
 
+
+    String cardId;
     String username;
     //Klasse, NOETIG ODER NICHT
     String monsterName;
@@ -42,6 +44,13 @@ public abstract class Card {
     }
     public String getUsername() {
         return username;
+    }
+    public String getCardId() {
+        return cardId;
+    }
+
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
     }
 
     public void setUsername(String username) {

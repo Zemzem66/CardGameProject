@@ -91,8 +91,8 @@ public class HelloApplication extends Application {
         //ElementType.FIRE
 
 
-        User playerOne = new User("Mike", "1234567");
-        User playerTwo = new User("Kayle", "1234567");
+        //User playerOne = new User("Mike", "1234567");
+        //User playerTwo = new User("Kayle", "1234567");
         //Wizard, damage, health, element -> fire, normal, water -> String
 
         MonsterName monsterName;
@@ -108,8 +108,8 @@ public class HelloApplication extends Application {
 
         //<--TODO: MonsterCard goblin = new Goblin(15,1,ElementType.randomElement(),MonsterName.Golbin); das ist alte Version
 
-        playerOne.printUserName(); //Player one <<<<<<<<<<<<<<<<-------------------------
-        playerTwo.printUserName(); //Player two <<<<<<<<<<<<<<<--------------------------
+      //  playerOne.printUserName(); //Player one <<<<<<<<<<<<<<<<-------------------------
+       // playerTwo.printUserName(); //Player two <<<<<<<<<<<<<<<--------------------------
         //  myWizzard.getMonsterName(); !!!!!! Fragen !!!!!
         MonsterName wizardName = MonsterName.Wizard;
         System.out.println(wizardName);

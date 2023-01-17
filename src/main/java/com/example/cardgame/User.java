@@ -6,6 +6,10 @@ import java.util.List;
 
 public class User {
 
+    String cardId;
+
+
+
     //ROUNDS MAX 100
     int userId;
 
@@ -16,10 +20,15 @@ public class User {
     public Deck getDeck() {
         return deck;
     }
+    public String getCardId() {
+        return cardId;
+    }
 
+    public void setCardId(String cardId) {
+        this.cardId = cardId;
+    }
     Deck deck;
     public User() {
-
     }
 
     public int getUserId() {
@@ -70,13 +79,16 @@ public class User {
     //Server.Server serverReqeuet = new Server.Server();
 
     String password; // password
+  /*
     public User(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
+   */
+
     public String getUsername() {
-        return username+"\r";
+        return username;
     }
 
     public void setUsername(String username) {

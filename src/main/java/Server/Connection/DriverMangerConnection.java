@@ -9,6 +9,9 @@ public class DriverMangerConnection {
     static Connection connection;
     Deck deckFirst = new Deck();
     Deck deckSecond = new Deck();
+
+    User usersFirst = new User();
+    User usersSecond = new User();
     public static Connection Connection /*connection*/() {
 
 
@@ -655,50 +658,6 @@ public class DriverMangerConnection {
                 cardFour = rs.getString(4);
 
             }
-            /*
-            rs = stmt.executeQuery("SELECT ctype,etype,damage,monsterspellname from cards where cardOne ;");
-            while (rs.next()) {
-                ctype = rs.getString(1);
-                etype = rs.getString(2);
-                damageValue = rs.getInt(3);
-                monsterspellname = rs.getString(4);
-                //onsterName monsterName, ElementType elementType, int damage, CardType cardType
-                Card cards1 = new Card(monsterspellname, etype, damageValue, ctype) {
-                    @Override
-                    public String name() {
-                        return null;
-                    }
-
-                    @Override
-                    public double damage() {
-                        return 0;
-                    }
-
-                    @Override
-                    public String elementType() {
-                        return null;
-                    }
-
-                    @Override
-                    public String cardType() {
-                        return null;
-                    }
-                };
-                //   List<Card> deck = new ArrayList<>();
-                Deck deck = new Deck();
-                deck.setCard1(cards1);
-                User users = new User();
-                users.setDeck((List<Card>) deck);
-                //
-                // deck.setCard1(deck);
-                //  users.setDeck(deck)
-                //deck.add(cards);
-                //users.setDeck((List<Card>) deck);
-
-
-                //Deck decks = new Deck(cards);
-            }
-*/
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
@@ -842,7 +801,6 @@ public class DriverMangerConnection {
                     cardtrade = rs.getString(2);
                     type = rs.getString(3);
                     givecard = rs.getString(4);
-
                     mindamage = rs.getString(5);
                     //return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
                 }
@@ -947,17 +905,23 @@ public class DriverMangerConnection {
                         {
 
                           Card cardOne = new MonsterCard(damage, etype,monsterspell,usernameK);
-                          User users = new User();
+                          cardOne.setCardId(cardone);
                           deckFirst.setMyCards(cardOne);
-                          users.setDeck(deckFirst);
-                            System.out.println("What inse my array " + users.getDeck());
+                          usersFirst.setDeck(deckFirst);
+                          usersFirst.setCardId(cardone);
+                          usersFirst.setUsername(usernameK);
+
+                            System.out.println("What inse my array " + usersFirst.getDeck());
                         }else if(ctype.equals("Spell"))
                         {
                             Card cardOne = new SpellCard(damage, etype,monsterspell,usernameK);
-                            User users = new User();
+                            cardOne.setCardId(cardone);
+                            usersFirst.setCardId(cardone);
                             deckFirst.setMyCards(cardOne);
-                            users.setDeck(deckFirst);
-                            System.out.println("What inse my array " + users.getDeck());
+                            usersFirst.setDeck(deckFirst);
+                            usersFirst.setUsername(usernameK);
+
+                            System.out.println("What inse my array " + usersFirst.getDeck());
                         }
                         System.out.println("User:"+usernameK+" For + CARD ONE :"+ cardone +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
                     }
@@ -965,7 +929,6 @@ public class DriverMangerConnection {
                 statementCardTwo.setString(1, cardtwo);
                 ResultSet rsTwo = statementCardTwo.executeQuery();
                 while (rsTwo.next()) {
-                    System.out.println(cardone);
                     ctype = rsTwo.getString(1);
                     etype = rsTwo.getString(2);
                     damage = rsTwo.getInt(3);
@@ -973,15 +936,20 @@ public class DriverMangerConnection {
                     if(ctype.equals("Monster"))
                     {
                         Card cardTwo = new MonsterCard(damage, etype,monsterspell,usernameK);
-                        User users = new User();
+                        cardTwo.setCardId(cardtwo);
                         deckFirst.setMyCards(cardTwo);
-                        users.setDeck(deckFirst);
+                        usersFirst.setDeck(deckFirst);
+                        usersFirst.setUsername(usernameK);
+
                     }else if(ctype.equals("Spell"))
                     {
                         Card cardTwo = new SpellCard(damage, etype,monsterspell,usernameK);
-                        User users = new User();
+                        cardTwo.setCardId(cardtwo);
+                        usersFirst.setCardId(cardtwo);
                         deckFirst.setMyCards(cardTwo);
-                        users.setDeck(deckFirst);
+                        usersFirst.setDeck(deckFirst);
+                        usersFirst.setUsername(usernameK);
+
                     }
                     System.out.println("User:"+usernameK+"For + CARD Two :"+ cardtwo +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
                 }
@@ -989,7 +957,6 @@ public class DriverMangerConnection {
                 statementCardThree.setString(1, cardthree);
                 ResultSet rsThree = statementCardThree.executeQuery();
                 while (rsThree.next()) {
-                    System.out.println(cardthree);
                     ctype = rsThree.getString(1);
                     etype = rsThree.getString(2);
                     damage = rsThree.getInt(3);
@@ -997,15 +964,22 @@ public class DriverMangerConnection {
                     if(ctype.equals("Monster"))
                     {
                         Card cardThree = new MonsterCard(damage, etype,monsterspell,usernameK);
-                        User users = new User();
+                        cardThree.setCardId(cardthree);
+                        usersFirst.setCardId(cardthree);
                         deckFirst.setMyCards(cardThree);
-                        users.setDeck(deckFirst);
+                        usersFirst.setDeck(deckFirst);
+                        usersFirst.setUsername(usernameK);
+
                     }else if(ctype.equals("Spell"))
                     {
                         Card cardThree = new SpellCard(damage, etype,monsterspell,usernameK);
-                        User users = new User();
+                        cardThree.setCardId(cardthree);
+                        usersFirst.setCardId(cardthree);
+
                         deckFirst.setMyCards(cardThree);
-                        users.setDeck(deckFirst);
+                        usersFirst.setDeck(deckFirst);
+                        usersFirst.setUsername(usernameK);
+
                     }
 
                     System.out.println("User:"+usernameK+"For + CARD Three :"+ cardthree +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
@@ -1023,16 +997,22 @@ public class DriverMangerConnection {
                     if(ctype.equals("Monster"))
                     {
                         Card cardFourth = new MonsterCard(damage, etype,monsterspell,usernameK);
-                        User users = new User();
+                        cardFourth.setCardId(cardFour);
+                        usersFirst.setCardId(cardFour);
                         deckFirst.setMyCards(cardFourth);
-                        users.setDeck(deckFirst);
+                        usersFirst.setDeck(deckFirst);
+                        usersFirst.setUsername(usernameK);
+
                     }else if(ctype.equals("Spell"))
                     {
                         Card cardFourth = new SpellCard(damage, etype,monsterspell,usernameK);
-
-                        User users = new User();
+                        cardFourth.setCardId(cardFour);
+                        usersFirst.setCardId(cardFour);
                         deckFirst.setMyCards(cardFourth);
-                        users.setDeck(deckFirst);
+                        usersFirst.setDeck(deckFirst);
+                        usersFirst.setUsername(usernameK);
+
+
                     }
                     System.out.println("User:"+usernameK+"For + CARD Four :"+ cardFour +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
                 }
@@ -1083,17 +1063,25 @@ public class DriverMangerConnection {
                 {
 
                     Card cardOne = new MonsterCard(damage, etype,monsterspell,usernameK);
-                    User users = new User();
+                    cardOne.setCardId(cardone);
+                    usersSecond.setCardId(cardone);
+
                     deckSecond.setMyCards(cardOne);
-                    users.setDeck(deckSecond);
-                    System.out.println("What inse my array " + users.getDeck());
+                    usersSecond.setDeck(deckSecond);
+                    usersSecond.setUsername(usernameK);
+
+                    System.out.println("What inse my array " + usersSecond.getDeck());
                 }else if(ctype.equals("Spell"))
                 {
                     Card cardOne = new SpellCard(damage, etype,monsterspell,usernameK);
-                    User users = new User();
+                    cardOne.setCardId(cardone);
+                    usersSecond.setCardId(cardone);
+
                     deckSecond.setMyCards(cardOne);
-                    users.setDeck(deckSecond);
-                    System.out.println("What inse my array " + users.getDeck());
+                    usersSecond.setDeck(deckSecond);
+                    usersSecond.setUsername(usernameK);
+
+                    System.out.println("What inse my array " + usersSecond.getDeck());
                 }
                 System.out.println("User:"+usernameK+" For + CARD ONE :"+ cardone +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
             }
@@ -1101,7 +1089,6 @@ public class DriverMangerConnection {
             statementCardTwo.setString(1, cardtwo);
             ResultSet rsTwo = statementCardTwo.executeQuery();
             while (rsTwo.next()) {
-                System.out.println(cardone);
                 ctype = rsTwo.getString(1);
                 etype = rsTwo.getString(2);
                 damage = rsTwo.getInt(3);
@@ -1109,15 +1096,22 @@ public class DriverMangerConnection {
                 if(ctype.equals("Monster"))
                 {
                     Card cardTwo = new MonsterCard(damage, etype,monsterspell,usernameK);
-                    User users = new User();
+                    cardTwo.setCardId(cardtwo);
+                    usersSecond.setCardId(cardtwo);
+
                     deckSecond.setMyCards(cardTwo);
-                    users.setDeck(deckSecond);
+                    usersSecond.setDeck(deckSecond);
+                    usersSecond.setUsername(usernameK);
+
                 }else if(ctype.equals("Spell"))
                 {
                     Card cardTwo = new SpellCard(damage, etype,monsterspell,usernameK);
-                    User users = new User();
+                    cardTwo.setCardId(cardtwo);
+                    usersSecond.setCardId(cardtwo);
                     deckSecond.setMyCards(cardTwo);
-                    users.setDeck(deckSecond);
+                    usersSecond.setDeck(deckSecond);
+                    usersSecond.setUsername(usernameK);
+
                 }
                 System.out.println("User:"+usernameK+"For + CARD Two :"+ cardtwo +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
             }
@@ -1125,7 +1119,6 @@ public class DriverMangerConnection {
             statementCardThree.setString(1, cardthree);
             ResultSet rsThree = statementCardThree.executeQuery();
             while (rsThree.next()) {
-                System.out.println(cardthree);
                 ctype = rsThree.getString(1);
                 etype = rsThree.getString(2);
                 damage = rsThree.getInt(3);
@@ -1133,15 +1126,21 @@ public class DriverMangerConnection {
                 if(ctype.equals("Monster"))
                 {
                     Card cardThree = new MonsterCard(damage, etype,monsterspell,usernameK);
-                    User users = new User();
+                    cardThree.setCardId(cardthree);
+                    usersSecond.setCardId(cardthree);
                     deckSecond.setMyCards(cardThree);
-                    users.setDeck(deckSecond);
+                    usersSecond.setDeck(deckSecond);
+                    usersSecond.setUsername(usernameK);
+
                 }else if(ctype.equals("Spell"))
                 {
                     Card cardThree = new SpellCard(damage, etype,monsterspell,usernameK);
-                    User users = new User();
+                    cardThree.setCardId(cardthree);
+                    usersSecond.setCardId(cardthree);
                     deckSecond.setMyCards(cardThree);
-                    users.setDeck(deckSecond);
+                    usersSecond.setDeck(deckSecond);
+                    usersSecond.setUsername(usernameK);
+
                 }
 
                 System.out.println("User:"+usernameK+"For + CARD Three :"+ cardthree +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
@@ -1156,27 +1155,24 @@ public class DriverMangerConnection {
                 etype = rsFour.getString(2);
                 damage = rsFour.getInt(3);
                 monsterspell = rsFour.getString(4);
-                // String monsterspellname, String etype, int damageValue, String ctype
-                //   Card cardTwo  = new Card(monsterspell, etype, damage, ctype);
-                //  Deck deck = new Deck();
-                // User users = new User();
-                //deck.setCard1(cardTwo);
-                //users.setDeck(deck);
-                // MonsterCard
 
                 if(ctype.equals("Monster"))
                 {
                     Card cardFourth = new MonsterCard(damage, etype,monsterspell,usernameK);
-                    User users = new User();
+                    cardFourth.setCardId(cardFour);
+                    usersSecond.setCardId(cardFour);
                     deckSecond.setMyCards(cardFourth);
-                    users.setDeck(deckSecond);
+                    usersSecond.setDeck(deckSecond);
+                    usersSecond.setUsername(usernameK);
                 }else if(ctype.equals("Spell"))
                 {
                     Card cardFourth = new SpellCard(damage, etype,monsterspell,usernameK);
-
-                    User users = new User();
+                    cardFourth.setCardId(cardFour);
+                    usersSecond.setCardId(cardFour);
                     deckSecond.setMyCards(cardFourth);
-                    users.setDeck(deckSecond);
+                    usersSecond.setDeck(deckSecond);
+                    usersSecond.setUsername(usernameK);
+
                 }
 
                 System.out.println("User:"+usernameK+"For + CARD Four :"+ cardFour +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
@@ -1191,12 +1187,58 @@ public class DriverMangerConnection {
         return "User " + username + " was created!";
 
     }
-    public void fight()
+    public String fight()
     {
         main myMain = new main();
-       // for(int i = 0; i < 100; i++){
-        Collections.shuffle(deckFirst.getMyCards());
-        Collections.shuffle(deckSecond.getMyCards());
+        for(int i = 0; i < 100; i++) {
+            //String loser;
+            // Collections.shuffle(deckFirst.getMyCards());
+            Collections.shuffle(usersFirst.getDeck().getMyCards());
+            Collections.shuffle(usersFirst.getDeck().getMyCards());
+
+            Card Winner = myMain.fight(usersFirst.getDeck().getMyCards().get(0), usersSecond.getDeck().getMyCards().get(0));
+            if(Winner == null)
+            {
+                System.out.println("-------------DRAAAAAWWW----------------");
+            }else{
+            Collections.shuffle(usersFirst.getDeck().getMyCards());
+            Collections.shuffle(usersSecond.getDeck().getMyCards());
+            System.out.println("The card who win is: " + Winner.getUsername() + " the card id " + Winner.getCardId());
+            if (Winner.getUsername() != usersFirst.getUsername()) {
+
+                try {
+                    PreparedStatement updateCards = connection.prepareStatement("UPDATE cards set owner = ? where cardid = ?;");
+                    updateCards.setString(1, Winner.getUsername());
+                    updateCards.setString(2, usersFirst.getCardId());
+
+                    updateCards.executeUpdate();
+                    //remove vielleicht
+                } catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+                //usersFirst.getDeck().getMyCards().remove(0);
+            } else if (Winner.getUsername() != usersSecond.getUsername()) {
+                try {
+                    PreparedStatement updateCards = connection.prepareStatement("UPDATE cards set owner = ? where cardid = ?;");
+                    updateCards.setString(1, Winner.getUsername());
+                    updateCards.setString(2, usersSecond.getCardId());
+                    updateCards.executeUpdate();
+                } catch (SQLException exception) {
+                    exception.printStackTrace();
+                }
+               // usersFirst.getDeck().getMyCards().remove(0);
+
+            }
+            }
+        }
+        // Collections.shuffle(deckSecond.getMyCards());
+
+        //System.out.println(usersFirst.getUsername()+": first user++");
+        //System.out.println(usersSecond.getUsername()+": second user++");
+
+
+
+        /*
         myMain.fight(deckFirst.getMyCards().get(0), deckSecond.getMyCards().get(0));
         if(deckFirst.getMyCards().get(0).getDamage() > deckSecond.getMyCards().get(0).getDamage())
         {
@@ -1210,7 +1252,9 @@ public class DriverMangerConnection {
             System.out.println("DRAAAW");
         }
         //}
-        myMain.battleLog();
+
+         */
+         return myMain.battleLog();
     }
     public String deleteDeck(Connection connection)
     {
