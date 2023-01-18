@@ -5,9 +5,6 @@ import java.util.List;
 
 public class Deck {
 
-
-
-
     List<Card> myCards = new ArrayList<Card>();
 
     public List<Card> getMyCards() {

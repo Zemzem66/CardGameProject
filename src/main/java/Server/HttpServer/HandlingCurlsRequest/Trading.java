@@ -23,8 +23,6 @@ public class Trading {
     public void setName(String name) {
         Name = name;
     }
-
-    String requestBody;
     String[] requestStorage;
     String[] cStorage;
     String cutFirst;
@@ -42,10 +40,9 @@ public class Trading {
         if(Name.equals("kienboec"))
         {
             setName("kienboec");
-            // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
 
-            String show = driverMangerConnection.showTradingK(conn);//"Tradings OF kienboec"; //driverMangerConnection.showDecksK(conn);
+            String show = driverMangerConnection.showTradingK(conn);
 
             return show;
         }else if (Name.equals("altenhof"))
@@ -53,8 +50,6 @@ public class Trading {
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
             String show = driverMangerConnection.showTradingA(conn);
-
-            //driverMangerConnection.showDecksA(conn);
             return show;
         }
         else{
@@ -63,7 +58,6 @@ public class Trading {
     }
     public String createTrading(Request request)
     {
-       // DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
         System.out.println("ACQUIRE PACKAGES--------------------------- ");
         String authorization = request.getHeaderMap().get("Authorization");
         String Input = null;
@@ -122,14 +116,12 @@ public class Trading {
             return testCon;
 
 
-           // return "Test";//create;
         }
         else if (Name.equals("altenhof"))
         {
-            //String create =;
-            return "Test";///create;
+            return "No Tradings for Altenhof";
         }
-        return " test";
+        return " No Trades Possible!";
     }
 
     public String deleteTrading(Request request)
@@ -141,8 +133,6 @@ public class Trading {
         Connection conn = driverMangerConnection.Connection();
         String deletedPath = driverMangerConnection.deletePath(conn, finishedPath);
         return deletedPath;
-       // System.out.println("What is inside the pathname SECOND:" + finishedPath);
-     //   return reqeustBody;
     }
 
     public String tryToTrade(Request request)
@@ -168,13 +158,11 @@ public class Trading {
             DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
             Connection conn = driverMangerConnection.Connection();
             String completedTrade = driverMangerConnection.completeTrade(conn, finalCut, Name);
-       //     completeTrade
-
 
             return completedTrade;
         }
         else {
-            return "HELO !";
+            return "Trade Fail!";
         }
 
     }

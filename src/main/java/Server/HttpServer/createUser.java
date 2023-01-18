@@ -13,10 +13,6 @@ import java.util.List;
 
 public class createUser extends ControllMapper {
 
-  //  public createUser(ObjectMapper objectMapper) {
-    //    super(objectMapper);
-   // }
-
     private Dao userDao;
     public createUser()
     {

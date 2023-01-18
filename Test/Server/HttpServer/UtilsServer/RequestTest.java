@@ -27,14 +27,14 @@ class RequestTest {
     }
 
     @Test
-    void testGetServiceRouteWithRoute() {
+    void testBasicRoute() {
         Request request = new Request();
         request.setPathname("/echo");
         assertEquals("/echo", request.getServiceRoute());
     }
 
     @Test
-    void testGetServiceRouteWithSubRoute() {
+    void testAdvancedRoute() {
         Request request = new Request();
         request.setPathname("/echo/1/cards");
 

@@ -29,7 +29,6 @@ public class ConfiguredDeck {
     public String confDeck(Request request)
     {
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
-        System.out.println("CONFIGURED DECK--------------------------- ");
         String authorization = request.getHeaderMap().get("Authorization");
         requestStorage = authorization.split(" ");
         cStorage = requestStorage[1].split("-");
@@ -96,6 +95,6 @@ public class ConfiguredDeck {
             String testCon =driverMangerConnection.createDeck(conn,cardsA.get(0),cardsA.get(1),cardsA.get(2),cardsA.get(3),"altenhof");
             return  testCon;
         }
-        return "HALLOOO!!!!";
+        return "Success!";
     }
 }

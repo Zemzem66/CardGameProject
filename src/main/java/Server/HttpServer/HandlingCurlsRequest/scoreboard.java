@@ -33,7 +33,6 @@ public class scoreboard {
         if(Name.equals("kienboec"))
         {
             setName("kienboec");
-            // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
             String show = driverMangerConnection.showScoreboardK(conn);
             return show;

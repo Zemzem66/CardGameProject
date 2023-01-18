@@ -36,27 +36,17 @@ public class ShowMyCards {
             // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
             driverMangerConnection.ShowK(conn);
-
-            //   driverMangerConnection.AcquirePackageK(conn);
             return "kienboc";
-            //System.out.println("ITS KIENBOC ");
         }else if (Name.equals("altenhof"))
         {
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
-            // String User = "altenhof";
             String show = driverMangerConnection.ShowK(conn);
-            //   driverMangerConnection.AcquirePackageA(conn);
-            //System.out.println("ITS altenhof ");
+
             return show;
         }
         else{
-            return" CANT SHOW DECK"   ;
+            return" CANT SHOW DECK";
         }
-        //String userBody = request.getBody();
-        //String[] valuePair = userBody.split(",");
-
-
     }
-
 }

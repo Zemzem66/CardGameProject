@@ -7,16 +7,6 @@ public class Goblin extends MonsterCard  {
         super(damage, elementType,monsterName,username);
     }
 
-    //public int getNormal() {return normal;}
-
-    //public void setNormal(int normal) {
-      //  this.normal = normal;
-    //}
-
-    //public MonsterCard getMyMonsterCard() {return myMonsterCard;}
-
-    //public void setMyMonsterCard(MonsterCard myMonsterCard) {this.myMonsterCard = myMonsterCard;}
-
     public void setDecreaseHealth(int damage)
     {
         this.health -=damage;
@@ -36,6 +26,5 @@ public class Goblin extends MonsterCard  {
         return null;
     }
 
-    //MonsterCard myMonsterCard = new MonsterCard(damage, normal,normal, health);
 
 }

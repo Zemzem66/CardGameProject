@@ -7,15 +7,6 @@ public class Check {
         //Connection connection = lockConnection();
         String sql = "Select something from Database";
 
-
-        //try{
-          //  PreparedStatement statement =  connection.prepareStatement(sql);
-            //if(statement != null)
-            //{
-              //  statement.setString(1,id);
-            //}
-
-        //}
     return true;
     }
 

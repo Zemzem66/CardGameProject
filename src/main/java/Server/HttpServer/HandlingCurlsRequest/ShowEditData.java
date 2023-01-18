@@ -32,20 +32,17 @@ public class ShowEditData {
         String Name = cStorage[0];
         System.out.println(Name);
         if (CheckURL.equals("/users/kienboec")) {
-           // if (Name.equals("kienboec")) {
                 setName("kienboec");
                 // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
                 Connection conn = driverMangerConnection.Connection();
                 String show = driverMangerConnection.showEditsK(conn);
                 return show;
-           // }
         } else if (CheckURL.equals("/users/altenhof")) {
-          //if (Name.equals("altenhof")) {
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
             String show = driverMangerConnection.showEditsA(conn);
             return show;
-        //}
+
         }
         else{
             return "Fail No such User";

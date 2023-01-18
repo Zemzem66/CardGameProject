@@ -33,9 +33,6 @@ public class Server {
             while(true) {
                 Socket clientConnection = serverSocket.accept();
                 executorService.execute(new RequestHandler(clientConnection));
-                //executorService.execute(new RequestHandler(clientConnection).TestRequest(request));
-               // RequestHandler test = new RequestHandler(clientConnection);
-               // test.TestRequest(request);
             }
         }
     }

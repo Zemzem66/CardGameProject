@@ -1,7 +1,6 @@
 package Server.HttpServer.HandlingCurlsRequest;
 
 import Server.Connection.DriverMangerConnection;
-import Server.Connection.UserDaoImpl;
 import Server.HttpServer.UtilsServer.Request;
 
 import java.sql.Connection;
@@ -9,12 +8,10 @@ import java.sql.Connection;
 public class LoginInUser {
 
     public String _userContent;
-    UserDaoImpl userDb= new UserDaoImpl();
     public String username;
     public String password;
     public String StringItemStorage;
     public String SplitViaDoublePoint[];
-    UserDaoImpl createUserDatabase = new UserDaoImpl();
     public String cutFirst;
     public String cutSecond;
 
@@ -54,18 +51,12 @@ public class LoginInUser {
                 password = cutSecond;
                 System.out.println(password);
             }
-            //}
-            // [] = StringItemStorage.split(":");
-            // cutFirst = SplitViaDoublePoint
+
         }
-        // String []
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
-        //Server connection and add
         Connection conn = driverMangerConnection.Connection();
         String testCon =driverMangerConnection.LogIn(conn,username,password);
-        //   Connection conn = userDb.add(username,password);
-        //_userContent = String.valueOf(conn);
-        System.out.println("TEST---");
+
         return testCon;
     }
 }

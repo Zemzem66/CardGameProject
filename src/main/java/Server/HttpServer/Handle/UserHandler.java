@@ -28,25 +28,5 @@ public class UserHandler implements HandleRequestService {
         }
         return new Response(HttpStatus.BAD_REQUEST, ContentType.JSON,"[]");
     }
-/*
-    public String TestRequest(Request request)
-    {
-        String input = request.getBody();
-        Method method = request.getMethod();
-        String path = request.getPathname();
-        if(path.equals("/user")  && method == Method.POST)
-        {
-            input = String.valueOf(new createUser()); // muss implementiert werden
-        } else if (path.equals("/sessions") && method == Method.POST) {
-            input = String.valueOf(new LoginUser());
-        } else if (path.equals("/packages") && method == Method.POST) {
-            input = String.valueOf(new createPackage());
-        } else if (path.equals("/transactions/packages") && method == Method.POST) {
-            input = String.valueOf(new handlePackage());
-        }else if ()
-        {
 
-        }
-
-  */
 }

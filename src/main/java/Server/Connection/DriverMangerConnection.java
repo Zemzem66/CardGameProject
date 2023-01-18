@@ -18,34 +18,10 @@ public class DriverMangerConnection {
         try {
             connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "");
             System.out.println("The connection is succesfull");
-        /*    PreparedStatement statement = connection.prepareStatement("INSERT INTO account (id,username, password) VALUES (?,?,?); ");
-/
-            User data = new User("admin","admin");
-            statement.setInt(1, 1);
-            statement.setString(2,data.getUsername());
-            statement.setString(3, data.getPassword());
-            statement.execute();
-            */
 
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
-
-        ///Funktioniert
-        /*
-        Connection conn = null;
-        try{
-           // jdbc:sqlserver://mssql_2:1433;DatabaseName=gls
-            conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/CardGame","postgres","");
-            System.out.println("Connection was succesfully");
-        }catch(SQLException e)
-        {
-            System.out.println(e.getMessage());
-        }
-        return conn; 
-        
-    */
-
         return connection;
     }
 
@@ -68,12 +44,6 @@ public class DriverMangerConnection {
         }
         return "User " + username + " was created!";
     }
-     /*
-    public static void main(String[] args)
-    {
-        DriverMangerConnection.Connection();
-        //DriverMangerConnection.connection();
-    }*/
 
     public String LogIn(Connection connection, String username, String password) {
         try {
@@ -130,19 +100,8 @@ public class DriverMangerConnection {
     int newId;
 
     public String createCard(Connection connection, String cardId, double damage, String ctype, String etype, String name, String owner, int myId) {
-        //TODO BEIM UEBERGEBEN IST IMMER AM ANFANG 0  muss gefixt werden.
         try {
-            /*
-            ResultSet rs;
-            Statement stmt;
-            stmt =connection.createStatement();
-            rs = stmt.executeQuery("SELECT packagesid from packages;");
-           // newId++;
-            while (rs.next()) {
-               setNewId(rs.getInt("packagesid"));
-            }
-                System.out.println("Package Number : " + newId);
-             */
+
             PreparedStatement takeIP = connection.prepareStatement("SELECT id from packages;");
             ResultSet resultSet = takeIP.executeQuery();
             while (resultSet.next()) {
@@ -175,7 +134,6 @@ public class DriverMangerConnection {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO admin (ad) VALUES (?); ");
 
             statement.setString(1, admin);
-            //   statement.setString(2,ad);
             statement.execute();
             System.out.println(admin + " + ad + ");
 
@@ -218,19 +176,13 @@ public class DriverMangerConnection {
                 }
                 return "kienboec got Package:" + miniumID;
             }
-            // }
-            // rs.close();
-            // stmt.close();
-
-
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
-        return " KIENBOC ";
+        return "KIENBOC";
 
     }
     public String AcquirePackageA(Connection connection) {
-        // TODO: 11.01.2023 ALTENHOF MUSS NOCH RICHTIG GESTELLT WERDEN
         int token = 0;
         try {
             ResultSet rs;
@@ -263,9 +215,7 @@ public class DriverMangerConnection {
 
                 PreparedStatement statementUpdateV = connection.prepareStatement("UPDATE cards set id = ? where owner = ''");
                 statementUpdateV.setInt(1, 7);
-                // statementUpdateV.setString(2,"");
-                //statementUpdate.setInt(2, miniumID);
-                //System.out.println("OWNER TESSSSST: " + miniumID);
+
                 statementUpdateV.executeUpdate();
 
                 PreparedStatement statementUpdate = connection.prepareStatement("UPDATE cards set owner = ? where id = ?");
@@ -274,64 +224,11 @@ public class DriverMangerConnection {
 
                 return "altenhof got Package:" + miniumID;
             }
-            // }
-            //    rs.close();
-            //  stmt.close();
-            // return "altenhof";
+
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
         return "altenhof";
-
-
-/*
-        int token = 0;
-        try{
-            ResultSet rs;
-            Statement stmt;
-            stmt =connection.createStatement();
-            rs = stmt.executeQuery("SELECT token from accounts where username = 'altenhof'");
-            while (rs.next()) {
-                token = rs.getInt(1);
-                System.out.println(token + "THIS IS MY TOKEN its altenhof");
-                //rs = stmt.executeQuery("UPDATE accounts set token = ? where username = 'kienboec'");
-
-                //TO SET THE TOKEN -5
-                PreparedStatement statement = connection.prepareStatement("UPDATE accounts set token = ? where username = 'altenhof'");
-
-                token -= 5;
-                statement.setInt(1,token);
-                statement.executeUpdate();
-
-                //TO GET THE PACKAGES AND STORE IT IN TO THE DATABASE
-
-                /*tring packageId;
-                PreparedStatement getPackage = connection.prepareStatement("SELECT cardid where FIRST_VALUE(id) FROM packages");
-                getPackage.next();
-
-                 */
-
-/*
-
-                System.out.println("This is the round to set the token down: " + token);
-            }
-            if(token < 0 )
-            {
-                System.out.println("NO MONEY!");
-                return "NO MONEY!";
-            }
-
-            // }
-            rs.close();
-            stmt.close();
-
-
-        }catch (SQLException exception)
-        {
-            exception.printStackTrace();
-        }
-        return  token+" : return value of token ";
- */
 
     }
     public String AcquirePackageT(Connection connection, String Username) {
@@ -432,7 +329,6 @@ public class DriverMangerConnection {
                     element = rs.getString(1);
                     card = rs.getString(2);
                     MonsterSpell = rs.getString(3);
-                    //return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
                 }
             }
         } catch (SQLException exception) {
@@ -461,24 +357,11 @@ public class DriverMangerConnection {
     }
 
 
-    //Show unconfirgemdDeck
     String UsernameR;
 
     public String createDeck(Connection connection, String testIdFirst, String testIdSecond, String testIdThree, String testIdFour, String Username) {
         try {
-/*
-            ResultSet rs;
-            Statement stmt;
-            //PreparedStatement statement;
-            stmt =connection.createStatement();
-            rs = stmt.executeQuery("SELECT cardId from cards where owner = 'kienboec'; ");
-            while(rs.next()) {
-                UsernameR = rs.getString(1);
-                ///card = rs.getString(2);
-                //MonsterSpell = rs.getString(3);
 
- */
-            // if(UsernameR == "kienboec") {
             PreparedStatement statement = connection.prepareStatement("INSERT INTO deck (cardIdFirst,cardIdSecond,cardIdThree,cardIdFour,username) VALUES (?,?,?,?,?); ");
             statement.setString(1, testIdFirst);
             statement.setString(2, testIdSecond);
@@ -486,32 +369,7 @@ public class DriverMangerConnection {
             statement.setString(4, testIdFour);
             statement.setString(5, Username);
             statement.execute();
-            //}
-            /*
-            rs = stmt.executeQuery("SELECT cardId from cards where owner = 'altenhof'; ");
-            while(rs.next()) {
-                UsernameR = rs.getString(1);
-                ///card = rs.getString(2);
-                //MonsterSpell = rs.getString(3);
 
-
-                // if(UsernameR == "kienboec") {
-                statement = connection.prepareStatement("INSERT INTO deck (cardIdFirst,cardIdSecond,cardIdThree,cardIdFour,cardFive,username) VALUES (?,?,?,?,?,?); ");
-                statement.setString(1, UsernameR);
-                statement.setString(2, UsernameR);
-                statement.setString(3, UsernameR);
-                statement.setString(4, UsernameR);
-                statement.setString(5, UsernameR);
-                statement.setString(6, "altenhof");
-                statement.execute();
-            }
-
-             */
-
-            //   statement.setString(2,ad);
-
-            // }
-            //    System.out.println(testIdFirst +" + ad + " );
 
         } catch (SQLException exception) {
             exception.printStackTrace();
@@ -519,12 +377,6 @@ public class DriverMangerConnection {
         return " WITH PACKED was created!";
     }
 
-    /*
-    public String ShowUDeck(Connection connection)
-    {
-
-    }
-     */
     String showCardIdOne;
     String showCardIdTwo;
     String showCardIdThree;
@@ -725,42 +577,10 @@ public class DriverMangerConnection {
                 cardTwo = rs.getString(2);
                 cardThree = rs.getString(3);
                 cardFour = rs.getString(4);
-
             }
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
-        //stmt;
-
-            /*
-//TODO: DIE WERTE ID NEHMEN, DANN ANSCHLIESSEND, MIT DEN IDS DIE JEWEILIN WERTTE NEHMEN, diese in die Cards einspeichern
-          //TODO  Die ise dann anschliesnd in die decks speichern, worauf der User dann zugriff hat
-                rs = stmt.executeQuery("SELECT ctype,etype,damage from cards where cardId = cardIdFirst ;");
-                while (rs.next()) {
-                    ctype = rs.getString(1);
-                    etype = rs.getString(2);
-                    damage = rs.getString(3);
-                    Card cards1 = new Card(ct ,  , );
-                 //   List<Card> deck = new ArrayList<>();
-                    Deck deck = new Deck()
-                    User users = new User();
-                    deck.setCard1()
-                  //  users.setDeck(deck)
-                    //deck.add(cards);
-                    users.setDeck(deck);
-
-
-                    Deck decks = new Deck(cards);
-                }
-            }
-
-
-
-
-
-
-        return  userFrist+userSecond
-   */
         return "Hello";
     }
 
@@ -846,7 +666,6 @@ public class DriverMangerConnection {
                     givecard = rs.getString(4);
 
                     mindamage = rs.getString(5);
-                    //return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
                 }
             }
         } catch (SQLException exception) {
@@ -868,7 +687,6 @@ public class DriverMangerConnection {
                     type = rs.getString(3);
                     givecard = rs.getString(4);
                     mindamage = rs.getString(5);
-                    //return  "The element Type is "+ element +" card type is " + card + " Monster/Spell tpye:" + MonsterSpell;
                 }
             }
         } catch (SQLException exception) {
@@ -1077,15 +895,9 @@ public class DriverMangerConnection {
                         deckFirst.setMyCards(cardFourth);
                         usersFirst.setDeck(deckFirst);
                         usersFirst.setUsername(usernameK);
-
-
                     }
                     System.out.println("User:"+usernameK+"For + CARD Four :"+ cardFour +"+ Ctype is bpla bal " +" " +ctype+" " +etype +" "+ damage+" " +monsterspell);
                 }
-
-
-
-                //   return "Ctype is bpla bal " + ctype+ etype + damage+ monsterspell;
         } catch (SQLException exception) {
             exception.printStackTrace();
         }
@@ -1257,8 +1069,6 @@ public class DriverMangerConnection {
     {
         main myMain = new main();
         for(int i = 0; i < 100; i++) {
-            //String loser;
-            // Collections.shuffle(deckFirst.getMyCards());
             Collections.shuffle(usersFirst.getDeck().getMyCards());
             Collections.shuffle(usersFirst.getDeck().getMyCards());
 
@@ -1292,34 +1102,10 @@ public class DriverMangerConnection {
                 } catch (SQLException exception) {
                     exception.printStackTrace();
                 }
-               // usersFirst.getDeck().getMyCards().remove(0);
 
             }
             }
         }
-        // Collections.shuffle(deckSecond.getMyCards());
-
-        //System.out.println(usersFirst.getUsername()+": first user++");
-        //System.out.println(usersSecond.getUsername()+": second user++");
-
-
-
-        /*
-        myMain.fight(deckFirst.getMyCards().get(0), deckSecond.getMyCards().get(0));
-        if(deckFirst.getMyCards().get(0).getDamage() > deckSecond.getMyCards().get(0).getDamage())
-        {
-            deckSecond.getMyCards().remove(0);
-            System.out.println(deckFirst.getMyCards().get(0)+ "REMOVING THE SECOND DECK");
-        }else if(deckSecond.getMyCards().get(0).getDamage() > deckFirst.getMyCards().get(0).getDamage())
-        {
-            deckFirst.getMyCards().remove(0);
-            System.out.println(deckFirst.getMyCards().get(0)+ "REMOVING THE FIRST DECK");
-        } else {
-            System.out.println("DRAAAW");
-        }
-        //}
-
-         */
          return myMain.battleLog();
     }
     public String deleteDeck(Connection connection)

@@ -13,29 +13,5 @@ public enum ElementType {
     NORMAL{ String Normal(){
         return "Regular";
     }};
-/*
-    private int numVal;
 
-    ElementType(int numVal)
-    {
-        this.numVal = numVal;
-    }
-
-    ElementType() {
-
-    }
-
-    public int getNumVal()
-    {
-        return numVal;
-    }
-
-    private static final Random PRNG = new Random();
-
-    public static ElementType randomElement() {
-        ElementType[] elements = values();
-        return elements[PRNG.nextInt(elements.length)];
-    }
-
- */
 }

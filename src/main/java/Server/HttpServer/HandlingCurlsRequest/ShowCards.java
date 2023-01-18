@@ -16,35 +16,21 @@ public class ShowCards {
         Name = name;
     }
 
-    String requestBody;
-    String[] requestStorage;
-    String[] cStorage;
+
     public String ShowAcquiredCards(Request request)
     {
         //TODO: FIX NULL POINTER EXCEPTION REQUEST IS NULL
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
-        System.out.println("ACQUIRE PACKAGES--------------------------- ");
         String authorization = request.getHeaderMap().get("Authorization");
         String Input = null;
 
-        //requestStorage = authorization.split(" ");
 for(int i =0; i < 2; i++)
         {
             Name = "kienboec";
-
-
-      //  cStorage = requestStorage[1].split("-");
-       // String Name = cStorage[0];
-        System.out.println(Name);
-        //if(Name.equals("kienboec"))
-        //{
             setName("kienboec");
-            // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
             String storage = driverMangerConnection.ShowK(conn);
             return storage;
-            //System.out.println("ITS KIENBOC ");
-        //}
         }
         Name="altenhof";
         if (Name.equals("altenhof"))
@@ -53,7 +39,6 @@ for(int i =0; i < 2; i++)
             Connection conn = driverMangerConnection.Connection();
             String User = "altenhof";
             String storage = driverMangerConnection.ShowA(conn);
-            //System.out.println("ITS altenhof ");
             return storage;
         }
 

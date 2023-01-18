@@ -21,13 +21,7 @@ public class FireEvle extends MonsterCard {
         this.normal = normal;
     }
 
-    //public MonsterCard getMyMonsterCard() {
-      //  return myMonsterCard;
-    //}
 
-    //public void setMyMonsterCard(MonsterCard myMonsterCard) {
-       // this.myMonsterCard = myMonsterCard;
-    //}
 
     public int getHealth() {
         return health;

@@ -1,10 +1,6 @@
 package com.example.cardgame;
 
 public class MonsterCard extends Card /*implements Playable */{
-    //ALLE MONSTER UNTERSCHIEDLICHE SKILLS/
-
-
-    MonsterType monsterType;
 
     @Override
     public String getUsername() {

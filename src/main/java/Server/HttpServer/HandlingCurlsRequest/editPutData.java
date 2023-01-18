@@ -1,7 +1,6 @@
 package Server.HttpServer.HandlingCurlsRequest;
 
 import Server.Connection.DriverMangerConnection;
-import Server.Connection.UserDaoImpl;
 import Server.HttpServer.UtilsServer.Request;
 import javafx.scene.image.Image;
 
@@ -10,14 +9,12 @@ import java.sql.Connection;
 public class editPutData {
 
     public String _userContent;
-    UserDaoImpl userDb= new UserDaoImpl();
     public String Name;
     public String Bio;
     public String image;
     int token= 20;
     public String StringItemStorage;
     public String SplitViaDoublePoint[];
-    UserDaoImpl createUserDatabase = new UserDaoImpl();
     public String cutFirst;
     public String cutSecond;
 

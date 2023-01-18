@@ -8,9 +8,6 @@ public class User {
 
     String cardId;
 
-
-
-    //ROUNDS MAX 100
     int userId;
 
     public void setDeck(Deck deck) {
@@ -41,16 +38,7 @@ public class User {
 
     boolean battle = false;
     List<Card> stack = new ArrayList<>(); // stack muss, class erstellt werden
-/*
-    public List<Card> getDeck() {
-        return deck;
-    }
 
-    public void setDeck(List<Card> deck) {
-        this.deck = deck;
-    }
-
- */
 
     public List<Card> getDeckArray() {
         return deckArray;

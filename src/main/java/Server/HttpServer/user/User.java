@@ -11,7 +11,7 @@ public class User {
     @JsonAlias({"password"})
     private String password;
 
-    public User() // wird benotigt wegen jackson
+    public User()
     {}
 
     public User(Integer id, String name, String password) {

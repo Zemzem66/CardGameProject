@@ -1,10 +1,6 @@
 package com.example.cardgame;
 
 public abstract class Card {
-
-
-
-
     String cardId;
     String username;
     //Klasse, NOETIG ODER NICHT
@@ -12,9 +8,7 @@ public abstract class Card {
     String elementType;
     public int damage;
     CardType cardType;
-
-  //  public Card(String monsterspellname, String etype, int damageValue, String ctype) {
-    //}
+    
 
     public Card() {
 

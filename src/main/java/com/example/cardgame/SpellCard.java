@@ -1,12 +1,6 @@
 package com.example.cardgame;
 
 public class SpellCard extends Card {
-    //effective (eg: water is effective against fire, so damage is doubled)
-    //– not effective (eg: fire is not effective against water, so damage is halved)
-    //– no effect (eg: normal monster vs normal spell, no change of damage,
-    // directwater -> fire
-    //• fire -> normal
-    //• normal -> water
 
 String username;
     public Spells getSpellType() {

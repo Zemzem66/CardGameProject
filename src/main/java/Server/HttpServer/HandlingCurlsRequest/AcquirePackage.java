@@ -16,7 +16,6 @@ public class AcquirePackage {
         Name = name;
     }
 
-    String requestBody;
     String[] requestStorage;
     String[] cStorage;
     public String createAcquire(Request request)
@@ -33,30 +32,19 @@ public class AcquirePackage {
         if(Name.equals("kienboec"))
         {
             setName("kienboec");
-            // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
             Connection conn = driverMangerConnection.Connection();
-          //  String storage = driverMangerConnection.AcquirePackageK(conn);
             String storage = driverMangerConnection.AcquirePackageT(conn,Name);
             return storage;
-            //System.out.println("ITS KIENBOC ");
         }else if (Name.equals("altenhof"))
         {
             setName("altenhof");
             Connection conn = driverMangerConnection.Connection();
-           // String User = "altenhof";
-            //String storage = driverMangerConnection.AcquirePackageA(conn);
             String storage = driverMangerConnection.AcquirePackageT(conn,Name);
-            //System.out.println("ITS altenhof ");
             return storage;
         }
 
         else{
-            return" no user selected"   ;
+            return"No User Selected!";
         }
-        //String userBody = request.getBody();
-        //String[] valuePair = userBody.split(",");
-
-
-      //  return "Irgendwas";
     }
 }

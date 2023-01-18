@@ -26,15 +26,11 @@ private String username;
         userFirst = cStorage[0];
         DriverMangerConnection driverMangerConnection = new DriverMangerConnection();
         Connection conn = driverMangerConnection.Connection();
-
         battleFirst = driverMangerConnection.addToBattle(conn,userFirst);
-
         battleSecond = driverMangerConnection.getBattle(conn,userSecond);
-        System.out.println("What is BATTLE SECOND ?" + battleSecond);
-
         driverMangerConnection.deleteDeck(conn);
-        String testTestOne = driverMangerConnection.getdeckK(conn,"kienboec");
-        String testTestSecond = driverMangerConnection.getdeckA(conn,"altenhof");
+        driverMangerConnection.getdeckK(conn,"kienboec");
+        driverMangerConnection.getdeckA(conn,"altenhof");
        // return
         String battle = driverMangerConnection.fight();
         /*

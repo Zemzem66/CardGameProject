@@ -1,6 +1,5 @@
 package Server.HttpServer.HandlingCurlsRequest;
 import Server.Connection.DriverMangerConnection;
-import Server.Connection.UserDaoImpl;
 import Server.HttpServer.UtilsServer.Request;
 
 import java.sql.Connection;
@@ -10,7 +9,6 @@ import static com.sun.javafx.util.Utils.split;
 public class ParseUserCreate {
 
     public String _userContent;
-    UserDaoImpl userDb= new UserDaoImpl();
     public String username;
     public String password;
     int token= 20;
@@ -19,7 +17,6 @@ public class ParseUserCreate {
     int games = 0;
     public String StringItemStorage;
     public String SplitViaDoublePoint[];
-    UserDaoImpl createUserDatabase = new UserDaoImpl();
     public String cutFirst;
     public String cutSecond;
 

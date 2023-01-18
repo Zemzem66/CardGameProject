@@ -15,8 +15,6 @@ public class showStats {
    public void setName(String name) {
       Name = name;
    }
-
-   String requestBody;
    String[] requestStorage;
    String[] cStorage;
    public String getStats(Request request)
@@ -33,7 +31,6 @@ public class showStats {
       if(Name.equals("kienboec"))
       {
          setName("kienboec");
-         // TODO: ITS HARD CODED, IF TIME IS LEFT DO IT
          Connection conn = driverMangerConnection.Connection();
          String show =driverMangerConnection.getStatK(conn);
          return show;

@@ -4,12 +4,51 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="Project is almost finished">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c31483c6-2c8d-42e3-8338-7693a12b0745.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/c31483c6-2c8d-42e3-8338-7693a12b0745.xml" afterDir="false" />
+    <list default="true" id="742f7900-a5f7-4588-be1e-256774f78b6b" name="Changes" comment="More Tests">
+      <change afterPath="$PROJECT_DIR$/Test/Server/HttpServer/UtilsServer/ResponseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Test/Server/HttpServer/UtilsServer/ServerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/HeaderMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Server/HttpServer/RequestUtils/RequestBuilderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Server/HttpServer/RequestUtils/RequestBuilderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/Server/HttpServer/RequestUtils/RequestHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Server/HttpServer/RequestUtils/RequestHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test/Server/HttpServer/UtilsServer/RequestTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Test/Server/HttpServer/UtilsServer/RequestTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/Connection/DriverMangerConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Connection/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/Endpoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Handle/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/Handle/UserHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/AcquirePackage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/AcquirePackage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ConfiguredDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ConfiguredDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/CreatePackages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/CreatePackages.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/LoginInUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/LoginInUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ParseUserCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ParseUserCreate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ShowCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ShowCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ShowDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ShowDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ShowEditData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ShowEditData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ShowMyCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/ShowMyCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/Trading.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/Trading.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/battles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/battles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/editPutData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/editPutData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/scoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/scoreboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/showStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/HandlingCurlsRequest/showStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/RequestUtils/RequestHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/UtilsServer/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/createUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/createUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/HttpServer/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Server/HttpServer/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Server/RequestHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Check.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Check.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/ElementType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/ElementType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/FireEvle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/FireEvle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Goblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Goblin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/MonsterCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Ork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Ork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/SpellCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/SpellCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Wizzard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cardgame/Wizzard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Project-Card" beforeDir="false" afterPath="$PROJECT_DIR$/../Project-Card" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +61,8 @@
       <list>
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -39,27 +78,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "extract.method.default.visibility": "private",
-    "last_opened_file_path": "C:/Users/Lenovo/Desktop/http-server",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "configurable.group.database.main"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Lenovo/Desktop/FH/WSS22-23/Software/CardGame&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Server" />
@@ -77,7 +116,7 @@
       <recent name="com.example.cardgame" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.RequestTest">
+  <component name="RunManager" selected="Application.Server">
     <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Server.HttpServer.UtilsServer.Server" />
       <module name="CardGame" />
@@ -91,48 +130,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server.HttpServer.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.Main" />
+    <configuration name="RequestBuilderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Server.HttpServer.HandlingCurlsRequest.*" />
+          <option name="PATTERN" value="Server.HttpServer.RequestUtils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.main" />
-      <module name="CardGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="HttpParserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="CardGame" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Server.Parse.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Server.Parse" />
-      <option name="MAIN_CLASS_NAME" value="Server.Parse.HttpParserTest" />
+      <option name="PACKAGE_NAME" value="Server.HttpServer.RequestUtils" />
+      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.RequestUtils.RequestBuilderTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RequestTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RequestHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CardGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.HttpServer.RequestUtils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Server.HttpServer.RequestUtils" />
+      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.RequestUtils.RequestHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResponseTest.testBadResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="CardGame" />
       <extension name="coverage">
         <pattern>
@@ -141,7 +169,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Server.HttpServer.UtilsServer" />
-      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.UtilsServer.RequestTest" />
+      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.UtilsServer.ResponseTest" />
+      <option name="METHOD_NAME" value="testBadResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CardGame" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Server.HttpServer.UtilsServer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Server.HttpServer.UtilsServer" />
+      <option name="MAIN_CLASS_NAME" value="Server.HttpServer.UtilsServer.ServerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,11 +193,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RequestTest" />
         <item itemvalue="Application.Server" />
-        <item itemvalue="Application.main" />
-        <item itemvalue="Application.Server.HttpServer.Main" />
-        <item itemvalue="JUnit.HttpParserTest" />
+        <item itemvalue="JUnit.RequestBuilderTest" />
+        <item itemvalue="JUnit.ResponseTest.testBadResponse" />
+        <item itemvalue="JUnit.ServerTest" />
+        <item itemvalue="JUnit.RequestHandlerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +230,8 @@
       <workItem from="1673026528862" duration="30354000" />
       <workItem from="1673250343118" duration="26976000" />
       <workItem from="1673398811593" duration="75842000" />
-      <workItem from="1673690536797" duration="73584000" />
+      <workItem from="1673690536797" duration="87631000" />
+      <workItem from="1674060542350" duration="294000" />
     </task>
     <task id="LOCAL-00001" summary="First push">
       <created>1665921694476</created>
@@ -311,7 +356,8 @@
     <MESSAGE value="Access to the Cards from the database" />
     <MESSAGE value="Battle Logic + Test" />
     <MESSAGE value="Project is almost finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Project is almost finished" />
+    <MESSAGE value="More Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="More Tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
